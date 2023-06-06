@@ -9,4 +9,8 @@ export default StyleSheet.create({
   background: {
     backgroundColour: Colours.backgroundColouring,
   },
+
+  bottomTabBar: {
+    backgroundColour: Colours.backgroundColouring,
+  },
 });
