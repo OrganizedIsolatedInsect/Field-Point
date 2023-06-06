@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
 
 export const Colours = {
-  primary: "#FFFFFF", //check designer style guide for actual colour
-  backgroundColouring: "#000000", //check designer style guide for actual colour
+  primary: "#FFFFFF", //White
+  backgroundColouring: "#000000", //Black
 };
 
 export default StyleSheet.create({
@@ -11,6 +11,8 @@ export default StyleSheet.create({
   },
 
   bottomTabBar: {
+    width: "360px",
+    height: "90px",
     backgroundColour: Colours.backgroundColouring,
   },
 });
