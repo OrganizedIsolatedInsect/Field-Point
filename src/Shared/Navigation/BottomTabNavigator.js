@@ -6,7 +6,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import styles,{ Colours } from "../styles";
+import styles,{ Color} from "../styles";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
@@ -23,7 +23,7 @@ export const AppNavigator = () => {
           ? [
               props.style,
               {
-                borderTopColor: Colours.primaryText,
+                borderTopColor: Color.primaryText,
                 borderTopWidth: 2,
               },
             ]
@@ -36,13 +36,10 @@ export const AppNavigator = () => {
   return (
     <BottomTab.Navigator
       screenOptions={({ route }) => ({
-        tabBarLabelStyle: {
-          fontFamily: "Roboto",      
-        },
         headerShown: false,
-        tabBarStyle: { backgroundColor: Colours.backgroundColouring },
-        tabBarInactiveTintColor: Colours.inctive, // color when icon is not picked
-        tabBarActiveTintColor: Colours.active, // color when icon is picked
+        tabBarStyle: { backgroundColor: Color.headingBackground },
+        tabBarInactiveTintColor: Color.inActiveIcon, // color when icon is not picked
+        tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
       })}
       //set default screen to Home
       initialRouteName="Home"
@@ -53,7 +50,7 @@ export const AppNavigator = () => {
         component={SettingScreen}
         options={{
           tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Colours.active : Colours.inActive}]}>MORE</Text>
+            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>MORE</Text>
           },
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialIcons name="help-center" color={color} style={styles.bottomTabIconSize} />
@@ -66,7 +63,7 @@ export const AppNavigator = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Colours.active : Colours.inActive}]}>HOME</Text>
+            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>HOME</Text>
           },
           tabBarIcon: ({ color, size, focused }) => (
             <FontAwesome name="home" color={color} style={styles.bottomTabIconSize} />
@@ -79,7 +76,7 @@ export const AppNavigator = () => {
         component={BookmarkScreen}
         options={{
           tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Colours.active : Colours.inActive}]}>BOOMARKS</Text>
+            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>BOOMARKS</Text>
           },
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
