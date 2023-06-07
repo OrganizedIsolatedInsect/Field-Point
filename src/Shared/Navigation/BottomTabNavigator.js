@@ -1,12 +1,12 @@
 import * as React from "react";
 
-import { Pressable } from "react-native";
+import { Pressable, Text } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import { Colours } from "../styles";
+import styles,{ Colours } from "../styles";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
@@ -37,22 +37,26 @@ export const AppNavigator = () => {
     <BottomTab.Navigator
       screenOptions={({ route }) => ({
         tabBarLabelStyle: {
-          fontFamily: "Roboto",
-          fontSize: 10,
-          color: Colours.primaryText,
+          fontFamily: "Roboto",      
         },
-
         headerShown: false,
         tabBarStyle: { backgroundColor: Colours.backgroundColouring },
+        tabBarInactiveTintColor: Colours.inctive, // color when icon is not picked
+        tabBarActiveTintColor: Colours.active, // color when icon is picked
       })}
+      //set default screen to Home
+      initialRouteName="Home"
+      
     >
       <BottomTab.Screen
         name="More"
         component={SettingScreen}
         options={{
-          tabBarLabel: "More",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="help-center" color={color} size={24} />
+          tabBarLabel: ({ focused,color,size }) => {
+            return <Text style={[styles.bottomTabText,{color: focused ? Colours.active : Colours.inActive}]}>MORE</Text>
+          },
+          tabBarIcon: ({ color, size, focused }) => (
+            <MaterialIcons name="help-center" color={color} style={styles.bottomTabIconSize} />
           ),
           tabBarButton: CustomTabButton,
         }}
@@ -61,9 +65,11 @@ export const AppNavigator = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="home" color={color} size={24} />
+          tabBarLabel: ({ focused,color,size }) => {
+            return <Text style={[styles.bottomTabText,{color: focused ? Colours.active : Colours.inActive}]}>HOME</Text>
+          },
+          tabBarIcon: ({ color, size, focused }) => (
+            <FontAwesome name="home" color={color} style={styles.bottomTabIconSize} />
           ),
           tabBarButton: CustomTabButton,
         }}
@@ -72,12 +78,14 @@ export const AppNavigator = () => {
         name="Bookmarks"
         component={BookmarkScreen}
         options={{
-          tabBarLabel: "Bookmarks",
-          tabBarIcon: ({ color, size }) => (
+          tabBarLabel: ({ focused,color,size }) => {
+            return <Text style={[styles.bottomTabText,{color: focused ? Colours.active : Colours.inActive}]}>BOOMARKS</Text>
+          },
+          tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
               name="bookmark-multiple"
               color={color}
-              size={24}
+              style={styles.bottomTabIconSize}
             />
           ),
           tabBarButton: CustomTabButton,
