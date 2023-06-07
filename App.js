@@ -8,10 +8,12 @@
 import React from "react";
 import { Text, View } from "react-native";
 
+import Searchbar from "./src/Shared/Components/Searchbar";
+
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
+    <View style={{ backgroundColor: "#000" }}>
+      <Searchbar />
     </View>
   );
 };
