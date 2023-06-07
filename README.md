@@ -1,28 +1,5 @@
 # Field-Point
 
-## Overview and documentation
-Learn about the product vision, user research findings, and more.
-```
-https://organizedisolatedinsect.github.io/ProjectNemo/#/
-```
-
-## Connecting to Github repository
-Clone the repository to Visual Studio Code
-  - Open a new Visual Studio Code window
-  - On the left side bar, click Source Control
-  - Clone Repository
-  - Paste url: ``https://github.com/OrganizedIsolatedInsect/ProjectNemo.git``
-  - Select the destination folder
-
-## Installation and Setting up Dev environment
-After cloning repository
-  - Open a new terminal
-  - Run `npm install` in order to download all the modules
-
-To start metro run `npx react-native start`
-
-To start compiling and run code run `npx react-native run-android`
-
 ## Branching
 
 When working on the project in VS Code, make sure you are working from a branch separate from the master branch.
@@ -41,12 +18,6 @@ How to use Github in VS Code in general (of importance, **Pull requests**):
 https://code.visualstudio.com/docs/editor/github
 ```
 
-## Figma Mockup
-MVP of this project should have function, look and feel of this design.
-
-```
-https://www.figma.com/file/PTth8wIjXV6Y2lFN02RH85/OII-App?node-id=0%3A1
-```
 ## SQL Lite Browser
 Software that simplifies the creation of SQL Lite databases in Windows rather than initializing it on device. Is capable of importing CSV files into proper databases. Additionally, allows you to view all the tables created by SQL Lite.
 ```
