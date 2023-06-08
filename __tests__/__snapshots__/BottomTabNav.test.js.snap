@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing react navigation clicking on the button takes you to the notifications screen 1`] = `Promise {}`;

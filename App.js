@@ -13,9 +13,6 @@ import AppNavigator from "./src/Shared/Navigation/BottomTabNavigator";
 const App = () => {
   return (
     <NavigationContainer>
-      <View>
-        <Text>App</Text>
-      </View>
       <AppNavigator />
     </NavigationContainer>
   );

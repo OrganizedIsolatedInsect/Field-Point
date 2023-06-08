@@ -76,7 +76,7 @@ export const AppNavigator = () => {
         component={BookmarkScreen}
         options={{
           tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>BOOMARKS</Text>
+            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>BOOKMARKS</Text>
           },
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
