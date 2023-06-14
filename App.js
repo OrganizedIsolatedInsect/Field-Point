@@ -10,10 +10,13 @@ import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import AppNavigator from "./src/Shared/Navigation/BottomTabNavigator";
 
+import LegislationScreen from "./src/Screens/Legislation/LegislationScreen"; //temp import until navigation is finished
+
 const App = () => {
   return (
     <NavigationContainer>
-      <AppNavigator />
+    <LegislationScreen />
+     {/*  <AppNavigator /> */}
     </NavigationContainer>
   );
 };
