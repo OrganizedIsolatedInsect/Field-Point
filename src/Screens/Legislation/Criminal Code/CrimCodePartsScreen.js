@@ -11,6 +11,7 @@ import { getDbDataCrimCodeHeading } from "./CriminalCodeFunctions";
 const CrimCodePartsScreen = () => {
   const [dbData, setDbData] = useState([]); // create array to house data from Crim Code Database
 
+  //function to get heading data from database
   useEffect(() => {
     getDbDataCrimCodeHeading(setDbData);
   }, []);
