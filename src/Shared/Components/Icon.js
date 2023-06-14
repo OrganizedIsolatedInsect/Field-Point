@@ -32,12 +32,7 @@ import Octicons from "react-native-vector-icons/Octicons";
 import Zocial from "react-native-vector-icons/Zocial";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
-const Icon = (props) => {
-  let iconStyle = props.iconStyle;
-  let iconName = props.iconName;
-  let iconSize = props.iconSize;
-  let iconColor = props.iconColor;
-
+const Icon = ({ iconStyle, iconName, iconSize, iconColor }) => {
   return (
     <View>
       {/* If else render function */}

@@ -14,26 +14,25 @@ onPress: function to be called when the button is pressed
 
 import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
-import stylesHome from "./HomeScreenStyle.js";
-import styles, { Color } from "../../Shared/styles.js";
-import Icon from "../../Shared/Components/Icon.js";
+import styles, { Color } from "../styles.js";
+import Icon from "./Icon.js";
 
-const HomeScreenButton = (props) => {
-  let imgURI = props.imgURI;
-  let buttonText = props.buttonText;
-  let onPress = props.onPress;
-  let iconStyle = props.iconStyle;
-  let iconName = props.iconName;
-  let iconSize = props.iconSize;
-  let iconColor = props.iconColor;
-
+const HomeScreenButton = ({
+  imgURI,
+  buttonText,
+  onPress,
+  iconStyle,
+  iconName,
+  iconSize,
+  iconColor,
+}) => {
   return (
     <Pressable
       android_ripple={{ color: Color.cardBody, foreground: true }}
       onPress={onPress}
     >
-      <Image style={stylesHome.homeScreenImg} source={imgURI} />
-      <View style={stylesHome.homeScreenButtonView}>
+      <Image style={styles.homeScreenImg} source={imgURI} />
+      <View style={styles.homeScreenButtonView}>
         <Icon
           iconStyle={iconStyle}
           iconName={iconName}
@@ -41,7 +40,7 @@ const HomeScreenButton = (props) => {
           iconColor={iconColor}
         />
 
-        <Text style={stylesHome.homeScreenButtonText}>{buttonText}</Text>
+        <Text style={styles.homeScreenButtonText}>{buttonText}</Text>
       </View>
     </Pressable>
   );

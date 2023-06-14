@@ -1,15 +1,14 @@
 import { View, Text } from "react-native";
 import React from "react";
-import stylesHome from "./HomeScreenStyle.js";
 import styles, { Color } from "../../Shared/styles.js";
-import HomeScreenButton from "./HomeScreenButton.js";
+import HomeScreenButton from "../../Shared/Components/HomeScreenButton.js";
 import LegislationScreen from "../../Screens/Legislation/LegislationScreen.js";
 
 const HomeScreen = () => {
   return (
-    <View style={stylesHome.background}>
-      <Text style={stylesHome.homeScreenHeader}>What are you looking for?</Text>
-      <Text style={stylesHome.homeScreenSubHeader}>
+    <View style={styles.homeScreenBackground}>
+      <Text style={styles.homeScreenHeader}>What are you looking for?</Text>
+      <Text style={styles.homeScreenSubHeader}>
         Explore supporting information and resources
       </Text>
 
@@ -45,16 +44,6 @@ const HomeScreen = () => {
         iconName="newspaper"
         buttonText="Resources"
         iconSize={36}
-        iconColor={Color.primaryText}
-        onPress={() => {}}
-      />
-
-      <HomeScreenButton
-        imgURI={require("./../../Assets/Imgs/Home-Screen/Resources-button-home-334x120.jpg")}
-        iconStyle="MaterialCommunityIcons"
-        iconName="twitter"
-        buttonText="Testing"
-        iconSize={80}
         iconColor={Color.primaryText}
         onPress={() => {}}
       />
