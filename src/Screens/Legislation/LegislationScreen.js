@@ -1,10 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text, Button } from 'react-native' 
 import React from 'react'
 
-const LegislationScreen = () => {
+import { LegislationStack } from '../../Shared/Navigation/LegislationStackNavigator'
+
+//button is temp until component for legislation is implemented 
+
+const LegislationScreen = ({navigation }) => {
   return (
     <View>
       <Text>LegislationScreen</Text>
+      <Button title='Criminal Code' onPress={() => navigation.navigate('CrimCodeStack')}/>
     </View>
   )
 }
