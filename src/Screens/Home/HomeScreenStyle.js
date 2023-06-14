@@ -19,13 +19,12 @@ export default StyleSheet.create({
     color: "#B3B3B3",
   },
 
-  homeScreenPressableButton: {
-    paddingVertical: 13,
-  },
-
   homeScreenImg: {
     borderRadius: 4,
     opacity: 0.8,
+    marginVertical: 13,
+    width: 334,
+    height: 120,
   },
 
   homeScreenButtonText: {
@@ -34,6 +33,7 @@ export default StyleSheet.create({
   },
 
   homeScreenButtonView: {
+    //center the icon and text horizontally and vertically
     position: "absolute",
     top: 0,
     left: 0,
