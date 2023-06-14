@@ -1,9 +1,10 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { View, Text } from "react-native";
+import styles, { Color } from "../../Shared/styles";
 
 const BookmarkScreen = () => {
   return (
-    <View>
+    <View style={styles.bookmarkScreenFormatting}>
       <Text>BookmarkScreen</Text>
     </View>
   );
