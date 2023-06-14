@@ -1,3 +1,5 @@
+//https://stackoverflow.com/questions/38715028/how-to-handle-different-screen-sizes-in-react-native
+
 import { Dimensions, StyleSheet } from "react-native";
 
 const { width, height } = Dimensions.get("window");
