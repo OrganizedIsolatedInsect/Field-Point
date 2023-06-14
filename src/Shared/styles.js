@@ -30,6 +30,7 @@ export default StyleSheet.create({
     marginBottom: 5,
     marginHorizontal: 5,
     flexDirection: "row",
+    borderRadius: 5,
   },
   headingLabelContainer: {
     width: 275,
