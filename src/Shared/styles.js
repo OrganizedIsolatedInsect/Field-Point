@@ -5,14 +5,14 @@ import { Dimensions, StyleSheet } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 export const Color = {
-  primaryText: "#ffffff",
-  background: "#323232",
-  activeIcon: "#ffffff",
-  inActiveIcon: "#b3b3b3",
-  headingBackground: "#000000",
-  cardBody: "#464646",
-  searchBody: "#ffffff",
-  inFocus: "#419aff",
+  primaryText: "#ffffff", //white
+  background: "#323232", //really dark grey
+  activeIcon: "#ffffff", //white
+  inActiveIcon: "#b3b3b3", //light red
+  headingBackground: "#000000", //black
+  cardBody: "#464646", //more dark grey
+  searchBody: "#ffffff", //white
+  inFocus: "#419aff", //light blue
 };
 
 export default StyleSheet.create({
