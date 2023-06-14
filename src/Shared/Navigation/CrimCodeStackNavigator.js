@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
 import CrimCodePartsScreen from "../../Screens/Legislation/Criminal Code/CrimCodePartsScreen";
-import CrimCodeSectionsScreen from "../../Screens/Legislation/Criminal Code/CrimCodeSectionsScreen";
+import CrimCodeSubSectionsScreen from "../../Screens/Legislation/Criminal Code/CrimCodeSubSectionsScreen";
 
 // Create Stack to go though Criminal Code screens. Order should be Criminal Code Parts --> Criminal Code Section --> Criminal Code Content.
 
@@ -15,8 +15,8 @@ const CrimCodeStack = () => {
         component={CrimCodePartsScreen}
       />
       <CrimCodeNavigator.Screen
-        name="CrimCodeSections"
-        component={CrimCodeSectionsScreen}
+        name="CrimCodeSubSections"
+        component={CrimCodeSubSectionsScreen}
       />
     </CrimCodeNavigator.Navigator>
   );
