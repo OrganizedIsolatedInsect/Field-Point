@@ -1,36 +1,70 @@
 //https://reactnative.dev/docs/asyncstorage
 
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, Pressable } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import styles, { Color } from "../../Shared/styles";
-import { AsyncStorage } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const BookmarkScreen = () => {
-  const getData = async () => {
-    try {
-      const value = JSON.parse(await AsyncStorage.getItem("docid"));
-      if (value !== null) {
-        // We have data!!
-        console.log(AsyncStorage);
-        console.log(value);
-      }
-    } catch (error) {
-      // Error retrieving data
-      await AsyncStorage.setItem("docid", "this is an id");
-      console.log("Bookmarks is empty");
-    }
-  };
+  const navAid = useNavigation();
+  const bookmarks = useSelector(state => state.bookmarks);
+  const dispatch = useDispatch();
 
-  return (
-    <View style={styles.bookmarkScreenFormatting}>
-      <Text>BookmarkScreen</Text>
-      <FlatList
-        data={getData}
-        renderItem={getData.docid}
-        keyExtractor={getData.docid}
-      ></FlatList>
+  const renderBookmark = ({ item }) => (
+    <View style={styles.bookmarkRender}>
+      <Pressable>
+        onPress=
+        {() => {
+          const docid = item.docid;
+          const legislation = item.legislation; //make certain the legislation in the data is the same as the screen name
+          navAid.navigate(legislation, { docid: docid }); //this should point directly to the document that was bookmarked
+        }}
+        <Text>
+          Legislation: {item.legislation} {item.section} {"/n"}
+          {item.title}
+          {/* Make sure these are the correct field names */}
+        </Text>
+        <Icon
+          name="delete"
+          size={20}
+          onPress={() => dispatch(removeBookmark({ section: item.section }))}
+        />
+      </Pressable>
     </View>
   );
+
+  /*Output Section*/
+
+  if (bookmarks.sections.length === 0) {
+    return (
+      <View style={[styles.bookmarkScreenFormatting, styles.centerOnScreen]}>
+        <Text style={[styles.title, { color: Color.primaryText }]}>
+          No Bookmarks Currently
+        </Text>
+        <Icon
+          name="collections-bookmark"
+          size={200}
+          style={{ color: Color.primaryText }}
+        />
+      </View>
+    );
+  } else {
+    return (
+      <SafeAreaView>
+        <View style={styles.bookmarkScreenFormatting}>
+          {/* conditional headers based on section array length */}
+
+          <View>
+            {/* here should be a breadcrumb */}
+            <FlatList data={bookmarks.sections} renderItem={renderBookmark} />
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
 };
 
 export default BookmarkScreen;

@@ -27,6 +27,11 @@ export default StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 10,
   },
+  centerOnScreen: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 
   //Bookmark styling
   bookmarkScreenFormatting: {
@@ -35,5 +40,9 @@ export default StyleSheet.create({
     flexDirection: "column",
     width: width,
     height: height,
+  },
+  bookmarkRender: {
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
