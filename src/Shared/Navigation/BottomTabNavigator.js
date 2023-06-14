@@ -10,6 +10,8 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
+import { CustomHeader } from "../Components/CustomHeader";
+
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
@@ -21,8 +23,9 @@ const Home = createStackNavigator();
 
 // Common navigation screen options pulled out to be reusable against all stacks
 const screenOptionStyle = {
-  // Disables showing the default header
-  headerShown: false,
+  header: ({ navigation, route, options, back }) => {
+    return <CustomHeader />;
+  },
   tabBarStyle: { backgroundColor: Color.headingBackground },
   tabBarInactiveTintColor: Color.inActiveIcon, // color when icon is not picked
   tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
@@ -31,7 +34,9 @@ const screenOptionStyle = {
 // Temporary HomeStack for routing
 const HomeStack = () => {
   return (
-    <Home.Navigator screenOptions={screenOptionStyle}>
+    <Home.Navigator
+      screenOptions={{ ...screenOptionStyle, headerShown: false }}
+    >
       <Home.Screen name="Home" component={HomeScreen} />
       <Home.Screen name="Bookmarks" component={BookmarkScreen} />
       <Home.Screen name="Legislation" component={LegislationScreen} />

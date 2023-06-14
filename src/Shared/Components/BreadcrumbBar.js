@@ -6,6 +6,8 @@ import {
   useNavigationState,
 } from "@react-navigation/core";
 
+import { Color } from "../styles";
+
 // To get parent route, need to use useNavigationState
 // SOURCE: https://reactnavigation.org/docs/use-navigation-state
 // CODE: https://snack.expo.io/?platform=android&name=Navigation%20prop%20reference%20%7C%20React%20Navigation&dependencies=%40expo%2Fvector-icons%40*%2C%40react-native-community%2Fmasked-view%40*%2Creact-native-gesture-handler%40*%2Creact-native-pager-view%40*%2Creact-native-paper%40%5E4.7.2%2Creact-native-reanimated%40*%2Creact-native-safe-area-context%40*%2Creact-native-screens%40*%2Creact-native-tab-view%40%5E3.0.0%2C%40react-navigation%2Fbottom-tabs%406.3.1%2C%40react-navigation%2Fdrawer%406.4.1%2C%40react-navigation%2Felements%401.3.3%2C%40react-navigation%2Fmaterial-bottom-tabs%406.2.1%2C%40react-navigation%2Fmaterial-top-tabs%406.2.1%2C%40react-navigation%2Fnative-stack%406.6.1%2C%40react-navigation%2Fnative%406.0.10%2C%40react-navigation%2Fstack%406.2.1&hideQueryParams=true&sourceUrl=https%3A%2F%2Freactnavigation.org%2Fexamples%2F6.x%2Fuse-navigation-state.js
@@ -56,10 +58,10 @@ export default BreadcrumbBar = () => {
             validateReturn();
           }}
         >
-          <Text>{previousRouteName}</Text>
+          <Text style={styles.breadcrumbText}>{previousRouteName}</Text>
         </Pressable>
-        <Text> &gt; </Text>
-        <Text>{currentRouteName}</Text>
+        <Text style={styles.breadcrumbText}> &gt; </Text>
+        <Text style={styles.breadcrumbText}>{currentRouteName}</Text>
       </View>
     );
   }
@@ -70,5 +72,12 @@ export default BreadcrumbBar = () => {
 const styles = StyleSheet.create({
   breadcrumb: {
     flexDirection: "row",
+    color: Color.primaryText,
+    paddingTop: 24,
+    paddingBottom: 10,
+    paddingLeft: 13
+  },
+  breadcrumbText: {
+    color: Color.primaryText,
   },
 });
