@@ -31,6 +31,9 @@ export default StyleSheet.create({
     marginHorizontal: 5,
     flexDirection: "row",
   },
+  headingLabelContainer: {
+    width: 275,
+  },
   partsButtonPrimaryText: {
     fontFamily: "Roboto",
     fontSize: 18,
