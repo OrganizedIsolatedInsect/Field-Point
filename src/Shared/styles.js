@@ -44,10 +44,10 @@ export default StyleSheet.create({
   partsSecondaryText: {
     fontFamily: "Roboto",
     fontSize: 10,
-    color: Color.cardBody,
+    color: Color.inActiveIcon,
   },
   partsCheveronCircle: {
-    color: Color.cardBody,
+    color: Color.inActiveIcon,
     fontSize: 30,
     marginRight: 20,
     marginLeft: 20,
