@@ -17,6 +17,7 @@ export const getDbDataCrimCodeHeading = (setDbData) => {
   });
 };
 
+//function to pull section data from Criminal Code Database
 export const getDbDataCrimCodeSection = (partLabel, setDbData) => {
   crimCodeDb.transaction((tx) => {
     tx.executeSql(
