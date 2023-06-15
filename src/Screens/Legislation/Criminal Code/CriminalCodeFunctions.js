@@ -16,3 +16,19 @@ export const getDbDataCrimCodeHeading = (setDbData) => {
     );
   });
 };
+
+export const getDbDataCrimCodeSection = (partLabel, setDbData) => {
+  crimCodeDb.transaction((tx) => {
+    tx.executeSql(
+      'SELECT DISTINCT Heading1_Label, Heading2 from criminal_code WHERE Heading2 NOT LIKE "" AND Heading1_Label = ? ',
+      [partLabel],
+      (tx, results) => {
+        let tempArray = [];
+        for (let i = 0; i < results.rows.length; i++) {
+          tempArray.push(results.rows.item(i));
+        }
+        setDbData(tempArray);
+      }
+    );
+  });
+};

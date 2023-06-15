@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const CrimCodeSubSectionsScreen = () => {
+const CrimCodeSectionsScreen = () => {
   return (
     <View>
-      <Text>CrimCodeSubSectionsScreen</Text>
+      <Text>CrimCodeSectionsScreen</Text>
     </View>
   );
 };
 
-export default CrimCodeSubSectionsScreen;
+export default CrimCodeSectionsScreen;

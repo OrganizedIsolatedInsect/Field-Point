@@ -22,7 +22,7 @@ export default StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 10,
   },
-  partsButton: {
+  accordionHeader: {
     paddingTop: 10,
     paddingBottom: 10,
     backgroundColor: Color.headingBackground,
@@ -35,19 +35,44 @@ export default StyleSheet.create({
   headingLabelContainer: {
     width: 275,
   },
-  partsButtonPrimaryText: {
+  partsPrimaryText: {
     fontFamily: "Roboto",
     fontSize: 18,
     color: Color.primaryText,
     flexDirection: "column",
   },
-  partsButtonSecondaryText: {
+  partsSecondaryText: {
     fontFamily: "Roboto",
     fontSize: 10,
     color: Color.cardBody,
   },
-  partsButtonCheveron: {
+  partsCheveronCircle: {
     color: Color.cardBody,
+    fontSize: 30,
+    marginRight: 20,
+    marginLeft: 20,
+  },
+  accordionBody: {
+    paddingLeft: 20,
+    backgroundColor: Color.cardBody,
+    borderBottomColor: Color.inActiveIcon,
+    borderBottomWidth: 2,
+    marginHorizontal: 5,
+    flexDirection: "row",
+  },
+  sectionsHeaderContainer: {
+    width: 260,
+    padding: 2,
+    justifyContent: "center",
+  },
+  sectionsPrimaryText: {
+    fontFamily: "Roboto",
+    fontSize: 12,
+    color: Color.primaryText,
+    flexDirection: "column",
+  },
+  sectionsCheveron: {
+    color: Color.primaryText,
     fontSize: 30,
     marginRight: 20,
     marginLeft: 20,
