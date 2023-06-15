@@ -15,7 +15,8 @@ export const Logo = ({ logoHeight, logoWidth }) => {
           width:
             logoWidth === undefined ? styles.defaultLogoSize.width : logoWidth,
         }}
-        source={require("../../Assets/Imgs/Shared/FP-Logo-547x490.png")}
+        // source={require("../../Assets/Imgs/Shared/FP-Logo-547x490.png")}
+        source={require("../../Assets/Imgs/Shared/Artboard-8.png")}
       />
     </View>
   );
@@ -23,7 +24,7 @@ export const Logo = ({ logoHeight, logoWidth }) => {
 
 const styles = StyleSheet.create({
   defaultLogoSize: {
-    height: 51,
-    width: 57,
+    height: 61,
+    width: 53,
   },
 });

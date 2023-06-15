@@ -73,9 +73,9 @@ const styles = StyleSheet.create({
   breadcrumb: {
     flexDirection: "row",
     color: Color.primaryText,
-    paddingTop: 24,
+    paddingTop: 11,
     paddingBottom: 10,
-    paddingLeft: 13
+    // paddingLeft: 13
   },
   breadcrumbText: {
     color: Color.primaryText,
