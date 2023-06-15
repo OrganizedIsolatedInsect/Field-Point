@@ -4,18 +4,18 @@ import { useNavigation, useRoute } from "@react-navigation/core";
 
 import { Color } from "../styles";
 
+import { Logo } from "./Logo";
 import Searchbar from "./Searchbar";
 import BreadcrumbBar from "./BreadcrumbBar";
 
-// Custom header should display branding, searchbar and breadcrumb
+// Custom header displays branding, searchbar and breadcrumb
 export const CustomHeader = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
-        <Image
-          style={styles.imageSize}
-          source={require("../../Assets/Imgs/Shared/FP-Logo-547x490.png")}
-        />
+        <View style={{paddingRight: 8}}>
+          <Logo />
+        </View>
         <Searchbar />
       </View>
       <View>
@@ -27,16 +27,12 @@ export const CustomHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 10,
+    // paddingTop: 10,
     backgroundColor: Color.headingBackground,
     height: 110,
+    padding: 13,
   },
   topRow: {
     flexDirection: "row",
-  },
-
-  imageSize: {
-    height: 51,
-    width: 57,
   },
 });
