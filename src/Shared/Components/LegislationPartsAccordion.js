@@ -1,7 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
 import styles from "../styles";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import {
   Collapse,
   CollapseHeader,
@@ -10,21 +9,21 @@ import {
 
 import { getDbDataCrimCodeSection } from "../../Screens/Legislation/Criminal Code/CriminalCodeFunctions";
 import LegislationSectionsAccordion from "./LegislationSectionsAccordion";
+import { AccordionUpIcon, AccordionDownIcon } from "./AccordionHeaderIcon";
 
 /* 
 Fields from database as follows
-headingLabel = Heading1
-partLabel = Heading1_Label
+headingLabel = Heading1       Heading Name
+partLabel = Heading1_Label    Part Number
+sortIndex = SortIndex         Index used as key
 
 Accordion instuctions can be found at https://github.com/marouanekadiri/Accordion-Collapse-react-native#readme
  */
 
-const LegislationPartsAccordion = ({ headingLabel, partLabel }) => {
+const LegislationPartsAccordion = ({ headingLabel, partLabel, sortIndex }) => {
   const [dbDataSection, setDbDataSection] = useState([]); // create array to section heading data from Crim Code Database
-
-  /* 
- sends partLabel into SQL query in getDbDataCrimCodeSection to get back distinct section data per part
- */
+  const [accordionArrow, setAccordionArrow] = useState(true);
+  //sends partLabel into SQL query in getDbDataCrimCodeSection to get back distinct section data per part
 
   useEffect(() => {
     getDbDataCrimCodeSection(partLabel, setDbDataSection);
@@ -32,13 +31,16 @@ const LegislationPartsAccordion = ({ headingLabel, partLabel }) => {
 
   return (
     <View>
-      <Collapse>
+      <Collapse
+        onToggle={(accordionArrow) => setAccordionArrow(!accordionArrow)}
+      >
         <CollapseHeader>
-          <View style={styles.accordionHeader}>
-            <Ionicons
-              name="chevron-back-circle"
-              style={styles.partsCheveronCircle}
-            />
+          <View style={styles.accordionHeader} key={sortIndex}>
+            {accordionArrow == true ? (
+              <AccordionUpIcon />
+            ) : (
+              <AccordionDownIcon />
+            )}
             <View style={styles.headingLabelContainer}>
               <Text style={styles.partsPrimaryText}>
                 {/* Temp fix for blank heading1_label for part I */}

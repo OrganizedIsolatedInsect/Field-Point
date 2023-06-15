@@ -25,6 +25,7 @@ const CrimCodePartsScreen = () => {
             <LegislationPartsAccordion
               headingLabel={item.Heading1}
               partLabel={item.Heading1_Label}
+              sortIndex={item.SortIndex}
             />
           );
         }}

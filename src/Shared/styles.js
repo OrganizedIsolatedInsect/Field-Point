@@ -58,12 +58,14 @@ export default StyleSheet.create({
     borderBottomColor: Color.inActiveIcon,
     borderBottomWidth: 2,
     marginHorizontal: 5,
+    paddingRight: 10,
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-between",
   },
   sectionsHeaderContainer: {
-    width: 240,
-    padding: 2,
+    width: 250,
+    padding: 5,
+    alignContent: "center",
     flexDirection: "row",
     justifyContent: "flex-start",
   },
@@ -75,14 +77,11 @@ export default StyleSheet.create({
   },
   sectionsCheveron: {
     color: Color.primaryText,
-    fontSize: 30,
-    marginRight: 20,
-    marginLeft: 20,
+    fontSize: 20,
+    padding: 3,
   },
   sectionsNum: {
-    //marginRight: 20,
-  },
-  sectionsHeading: {
-    marginLeft: 20,
+    width: 40,
+    marginRight: 20,
   },
 });

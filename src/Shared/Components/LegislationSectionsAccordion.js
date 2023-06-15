@@ -1,34 +1,36 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 import styles from "../styles";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import { AccordionSectionIcon } from "./AccordionSectionIcon";
 
 /* 
 Fields from database as follows
-sectionHeading = Heading2
-sectionNum = id
+sectionHeading = Heading2     Name of section
+sectionNum = id               Section Number
+sortIndex = SortIndex         Index used as key
  */
-const LegislationSectionsAccordion = ({ sectionHeading, sectionNum }) => {
+
+const LegislationSectionsAccordion = ({
+  sectionHeading,
+  sectionNum,
+  sortIndex,
+}) => {
   return (
     <Pressable
       onPress={() => {
         console.log("button");
       }}
     >
-      <View style={styles.accordionBody}>
+      <View style={styles.accordionBody} key={sortIndex}>
         <View style={styles.sectionsHeaderContainer}>
-          <View>
-            <Text style={[styles.sectionsNum, styles.sectionsPrimaryText]}>
-              {sectionNum}
-            </Text>
+          <View style={styles.sectionsNum}>
+            <Text style={styles.sectionsPrimaryText}>{sectionNum}</Text>
           </View>
           <View>
-            <Text style={[styles.sectionsHeading, styles.sectionsPrimaryText]}>
-              {sectionHeading}
-            </Text>
+            <Text style={styles.sectionsPrimaryText}>{sectionHeading}</Text>
           </View>
         </View>
-        <Ionicons name="chevron-forward" style={styles.sectionsCheveron} />
+        <AccordionSectionIcon />
       </View>
     </Pressable>
   );
