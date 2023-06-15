@@ -59,11 +59,13 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     marginHorizontal: 5,
     flexDirection: "row",
+    justifyContent: "center",
   },
   sectionsHeaderContainer: {
-    width: 260,
+    width: 240,
     padding: 2,
-    justifyContent: "center",
+    flexDirection: "row",
+    justifyContent: "flex-start",
   },
   sectionsPrimaryText: {
     fontFamily: "Roboto",
@@ -75,6 +77,12 @@ export default StyleSheet.create({
     color: Color.primaryText,
     fontSize: 30,
     marginRight: 20,
+    marginLeft: 20,
+  },
+  sectionsNum: {
+    //marginRight: 20,
+  },
+  sectionsHeading: {
     marginLeft: 20,
   },
 });

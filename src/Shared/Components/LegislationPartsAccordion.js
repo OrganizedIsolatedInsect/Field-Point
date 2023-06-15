@@ -52,7 +52,10 @@ const LegislationPartsAccordion = ({ headingLabel, partLabel }) => {
           <View>
             {dbDataSection.map((x) => {
               return (
-                <LegislationSectionsAccordion sectionHeading={x.Heading2} />
+                <LegislationSectionsAccordion
+                  sectionHeading={x.Heading2}
+                  sectionNum={x.id}
+                />
               );
             })}
           </View>

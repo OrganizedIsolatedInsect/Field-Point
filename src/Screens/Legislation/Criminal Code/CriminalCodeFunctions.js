@@ -24,7 +24,7 @@ export const getDbDataCrimCodeHeading = (setDbData) => {
 export const getDbDataCrimCodeSection = (partLabel, setDbData) => {
   crimCodeDb.transaction((tx) => {
     tx.executeSql(
-      'SELECT DISTINCT Heading1_Label, Heading2 from criminal_code WHERE Heading2 NOT LIKE "" AND Heading1_Label = ? ',
+      'SELECT DISTINCT Heading1_Label, Heading2,id from criminal_code WHERE isHeading = "True" AND HeadingLevel = "2" AND Heading1_Label = ?',
       [partLabel],
       (tx, results) => {
         let tempArray = [];

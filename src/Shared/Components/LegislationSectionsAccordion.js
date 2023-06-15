@@ -6,8 +6,9 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 /* 
 Fields from database as follows
 sectionHeading = Heading2
+sectionNum = id
  */
-const LegislationSectionsAccordion = ({ sectionHeading }) => {
+const LegislationSectionsAccordion = ({ sectionHeading, sectionNum }) => {
   return (
     <Pressable
       onPress={() => {
@@ -16,7 +17,16 @@ const LegislationSectionsAccordion = ({ sectionHeading }) => {
     >
       <View style={styles.accordionBody}>
         <View style={styles.sectionsHeaderContainer}>
-          <Text style={styles.sectionsPrimaryText}>{sectionHeading}</Text>
+          <View>
+            <Text style={[styles.sectionsNum, styles.sectionsPrimaryText]}>
+              {sectionNum}
+            </Text>
+          </View>
+          <View>
+            <Text style={[styles.sectionsHeading, styles.sectionsPrimaryText]}>
+              {sectionHeading}
+            </Text>
+          </View>
         </View>
         <Ionicons name="chevron-forward" style={styles.sectionsCheveron} />
       </View>
