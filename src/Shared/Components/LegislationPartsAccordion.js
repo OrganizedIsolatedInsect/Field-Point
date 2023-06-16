@@ -33,9 +33,10 @@ const LegislationPartsAccordion = ({ headingLabel, partLabel, sortIndex }) => {
     <View>
       <Collapse
         onToggle={(accordionArrow) => setAccordionArrow(!accordionArrow)}
+        key={sortIndex}
       >
         <CollapseHeader>
-          <View style={styles.accordionHeader} key={sortIndex}>
+          <View style={styles.accordionHeader}>
             {accordionArrow == true ? (
               <AccordionUpIcon />
             ) : (
