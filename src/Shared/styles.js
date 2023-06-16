@@ -63,7 +63,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
   },
   sectionsHeaderContainer: {
-    width: 250,
+    width: 240,
     padding: 5,
     alignContent: "center",
     flexDirection: "row",
@@ -81,7 +81,7 @@ export default StyleSheet.create({
     padding: 3,
   },
   sectionsNum: {
-    width: 40,
+    width: 45,
     marginRight: 20,
   },
 });
