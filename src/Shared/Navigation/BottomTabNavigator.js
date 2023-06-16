@@ -6,16 +6,17 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import styles,{ Color} from "../styles";
+import styles, { Color } from "../styles";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
+import HomeStack from "./HomeStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
 export const AppNavigator = () => {
   //Changes style of the Icon to show a line on top
-  const CustomTabButton = props => (
+  const CustomTabButton = (props) => (
     <Pressable
       {...props}
       style={
@@ -42,31 +43,56 @@ export const AppNavigator = () => {
         tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
       })}
       //set default screen to Home
-      initialRouteName="Home"
-      
+      initialRouteName="HomeStack"
     >
       <BottomTab.Screen
         name="More"
         component={SettingScreen}
         options={{
-          tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>MORE</Text>
+          tabBarLabel: ({ focused, color, size }) => {
+            return (
+              <Text
+                style={[
+                  styles.bottomTabText,
+                  { color: focused ? Color.activeIcon : Color.inActiveIcon },
+                ]}
+              >
+                MORE
+              </Text>
+            );
           },
           tabBarIcon: ({ color, size, focused }) => (
-            <MaterialIcons name="help-center" color={color} style={styles.bottomTabIconSize} />
+            <MaterialIcons
+              name="help-center"
+              color={color}
+              style={styles.bottomTabIconSize}
+            />
           ),
           tabBarButton: CustomTabButton,
         }}
       />
       <BottomTab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeStack"
+        component={HomeStack}
         options={{
-          tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>HOME</Text>
+          tabBarLabel: ({ focused, color, size }) => {
+            return (
+              <Text
+                style={[
+                  styles.bottomTabText,
+                  { color: focused ? Color.activeIcon : Color.inActiveIcon },
+                ]}
+              >
+                HOME
+              </Text>
+            );
           },
           tabBarIcon: ({ color, size, focused }) => (
-            <FontAwesome name="home" color={color} style={styles.bottomTabIconSize} />
+            <FontAwesome
+              name="home"
+              color={color}
+              style={styles.bottomTabIconSize}
+            />
           ),
           tabBarButton: CustomTabButton,
         }}
@@ -75,8 +101,17 @@ export const AppNavigator = () => {
         name="Bookmarks"
         component={BookmarkScreen}
         options={{
-          tabBarLabel: ({ focused,color,size }) => {
-            return <Text style={[styles.bottomTabText,{color: focused ? Color.activeIcon : Color.inActiveIcon}]}>BOOKMARKS</Text>
+          tabBarLabel: ({ focused, color, size }) => {
+            return (
+              <Text
+                style={[
+                  styles.bottomTabText,
+                  { color: focused ? Color.activeIcon : Color.inActiveIcon },
+                ]}
+              >
+                BOOKMARKS
+              </Text>
+            );
           },
           tabBarIcon: ({ color, size, focused }) => (
             <MaterialCommunityIcons
