@@ -1,19 +1,30 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
-import { CrimCodeStack } from "./CrimCodeStackNavigator";
 import LegislationScreen from "../../Screens/Legislation/LegislationScreen";
+import CrimCodePartsScreen from "../../Screens/Legislation/Criminal Code/CrimCodePartsScreen";
+import CrimCodeSectionsScreen from "../../Screens/Legislation/Criminal Code/CrimCodeSubSectionsScreen";
 
 //Legislation Stack created to nest stacks for each legislation act eg.(Criminal Code, Motor Vehicle Act)
 
-const LegislationStackNavigator = createStackNavigator()
+const LegislationStackNavigator = createStackNavigator();
 
-const LegislationStack = () =>{
-    return(
-        <LegislationStackNavigator.Navigator>
-            <LegislationStackNavigator.Screen name="LegislationScreen" component={LegislationScreen}/>
-            <LegislationStackNavigator.Screen name="CrimCodeStack" component={CrimCodeStack}/>
-        </LegislationStackNavigator.Navigator>
-    )
-}
+const LegislationStack = () => {
+  return (
+    <LegislationStackNavigator.Navigator screenOptions={{ headerShown: false }}>
+      <LegislationStackNavigator.Screen
+        name="LegislationScreen"
+        component={LegislationScreen}
+      />
+      <LegislationStackNavigator.Screen
+        name="CrimCodePartsScreen"
+        component={CrimCodePartsScreen}
+      />
+      <LegislationStackNavigator.Screen
+        name="CrimCodeSectionsScreen"
+        component={CrimCodeSectionsScreen}
+      />
+    </LegislationStackNavigator.Navigator>
+  );
+};
 
-export {LegislationStack}
+export default LegislationStack;

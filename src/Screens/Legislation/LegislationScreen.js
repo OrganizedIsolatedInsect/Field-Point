@@ -1,7 +1,5 @@
-import { View, Text } from "react-native";
+import { View, Text, Button } from "react-native";
 import React from "react";
-
-import { LegislationStack } from "../../Shared/Navigation/LegislationStackNavigator";
 
 //button is temp until component for legislation is implemented
 
@@ -10,7 +8,7 @@ const LegislationScreen = ({ navigation }) => {
     <View>
       <Button
         title="Criminal Code of Canada"
-        onPress={() => navigation.navigate("CrimCodeStack")}
+        onPress={() => navigation.navigate("CrimCodePartsScreen")}
       />
     </View>
   );
