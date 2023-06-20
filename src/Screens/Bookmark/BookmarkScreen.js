@@ -1,5 +1,3 @@
-//https://reactnative.dev/docs/asyncstorage
-
 import React from "react";
 import { View, Text, FlatList, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
