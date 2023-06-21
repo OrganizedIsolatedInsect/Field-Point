@@ -16,11 +16,13 @@ dbData = object of dbData sent from Subsection Screen
 */
 
 const SubSectionCard = ({ partLabel, sectionNum, sectionHeading, dbData }) => {
-  let subSectionArray = dbData.filter((x) => {
-    return x.IsMarginalNote == "True";
+  let subSectionMarginalNoteArray = dbData.filter((x) => {
+    return x.IsMarginalNote == "True" && x.Heading2 == sectionHeading;
   });
-  console.log(dbData.length);
-  console.log(subSectionArray.length);
+
+  let subSectionTextArray = dbData.filter((x) => {
+    return x.IsMarginalNote == "False" && x.Heading2 == sectionHeading;
+  });
 
   return (
     <View style={styles.subSectionCard}>
@@ -30,10 +32,16 @@ const SubSectionCard = ({ partLabel, sectionNum, sectionHeading, dbData }) => {
         partLabel={partLabel}
       />
       <FlatList
-        data={subSectionArray}
+        data={subSectionMarginalNoteArray}
         key={({ item }) => item.SortIndex}
         renderItem={({ item }) => {
-          return <SubSectionBody marginalNote={item.Text} />;
+          return (
+            <SubSectionBody
+              marginalNote={item.Text}
+              subSectionText={subSectionTextArray}
+              bookmarkGroup={item.BookmarkGroup}
+            />
+          );
         }}
       />
     </View>

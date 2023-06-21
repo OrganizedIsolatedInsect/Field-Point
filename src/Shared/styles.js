@@ -114,13 +114,14 @@ export default StyleSheet.create({
   },
   subSectionBody: {
     backgroundColor: Color.cardBody,
-    justifyContent: "center",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
   subSectionBodyHeaderText: {
     color: Color.primaryText,
+    marginVertical: 5,
   },
   subSectionBodyText: {
     color: Color.inActiveIcon,
+    marginVertical: 10,
   },
 });
