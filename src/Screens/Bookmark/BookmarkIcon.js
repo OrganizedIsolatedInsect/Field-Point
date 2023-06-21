@@ -9,15 +9,11 @@ export const BookmarkIcon = ({ legislation, docid, passMarked }) => {
   const [marked, setMarked] = useState(passMarked); //to change marked status of content
   const dispatch = useDispatch();
 
-  let markString = marked ? "true" : "false";
-  console.log("BookmarkIcon " + markString);
-
   function switchMarks(marked) {
     return !marked;
   }
 
   const bookmarkAction = (legislation, docid, marked) => {
-    console.log("inside bookmarkAction " + marked ? "true" : "false");
     if (marked === true) {
       dispatch(
         addBookmark({

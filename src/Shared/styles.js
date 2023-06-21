@@ -13,6 +13,8 @@ export const Color = {
   cardBody: "#464646", //more dark grey
   searchBody: "#ffffff", //white
   inFocus: "#419aff", //light blue
+  black: "#000000", //black
+  lightGrey: "#9c9c9c", //light grey
 };
 
 export default StyleSheet.create({
@@ -33,7 +35,7 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
 
-  //Bookmark styling
+  //BOOKMARK STYLING
   bookmarkScreenFormatting: {
     backgroundColor: Color.background,
     color: Color.primaryText,
@@ -42,8 +44,35 @@ export default StyleSheet.create({
     width: width,
     height: height,
   },
-  bookmarkRender: {
+  bookmarkContainer: {
+    backgroundColor: Color.black,
     flexDirection: "row",
     justifyContent: "space-between",
+    width: width,
+    height: 100,
+    marginTop: 10,
+    marginBottom: 10,
+    paddingTop: 28,
+    paddingBottom: 28,
+    paddingLeft: 36,
+  },
+  bookmarkTextRender: {
+    color: Color.primaryText,
+  },
+  bookmarkLabelRender: {
+    color: Color.lightGrey,
+  },
+  bookmarkChevronRender: {
+    color: Color.lightGrey,
+    flex: 1,
+    alignItems: "flex-end",
+  },
+  bookmarkFlexOne: {
+    flex: 1,
+    alignItems: "flex-start",
+  },
+  bookmarkFlexTwo: {
+    flex: 2,
+    alignItems: "flex-start",
   },
 });

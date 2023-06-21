@@ -12,12 +12,12 @@ const HomeScreen = () => {
   //pull state to see if current section exists in bookmarks
   const bookmarkStateId = useSelector(state => state.bookmarks.bookmarkItem);
 
+  //FOR TESTING
   console.log(bookmarkStateId);
   let legislation = "Crim Code";
   let docid = "425";
 
   useEffect(() => {
-    console.log("inside HomeScreen-useeffect " + legislation + " " + docid);
     // compares state array to see if section exists in bookmarks, if it does turn on bookmark icon
     if (
       bookmarkStateId.some(
@@ -30,7 +30,6 @@ const HomeScreen = () => {
     }
   }, []); //do not set the flag to marked as the second you call setmarked, then marked changes and useeffect runs again.
 
-  //dispatch add or remove bookmarks based bookmark icon
   //Requires Legislation to differentiate the source of the bookmark
 
   //for testing purposes
@@ -38,26 +37,10 @@ const HomeScreen = () => {
     <View style={styles.bookmarkScreenFormatting}>
       <Text>HomeScreen</Text>
       <View>
-        {console.log("homescreen inside view before icon")}
         <BookmarkIcon legislation={legislation} docid={docid} marked={marked} />
-        {console.log("homescreen inside view after icon")}
       </View>
-      <Text style={{ color: Color.inActiveIcon }}>
-        HomeScreenmarked: {marked ? "true" : "false"}
-      </Text>
-      <Text style={{ color: Color.inActiveIcon }}>
-        HomeScreenleg: {legislation}
-      </Text>
-      <Text style={{ color: Color.inActiveIcon }}>
-        HomeScreendocid: {docid}
-      </Text>
-      <Text style={{ color: Color.inActiveIcon }}>
-        HomeScreenmarked: {marked ? "true" : "false"}
-      </Text>
     </View>
   );
-
-  //ALL FOR TESTING
 };
 
 export default HomeScreen;
