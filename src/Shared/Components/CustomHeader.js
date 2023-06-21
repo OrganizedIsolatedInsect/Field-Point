@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, Pressable, Image, StyleSheet } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/core";
+import { View, StyleSheet } from "react-native";
 
 import { Color } from "../styles";
 
@@ -9,16 +8,28 @@ import Searchbar from "./Searchbar";
 import BreadcrumbBar from "./BreadcrumbBar";
 
 // Custom header displays branding, searchbar and breadcrumb
+
+// Because React Native does not support the outline style prop, we've had to manually simulate the outline
+//    function by using the borderWidth and making it "on" or "off" with the isFocused state. To achieve this,
+//    container has a paddingTop of 10, and the logoPadding has a padding of 3 giving a total paddingTop of 13.
+//    The logoPadding of 3 is required as the Searchbar has a borderWidth of 3 and without the padding and
+//    additional height on that container (56, with 3 on top and bottom), it makes the logo offset from the
+//    searchbar by 3. The same had to be done with the topRowSpacing.
+
+// Logo can take the following arguments: logoHeight and logoWidth. By default, it is currently H400 x W416.
+
 export const CustomHeader = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
-        <View style={{paddingRight: 8}}>
-          <Logo />
+        <View style={styles.topRowSpacing}>
+          <View style={styles.logoPadding}>
+            <Logo logoHeight={50} logoWidth={49} />
+          </View>
         </View>
         <Searchbar />
       </View>
-      <View>
+      <View style={styles.bottomRow}>
         <BreadcrumbBar />
       </View>
     </View>
@@ -27,12 +38,24 @@ export const CustomHeader = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // paddingTop: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 13,
     backgroundColor: Color.headingBackground,
     height: 110,
-    padding: 13,
   },
   topRow: {
+    flex: 1,
     flexDirection: "row",
+    height: 52,
+    justifyContent: "center",
+  },
+  topRowSpacing: {
+    paddingRight: 5,
+  },
+  logoPadding: {
+    paddingTop: 3,
+  },
+  bottomRow: {
+    marginTop: 24,
   },
 });
