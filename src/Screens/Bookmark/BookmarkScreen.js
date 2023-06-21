@@ -25,6 +25,7 @@ const BookmarkScreen = () => {
           {item.title}
           {/* Make sure these are the correct field names */}
         </Text>
+        {/* Icon to be possibly replaced with swipe gesture to bring up a delete button */}
         <Icon
           name="delete"
           size={20}

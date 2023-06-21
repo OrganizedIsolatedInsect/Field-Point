@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
-import { addBookmark, removeBookmark } from "./src/Redux/bookmarkSlice";
-import Icon from "react-native-vector-icons/MaterialIcons";
+import { View } from "react-native";
+
+import Icon from "react-native-vector-icons/FontAwesome";
 import { useDispatch } from "react-redux";
 import { switchMarks } from "../Functions/Functions";
 import { Color } from "../styles";
+import { addBookmark, removeBookmark } from "../../Redux/bookmarkSlice";
 
-const BookmarkAction = (legislation, docid) => {
-  const [marked, setMarked] = useState(false); // Preps icon for state change
+const BookmarkAction = ({ legislation, docid, marked }) => {
+  console.log("inside bookmark action");
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    action(legislation, docid);
-  });
-
-  const action = (legislation, docid) => {
+  function action(legislation, docid, marked) {
+    console.log("inside BookmarkAction-action");
     if (marked === true) {
       dispatch(
         addBookmark({
@@ -31,23 +29,26 @@ const BookmarkAction = (legislation, docid) => {
         })
       );
     }
-  };
-
-  return (
-    <Pressable
-      onPress={() => {
-        setMarked(switchMarks(marked));
-      }}
-    >
-      <View>
-        <Icon
-          name={marked ? "bookmark" : "bookmark-outline"}
-          size={30}
-          style={{ color: Color.primaryText }}
-        />
-      </View>
-    </Pressable>
-  );
+  }
+  action(legislation, docid, marked);
+  // return (
+  //   <Pressable
+  //     onPress={() => {
+  //       setMarked(switchMarks(marked));
+  //       {
+  //         console.log("inside BookmarkAction-return");
+  //       }
+  //       action(legislation, docid);
+  //     }}
+  //   >
+  //     <View>
+  //       <Icon
+  //         name={marked ? "bookmark" : "bookmark-o"}
+  //         size={30}
+  //         style={{ color: Color.primaryText }}
+  //       />
+  //     </View>
+  //   </Pressable>
 };
 
 export default BookmarkAction;
