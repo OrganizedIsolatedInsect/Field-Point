@@ -2,9 +2,8 @@ import { View, Text } from "react-native";
 import React from "react";
 import styles, { Color } from "../../Shared/styles.js";
 import HomeScreenButton from "../../Shared/Components/HomeScreenButton.js";
-import LegislationScreen from "../../Screens/Legislation/LegislationScreen.js";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.homeScreenBackground}>
       <Text style={styles.homeScreenHeader}>What are you looking for?</Text>
@@ -21,7 +20,7 @@ const HomeScreen = () => {
         buttonText="Legislation"
         iconSize={36}
         iconColor={Color.primaryText}
-        onPress={() => {}}
+        onPress={() => navigation.navigate("LegislationScreen")}
       />
 
       {/* Policy Button */}
