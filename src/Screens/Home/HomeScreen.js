@@ -34,8 +34,11 @@ const HomeScreen = ({ navigation }) => {
 
   //for testing purposes
   return (
-    <View>
+    <View style={styles.bookmarkScreenFormatting}>
       <Text>HomeScreen</Text>
+      <View>
+        <BookmarkIcon legislation={legislation} docid={docid} marked={marked} />
+      </View>
     </View>
   );
 };
