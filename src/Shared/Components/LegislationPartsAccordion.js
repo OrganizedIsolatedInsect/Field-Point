@@ -58,6 +58,8 @@ const LegislationPartsAccordion = ({ headingLabel, partLabel, sortIndex }) => {
                 <LegislationSectionsAccordion
                   sectionHeading={x.Heading2}
                   sectionNum={x.id}
+                  sortIndex={x.sortIndex}
+                  partLabel={partLabel}
                 />
               );
             })}

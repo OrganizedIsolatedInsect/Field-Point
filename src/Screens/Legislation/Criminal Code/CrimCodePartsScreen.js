@@ -8,7 +8,7 @@ import { getDbDataCrimCodeHeading } from "./CriminalCodeFunctions";
 //screen to house top level of Criminal Code and display all the parts of the legislation
 //parts are seperated by the component LegislationPartsAccordion, pressing will lead to sections of Crim Code
 
-const CrimCodePartsScreen = ({ navigation }) => {
+const CrimCodePartsScreen = () => {
   const [dbDataHeading, setDbDataHeading] = useState([]); // create array to house heading data from Crim Code Database
 
   //function to get heading data from database

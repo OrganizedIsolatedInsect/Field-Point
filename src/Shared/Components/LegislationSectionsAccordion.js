@@ -2,6 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import React from "react";
 import styles from "../styles";
 import { AccordionSectionIcon } from "./AccordionSectionIcon";
+import { useNavigation } from "@react-navigation/native";
 
 /* 
 Fields from database as follows
@@ -14,11 +15,19 @@ const LegislationSectionsAccordion = ({
   sectionHeading,
   sectionNum,
   sortIndex,
+  partLabel,
 }) => {
+  //use navigation hook to navigate to SubSction Screen sending the section heading name, section number and part label as a param via the navigation route
+  const navigation = useNavigation();
+
   return (
     <Pressable
       onPress={() => {
-        console.log("button");
+        navigation.navigate("CrimCodeSubSectionsScreen", {
+          sectionHeading: sectionHeading,
+          sectionNum: sectionNum,
+          partLabel: partLabel,
+        });
       }}
     >
       <View style={styles.accordionBody} key={sortIndex}>

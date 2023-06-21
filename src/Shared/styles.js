@@ -84,4 +84,10 @@ export default StyleSheet.create({
     width: 45,
     marginRight: 20,
   },
+  subSectionHeader: {
+    backgroundColor: Color.background,
+  },
+  subSectionHeaderText: {
+    color: Color.primaryText,
+  },
 });
