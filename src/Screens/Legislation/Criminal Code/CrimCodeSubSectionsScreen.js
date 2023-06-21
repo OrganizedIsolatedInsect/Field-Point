@@ -13,11 +13,14 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
   useEffect(() => {
     getDbDataCrimCodeSubSection(sectionHeading, setDbSubSectionData);
   }, [sectionHeading]);
-  console.log(partLabel);
 
   return (
     <View>
-      <Text>screen</Text>
+      <SubSectionCard
+        sectionHeading={sectionHeading}
+        sectionNum={sectionNum}
+        partLabel={partLabel}
+      />
     </View>
   );
 };

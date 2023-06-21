@@ -84,10 +84,43 @@ export default StyleSheet.create({
     width: 45,
     marginRight: 20,
   },
+  subSectionCard: {
+    marginTop: 10,
+    marginBottom: 5,
+    marginHorizontal: 5,
+  },
   subSectionHeader: {
     backgroundColor: Color.background,
+    padding: 20,
+    flexDirection: "row",
   },
-  subSectionHeaderText: {
+  subSectionLabelContainer: {
+    marginLeft: 40,
+    width: 240,
+  },
+  subSectionPartSectionContainer: {
+    flexDirection: "column",
+  },
+  subSectionHeaderPartText: {
+    color: Color.inActiveIcon,
+    fontSize: 10,
+  },
+  subSectionHeaderSectionNumText: {
     color: Color.primaryText,
+    fontSize: 24,
+  },
+  subSectionHeaderSectionLabelText: {
+    color: Color.primaryText,
+  },
+  subSectionBody: {
+    backgroundColor: Color.cardBody,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  subSectionBodyHeaderText: {
+    color: Color.primaryText,
+  },
+  subSectionBodyText: {
+    color: Color.inActiveIcon,
   },
 });

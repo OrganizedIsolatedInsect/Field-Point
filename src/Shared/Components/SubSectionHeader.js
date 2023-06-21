@@ -5,9 +5,19 @@ import styles from "../styles";
 const SubSectionHeader = ({ partLabel, sectionNum, sectionHeading }) => {
   return (
     <View style={styles.subSectionHeader}>
-      <Text style={styles.sectionsPrimaryText}>
-        {partLabel} {sectionNum} {sectionHeading}
-      </Text>
+      <View>
+        <View style={styles.subSectionPartSectionContainer}>
+          <Text style={styles.subSectionHeaderPartText}> {partLabel}</Text>
+          <Text style={styles.subSectionHeaderSectionNumText}>
+            {sectionNum}
+          </Text>
+        </View>
+      </View>
+      <View style={styles.subSectionLabelContainer}>
+        <Text style={styles.subSectionHeaderSectionLabelText}>
+          {sectionHeading}
+        </Text>
+      </View>
     </View>
   );
 };
