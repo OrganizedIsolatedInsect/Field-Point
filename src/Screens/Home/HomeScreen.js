@@ -1,11 +1,11 @@
-import { View, Text } from "react-native";
+import { Text, ScrollView } from "react-native";
 import React from "react";
 import styles, { Color } from "../../Shared/styles.js";
 import HomeScreenButton from "../../Shared/Components/HomeScreenButton.js";
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.homeScreenBackground}>
+    <ScrollView style={styles.homeScreenBackground}>
       <Text style={styles.homeScreenHeader}>What are you looking for?</Text>
       <Text style={styles.homeScreenSubHeader}>
         Explore supporting information and resources
@@ -46,7 +46,7 @@ const HomeScreen = ({ navigation }) => {
         iconColor={Color.primaryText}
         onPress={() => {}}
       />
-    </View>
+    </ScrollView>
   );
 };
 
