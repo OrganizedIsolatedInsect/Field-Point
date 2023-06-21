@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+import { RoutingItems } from "../../Data/RoutingLookups";
 
 const BookmarkScreen = () => {
   const navAid = useNavigation();
@@ -13,24 +14,31 @@ const BookmarkScreen = () => {
 
   //FOR TESTING PURPOSES
   const forTesting = [
-    { legislation: "Crim Code", docid: "874" },
+    { legislation: "CrimCode", docid: "874" },
     { legislation: "MVA", docid: "19.87" },
-    { legislation: "Crim Code", docid: "486" },
+    { legislation: "CrimCode", docid: "486" },
     { legislation: "MVA", docid: "37 (2)" },
-    { legislation: "Crim Code", docid: "29" },
+    { legislation: "CrimCode", docid: "29" },
     { legislation: "MVA", docid: "269 (3) (I) (f) (i)" },
-    { legislation: "Crim Code", docid: "54899849" },
+    { legislation: "CrimCode", docid: "54899849" },
   ];
 
   console.log("inside bookmarkscreen");
+  console.log(RoutingItems);
 
   const renderBookmarkItem = ({ item }) => (
     <View>
       <Pressable
         onPress={() => {
+          const screenRoute = RoutingItems.find(
+            legislation => legislation.legislation == item.legislation
+          );
+
+          console.log(screenRoute);
           const docid = item.docid;
           const legislation = item.legislation; //make certain the legislation in the data is the same as the screen name
-          //navAid.navigate(legislation, { docid: docid }); //this should point directly to the document that was bookmarked
+
+          navAid.navigate(screenRoute.screenName); //this should point directly to the document that was bookmarked
         }}
       >
         <View style={styles.bookmarkContainer}>
@@ -91,7 +99,7 @@ const BookmarkScreen = () => {
           {/* here should be a header/search */}
           {/* here should be a breadcrumb */}
           <FlatList
-            // data={bookmarks.bookmarkItem}
+            //data={bookmarks.bookmarkItem}
             data={forTesting}
             renderItem={renderBookmarkItem}
           />
