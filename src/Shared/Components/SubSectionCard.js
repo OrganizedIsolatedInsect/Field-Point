@@ -38,7 +38,7 @@ const SubSectionCard = ({ partLabel, sectionNum, sectionHeading, dbData }) => {
           return (
             <SubSectionBody
               marginalNote={item.Text}
-              subSectionText={subSectionTextArray}
+              subSectionData={subSectionTextArray}
               bookmarkGroup={item.BookmarkGroup}
             />
           );
