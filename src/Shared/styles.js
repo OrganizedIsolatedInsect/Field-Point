@@ -46,8 +46,6 @@ export default StyleSheet.create({
   },
   bookmarkContainer: {
     backgroundColor: Color.black,
-    flexDirection: "row",
-    justifyContent: "space-between",
     width: width,
     height: 100,
     marginTop: 10,
@@ -56,16 +54,26 @@ export default StyleSheet.create({
     paddingBottom: 28,
     paddingLeft: 36,
   },
+  bookmarkFlexContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
   bookmarkTextRender: {
     color: Color.primaryText,
+    fontSize: 14,
+    fontWeight: 300,
   },
   bookmarkLabelRender: {
     color: Color.lightGrey,
+    fontSize: 14,
+    fontWeight: 300,
   },
   bookmarkChevronRender: {
     color: Color.lightGrey,
     flex: 1,
     alignItems: "flex-end",
+    fontSize: 14,
+    fontWeight: 300,
   },
   bookmarkFlexOne: {
     flex: 1,
@@ -74,5 +82,11 @@ export default StyleSheet.create({
   bookmarkFlexTwo: {
     flex: 2,
     alignItems: "flex-start",
+  },
+  bookmarkTitleRender: {
+    color: Color.primaryText,
+    fontSize: 18,
+    fontWeight: 500,
+    paddingTop: 8,
   },
 });

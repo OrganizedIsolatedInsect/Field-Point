@@ -34,23 +34,30 @@ const BookmarkScreen = () => {
         }}
       >
         <View style={styles.bookmarkContainer}>
-          <View style={styles.bookmarkFlexOne}>
-            <Text style={styles.bookmarkLabelRender}>Legislation: </Text>
-          </View>
+          <View style={styles.bookmarkFlexContainer}>
+            <View style={styles.bookmarkFlexOne}>
+              <Text style={styles.bookmarkLabelRender}>Legislation: </Text>
+            </View>
 
-          <View style={styles.bookmarkFlexTwo}>
-            <Text style={styles.bookmarkTextRender}>
-              {item.legislation} {item.docid}
-            </Text>
-          </View>
+            <View style={styles.bookmarkFlexTwo}>
+              <Text style={styles.bookmarkTextRender}>
+                {item.legislation} {item.docid}
+              </Text>
+            </View>
 
-          <View style={styles.bookmarkFlexOne}>
-            <Text style={styles.bookmarkChevronRender}>
-              <FontAwesome
-                name="angle-right"
-                size={20}
-                style={{ color: Color.primaryText }}
-              />
+            <View style={styles.bookmarkFlexOne}>
+              <Text style={styles.bookmarkChevronRender}>
+                <FontAwesome
+                  name="angle-right"
+                  size={20}
+                  style={{ color: Color.primaryText }}
+                />
+              </Text>
+            </View>
+          </View>
+          <View>
+            <Text style={styles.bookmarkTitleRender}>
+              This is where the title goes
             </Text>
           </View>
         </View>
@@ -81,6 +88,7 @@ const BookmarkScreen = () => {
         {/* conditional headers based on section array length */}
 
         <View>
+          {/* here should be a header/search */}
           {/* here should be a breadcrumb */}
           <FlatList
             // data={bookmarks.bookmarkItem}
