@@ -39,12 +39,12 @@ export const getDbDataCrimCodeSection = (partLabel, setDbData) => {
 
 //function to pull subSection data from Criminal Code Database
 //setDbData is the useState function to set the data base data pulled
-//sectionLabel is the Part of the Criminal Code sent to the sql query to pull sub sections, shown as Heading2 in the database
-export const getDbDataCrimCodeSubSection = (sectionLabel, setDbData) => {
+//partLabel is the Part of the Criminal Code sent to the sql query to pull sub sections, shown as Heading1_Label in the database
+export const getDbDataCrimCodeSubSection = (partLabel, setDbData) => {
   crimCodeDb.transaction((tx) => {
     tx.executeSql(
-      'SELECT SortIndex,IsMarginalNote,Heading2, Heading3,BookmarkGroup,HeadingLevel,IndentLevel, id, label, Text FROM criminal_code WHERE IsHeading = "False" and Heading2 = ?',
-      [sectionLabel],
+      'SELECT SortIndex,IsMarginalNote,Heading2, Heading3,BookmarkGroup,HeadingLevel,IndentLevel, id, label, Text FROM criminal_code WHERE IsHeading = "False" and Heading1_Label = ? ',
+      [partLabel],
       (tx, results) => {
         let tempArray = [];
         for (let i = 0; i < results.rows.length; i++) {

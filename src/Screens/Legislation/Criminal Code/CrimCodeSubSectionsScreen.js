@@ -11,7 +11,7 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
 
   //function to get subSection data from database
   useEffect(() => {
-    getDbDataCrimCodeSubSection(sectionHeading, setDbSubSectionData);
+    getDbDataCrimCodeSubSection(partLabel, setDbSubSectionData);
   }, [sectionHeading]);
 
   return (
@@ -20,6 +20,7 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
         sectionHeading={sectionHeading}
         sectionNum={sectionNum}
         partLabel={partLabel}
+        dbData={dbSubSectionData}
       />
     </View>
   );
