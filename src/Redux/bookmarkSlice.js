@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 //redux store for boookmarks
 
 const initialState = {
-  sections: [],
+  bookmarkItem: [],
 };
 
 const bookmarkSlice = createSlice({
@@ -11,11 +11,13 @@ const bookmarkSlice = createSlice({
   initialState,
   reducers: {
     addBookmark: (state, action) => {
-      state.sections.push(action.payload);
+      state.bookmarkItem.push(action.payload);
     },
     removeBookmark: (state, action) => {
-      state.sections = state.sections.filter(
-        sections => sections.section !== action.payload.section
+      state.bookmarkItem = state.bookmarkItem.filter(
+        bookmarkItem =>
+          bookmarkItem.legislation !== action.payload.legislation &&
+          bookmarkItem.docid !== action.payload.docid
       );
     },
   },

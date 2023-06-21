@@ -36,6 +36,7 @@ export default StyleSheet.create({
   //Bookmark styling
   bookmarkScreenFormatting: {
     backgroundColor: Color.background,
+    color: Color.primaryText,
     flex: 1,
     flexDirection: "column",
     width: width,
