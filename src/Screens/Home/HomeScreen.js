@@ -5,7 +5,7 @@ import { BookmarkIcon } from "../Bookmark/BookmarkIcon";
 
 import styles, { Color } from "../../Shared/styles";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   //FOR TESTING PURPOSES
   const [marked, setMarked] = useState(true); //to change marked status of content
 
@@ -34,11 +34,8 @@ const HomeScreen = () => {
 
   //for testing purposes
   return (
-    <View style={styles.bookmarkScreenFormatting}>
+    <View>
       <Text>HomeScreen</Text>
-      <View>
-        <BookmarkIcon legislation={legislation} docid={docid} marked={marked} />
-      </View>
     </View>
   );
 };
