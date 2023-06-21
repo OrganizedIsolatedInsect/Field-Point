@@ -2,7 +2,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import LegislationScreen from "../../Screens/Legislation/LegislationScreen";
 import CrimCodePartsScreen from "../../Screens/Legislation/Criminal Code/CrimCodePartsScreen";
-import CrimCodeSectionsScreen from "../../Screens/Legislation/Criminal Code/CrimCodeSubSectionsScreen";
+import CrimCodeSubSectionsScreen from "../../Screens/Legislation/Criminal Code/CrimCodeSubSectionsScreen";
+
 
 //Legislation Stack created to nest stacks for each legislation act eg.(Criminal Code, Motor Vehicle Act)
 
@@ -20,8 +21,8 @@ const LegislationStack = () => {
         component={CrimCodePartsScreen}
       />
       <LegislationStackNavigator.Screen
-        name="CrimCodeSectionsScreen"
-        component={CrimCodeSectionsScreen}
+        name="CrimCodeSubSectionsScreen"
+        component={CrimCodeSubSectionsScreen}
       />
     </LegislationStackNavigator.Navigator>
   );
