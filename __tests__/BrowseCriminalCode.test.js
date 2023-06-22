@@ -6,6 +6,25 @@ import AppNavigator from "../src/Shared/Navigation/BottomTabNavigator";
 
 describe("Testing Criminal Code Browse", () => {
   test("Navigate to the Criminal code and check Accordion for Part I", async () => {
+    jest.mock("react-native-sqlite-storage", () => ({
+      DEBUG: jest.fn,
+      enablePromise: jest.fn(),
+      openDatabase: (...args) => {
+        return {
+          transaction: (...args) =>
+            Promise.resolve({
+              executeSql: (query) => {
+                return Promise.resolve([]);
+              },
+            }),
+          cleanDb: () => Promise.resolve(),
+          executeSql: (query) => {
+            return Promise.resolve([]);
+          },
+        };
+      },
+    }));
+
     const component = (
       <NavigationContainer>
         <AppNavigator />
