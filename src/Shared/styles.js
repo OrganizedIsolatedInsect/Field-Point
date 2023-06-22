@@ -38,7 +38,7 @@ export default StyleSheet.create({
 
   homeScreenSubHeader: {
     fontSize: 14,
-    color: "#B3B3B3",
+    color: Color.inActiveIcon,
   },
 
   homeScreenImg: {
