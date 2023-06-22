@@ -4,14 +4,35 @@ import styles from "../styles";
 
 const SubSectionBody = ({ marginalNote, subSectionData, bookmarkGroup }) => {
   const filtedSubSectionTextArray = subSectionData.filter((x) => {
-    return x.bookmarkGroup == bookmarkGroup;
+    return x.BookmarkGroup == bookmarkGroup;
   });
-
-  console.log(filtedSubSectionTextArray);
 
   return (
     <View style={styles.subSectionBody}>
       <Text style={styles.subSectionBodyHeaderText}>{marginalNote}</Text>
+      {filtedSubSectionTextArray.map((x) => {
+        if (x.IndentLevel === "1") {
+          return (
+            <View style={styles.subSectionBodyLevel1}>
+              <Text style={styles.subSectionBodyText}>{x.Text}</Text>
+            </View>
+          );
+        }
+        if (x.IndentLevel === "2") {
+          return (
+            <View style={styles.subSectionBodyLevel2}>
+              <Text style={styles.subSectionBodyText}>{x.Text}</Text>
+            </View>
+          );
+        }
+        if (x.IndentLevel === "3") {
+          return (
+            <View style={styles.subSectionBodyLevel3}>
+              <Text style={styles.subSectionBodyText}>{x.Text}</Text>
+            </View>
+          );
+        }
+      })}
     </View>
   );
 };

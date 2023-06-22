@@ -88,6 +88,7 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 5,
     marginHorizontal: 5,
+    height: 600,
   },
   subSectionHeader: {
     backgroundColor: Color.background,
@@ -118,10 +119,21 @@ export default StyleSheet.create({
   },
   subSectionBodyHeaderText: {
     color: Color.primaryText,
-    marginVertical: 5,
+    marginVertical: 10,
+    paddingLeft: 10,
   },
   subSectionBodyText: {
     color: Color.inActiveIcon,
-    marginVertical: 10,
+  },
+  subSectionBodyLevel1: {
+    paddingLeft: 10,
+  },
+  subSectionBodyLevel2: {
+    paddingLeft: 25,
+    marginTop: 5,
+  },
+  subSectionBodyLevel3: {
+    paddingLeft: 35,
+    marginTop: 5,
   },
 });
