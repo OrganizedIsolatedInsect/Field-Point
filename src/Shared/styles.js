@@ -112,6 +112,7 @@ export default StyleSheet.create({
   },
   subSectionHeaderSectionLabelText: {
     color: Color.primaryText,
+    fontSize: 18,
   },
   subSectionBody: {
     backgroundColor: Color.cardBody,
@@ -121,9 +122,11 @@ export default StyleSheet.create({
     color: Color.primaryText,
     marginVertical: 10,
     paddingLeft: 10,
+    fontSize: 14,
   },
   subSectionBodyText: {
     color: Color.inActiveIcon,
+    fontSize: 12,
   },
   subSectionBodyLevel1: {
     paddingLeft: 10,
