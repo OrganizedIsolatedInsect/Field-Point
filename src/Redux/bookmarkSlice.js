@@ -17,7 +17,9 @@ const bookmarkSlice = createSlice({
       state.bookmarkItem = state.bookmarkItem.filter(
         bookmarkItem =>
           bookmarkItem.legislation !== action.payload.legislation &&
-          bookmarkItem.docid !== action.payload.docid
+          bookmarkItem.sectionNum !== action.payload.docid &&
+          bookmarkItem.partLabel !== action.payload.partLabel &&
+          bookmarkItem.sectionHeading !== action.payload.sectionHeading
       );
     },
   },

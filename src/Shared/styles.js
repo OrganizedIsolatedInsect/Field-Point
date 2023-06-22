@@ -86,7 +86,21 @@ export default StyleSheet.create({
   bookmarkTitleRender: {
     color: Color.primaryText,
     fontSize: 18,
-    fontWeight: 500,
+    fontWeight: 400,
     paddingTop: 8,
+  },
+  bookmarkNoneLabelRender: {
+    flexDirection: "row",
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkNoneBoxRender: {
+    paddingLeft: 36,
+    paddingRight: 36,
+  },
+  bookmarkNoneTitleRender: {
+    fontWeight: 500,
+    fontSize: 24,
+    color: Color.primaryText,
   },
 });

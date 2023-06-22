@@ -5,7 +5,13 @@ import { addBookmark, removeBookmark } from "../../Redux/bookmarkSlice";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { Color } from "../../Shared/styles";
 
-export const BookmarkIcon = ({ legislation, docid, passMarked }) => {
+export const BookmarkIcon = ({
+  legislation,
+  sectionNum,
+  partLabel,
+  sectionHeading,
+  passMarked,
+}) => {
   const [marked, setMarked] = useState(passMarked); //to change marked status of content
   const dispatch = useDispatch();
 
@@ -13,12 +19,20 @@ export const BookmarkIcon = ({ legislation, docid, passMarked }) => {
     return !marked;
   }
 
-  const bookmarkAction = (legislation, docid, marked) => {
+  const bookmarkAction = (
+    legislation,
+    sectionNum,
+    partLabel,
+    sectionHeading,
+    marked
+  ) => {
     if (marked === true) {
       dispatch(
         addBookmark({
           legislation: legislation,
-          docid: docid,
+          sectionNum: sectionNum,
+          partLabel: partLabel,
+          sectionHeading: sectionHeading,
         })
       );
     }
@@ -26,7 +40,9 @@ export const BookmarkIcon = ({ legislation, docid, passMarked }) => {
       dispatch(
         removeBookmark({
           legislation: legislation,
-          docid: docid,
+          sectionNum: sectionNum,
+          partLabel: partLabel,
+          sectionHeading: sectionHeading,
         })
       );
     }
@@ -39,7 +55,13 @@ export const BookmarkIcon = ({ legislation, docid, passMarked }) => {
         size={30}
         onPress={() => {
           setMarked(switchMarks(marked));
-          bookmarkAction(legislation, docid, marked);
+          bookmarkAction(
+            legislation,
+            sectionNum,
+            partLabel,
+            sectionHeading,
+            marked
+          );
         }}
         style={{ color: Color.activeIcon }}
       />
