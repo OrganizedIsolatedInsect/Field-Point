@@ -66,4 +66,41 @@ export default StyleSheet.create({
   },
 
   /* End of Home Screen Styles */
+
+  /* Legislation Screen Styles */
+
+  LegislationTilesView: {
+    flex: 1,
+    flexWrap: "wrap",
+    flexDirection: "row",
+    flexShrink: 1,
+    justifyContent: "space-between",
+    rowGap: 13,
+    paddingTop: 22,
+  },
+
+  LegislationImg: {
+    borderRadius: 4,
+    opacity: 0.8,
+  },
+
+  LegislationButtonTextView: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    width: 150,
+    padding: 10,
+  },
+
+  LegislationButtonText: {
+    fontSize: 20,
+    color: Color.primaryText,
+    textAlign: "center",
+  },
+
+  /* End of Legislation Screen Styles */
 });
