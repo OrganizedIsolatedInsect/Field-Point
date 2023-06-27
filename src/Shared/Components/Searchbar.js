@@ -7,12 +7,15 @@ import { Color } from "../styles";
 // TODO - wire in the actual search function
 // TODO - migrate styles to own CSS
 
+// Searchbar component implements the search icon, focused and blurred state outline, and changing the keyboard
+//    return key to a magnifying glass icon.
 const Searchbar = () => {
   // This state is required so that we can change the color of the border when the searchbar is ready for input.
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <View
+    // Because of the dynamic borderColor change on focus, the style here needs to remain inline
       style={{
         ...styles.container,
         borderColor:
@@ -27,6 +30,7 @@ const Searchbar = () => {
         onSubmitEditing={() => setIsFocused(false)}
         onEndEditing={() => setIsFocused(false)}
         onBlur={() => setIsFocused(false)}
+        returnKeyType="search"
       />
     </View>
   );

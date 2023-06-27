@@ -15,7 +15,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 // Alternative? https://github.com/react-navigation/react-navigation/issues/4349
 
-// Breadcrumb bar displays the back icon and the current location title
+// Breadcrumb bar displays the back icon and the current location title. If it is on the homescreen, do not display anything.
 
 export default BreadcrumbBar = () => {
   // Hooks required to navigate to different screens and get route names
@@ -43,6 +43,7 @@ export default BreadcrumbBar = () => {
     return useNavigationState((state) => state.routes[state.index]?.name);
   };
 
+  // Because of the use of Arrow functions above, these needed to be declared after
   const isFirstRoute = useIsFirstRouteInParent();
   const previousRouteName = usePreviousRouteName();
   const currentRouteName = useCurrentRouteName();
@@ -55,7 +56,7 @@ export default BreadcrumbBar = () => {
     }
   };
 
-  // Passed render function for the PreviousRoute validation
+  // Render function for the PreviousRoute validation
   const PreviousRouteRender = () => {
     return (
       <View style={styles.breadcrumb}>
@@ -96,10 +97,10 @@ const styles = StyleSheet.create({
   },
   breadcrumbText: {
     color: Color.primaryText,
-    fontSize: 14,
+    fontSize: 18,
   },
   backIcon: {
     color: Color.primaryText,
-    fontSize: 14,
+    fontSize: 20,
   },
 });
