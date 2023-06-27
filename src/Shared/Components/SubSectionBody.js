@@ -2,7 +2,18 @@ import { View, Text } from "react-native";
 import React from "react";
 import styles from "../styles";
 
-const SubSectionBody = ({ marginalNote, subSectionData, bookmarkGroup }) => {
+/* 
+Body to house the text of the subsections based on the marginal note of the subsection
+
+Fields from database as follows, props receieved from SubSectionCard
+marginalNote = Text                     Text of heading where isMarginalNote = True
+bookmarkGroup = BookmarkGroup           Name of bookmark grouping
+subSectionData = subSectionTextArray    sent as prop from SubSectionCard, houses text data filtered by sectionHeading
+
+
+*/
+
+const SubSectionBody = ({ marginalNote, bookmarkGroup, subSectionData }) => {
   const filtedSubSectionTextArray = subSectionData.filter((x) => {
     return x.BookmarkGroup == bookmarkGroup;
   });

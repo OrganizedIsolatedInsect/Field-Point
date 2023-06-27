@@ -8,7 +8,7 @@ import { FlatList } from "react-native-gesture-handler";
 /* 
 Header for Subsection 
 
-Fields from database as follows
+Fields from database as follows, props receieved from CrimCodeSubSectionsScreen
 partLabel = Heading1_Label    Part Number
 sectionHeading = Heading2     Name of section
 sectionNum = id               Section Number
@@ -16,10 +16,12 @@ dbData = object of dbData sent from Subsection Screen
 */
 
 const SubSectionCard = ({ partLabel, sectionNum, sectionHeading, dbData }) => {
+  // Array created for the marginal note heading for the subSection component, fitered so only marginal notes are shown for the section
   let subSectionMarginalNoteArray = dbData.filter((x) => {
     return x.IsMarginalNote == "True" && x.Heading2 == sectionHeading;
   });
 
+  //Array created to pass the subsection text data to the subSection component, filtered so no marginal notes are shown for the section
   let subSectionTextArray = dbData.filter((x) => {
     return x.IsMarginalNote == "False" && x.Heading2 == sectionHeading;
   });

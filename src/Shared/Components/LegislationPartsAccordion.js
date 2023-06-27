@@ -12,6 +12,8 @@ import LegislationSectionsAccordion from "./LegislationSectionsAccordion";
 import { AccordionOpenIcon, AccordionCloseIcon } from "./AccordionIcons";
 
 /* 
+Component for the accordion to display the Parts heading for the accordion head, opening the accordion will open the sections accordion component which displays the Sections for the part selected
+
 Fields from database as follows, props recieved from CrimCodePartsScreen
 headingLabel = Heading1       Heading Name
 partLabel = Heading1_Label    Part Number

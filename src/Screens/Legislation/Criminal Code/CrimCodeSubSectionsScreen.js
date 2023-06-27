@@ -3,8 +3,10 @@ import React, { useEffect, useState } from "react";
 import { getDbDataCrimCodeSubSection } from "./CriminalCodeFunctions";
 import SubSectionCard from "../../../Shared/Components/SubSectionCard";
 
+//Screen to display CrimCode sub sections data from the section a user selects coming from the CrimCode parts screen.
+
 const CrimCodeSubSectionsScreen = ({ route }) => {
-  //sectionHeading sent by sections component, taken via the naviagation route
+  //sectionHeading sent by LegislationSectionsAccordion component, taken via the naviagation route
   const { sectionHeading, sectionNum, partLabel } = route.params;
 
   const [dbSubSectionData, setDbSubSectionData] = useState([]);

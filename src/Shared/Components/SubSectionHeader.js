@@ -5,7 +5,7 @@ import styles from "../styles";
 /* 
 Header for Subsection 
 
-Fields from database as follows
+Fields from database as follows, props recieved from SubSectionCard component
 partLabel = Heading1_Label    Part Number
 sectionHeading = Heading2     Name of section
 sectionNum = id               Section Number
