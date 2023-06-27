@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import { RoutingItems } from "../../Data/RoutingLookups";
+import { RoutingItems } from "../../Data/RoutingLookups"; //to determine which screen the legislation is to navigate to.
 
 /*
  This component needs to pass to the onpress:
@@ -64,28 +64,21 @@ const BookmarkScreen = () => {
       sectionHeading: "",
     },
   ];
-
-  console.log("inside bookmarkscreen");
-  console.log(RoutingItems);
-
   const renderBookmarkItem = ({ item }) => (
     <View>
       <Pressable
         onPress={() => {
+          //determine which screen to navigate to depending on which legislation is being passed.
           const screenRoute = RoutingItems.find(
             legislation => legislation.legislation == item.legislation
           );
-
-          console.log(screenRoute);
-          const sectionNum = item.sectionNum;
-          const legislation = item.legislation; //make certain the legislation in the data is the same as the screen name
-          const partLabel = item.partLabel;
-          const sectionHeading = item.sectionHeading;
+          //this will navigation directly to the document that was bookmarked
           navAid.navigate(screenRoute.screenName, {
-            sectionNum,
-            partLabel,
-            sectionHeading,
-          }); //this should point directly to the document that was bookmarked
+            sectionNum: item.sectionNum,
+            partLabel: item.partLabel,
+            sectionHeading: item.sectionHeading,
+            legislation: item.legislation,
+          });
         }}
       >
         <View style={styles.bookmarkContainer}>
@@ -123,7 +116,6 @@ const BookmarkScreen = () => {
   /*Output Section*/
 
   if (bookmarks.bookmarkItem.length === 10) {
-    console.log(".length === 0");
     return (
       <View style={[styles.bookmarkScreenFormatting, styles.centerOnScreen]}>
         <Ionicons
@@ -143,11 +135,8 @@ const BookmarkScreen = () => {
       </View>
     );
   } else {
-    console.log("inside else");
     return (
       <View style={styles.bookmarkScreenFormatting}>
-        {/* conditional headers based on section array length */}
-
         <View>
           {/* here should be a header/search */}
           {/* here should be a breadcrumb */}

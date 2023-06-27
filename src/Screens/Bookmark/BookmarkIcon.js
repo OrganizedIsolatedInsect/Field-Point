@@ -10,9 +10,10 @@ export const BookmarkIcon = ({
   sectionNum,
   partLabel,
   sectionHeading,
-  passMarked,
+  marked,
 }) => {
-  const [marked, setMarked] = useState(passMarked); //to change marked status of content
+  //This does not require a state change for the icon.  Just a new value of marked if necessary
+
   const dispatch = useDispatch();
 
   function switchMarks(marked) {
@@ -47,14 +48,13 @@ export const BookmarkIcon = ({
       );
     }
   };
-
   return (
     <View style={{ flexDirection: "row" }}>
       <Icon
         name={marked ? "bookmark" : "bookmark-o"}
         size={30}
         onPress={() => {
-          setMarked(switchMarks(marked));
+          switchMarks(marked);
           bookmarkAction(
             legislation,
             sectionNum,
