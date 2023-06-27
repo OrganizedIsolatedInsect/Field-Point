@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { render, screen, fireEvent } from "@testing-library/react-native";
 
-import AppNavigator from "../src/Shared/Navigation/BottomTabNavigator";
+import AppNavigator from "../Shared/Navigation/BottomTabNavigator";
 
 //Find findByText is case sensitive and looks for the title of the component in the Code, not what is on the screen
 

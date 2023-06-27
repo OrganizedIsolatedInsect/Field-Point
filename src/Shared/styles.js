@@ -88,6 +88,7 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: 400,
     paddingTop: 8,
+    width: width - 36 - 26, //to allow for 1 line of title and an ellipses if trucating is necessary. (additional values are padding values)
   },
   bookmarkNoneLabelRender: {
     flexDirection: "row",
