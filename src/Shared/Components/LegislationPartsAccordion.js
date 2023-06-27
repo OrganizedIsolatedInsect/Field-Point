@@ -9,10 +9,10 @@ import {
 
 import { getDbDataCrimCodeSection } from "../../Screens/Legislation/Criminal Code/CriminalCodeFunctions";
 import LegislationSectionsAccordion from "./LegislationSectionsAccordion";
-import { AccordionUpIcon, AccordionDownIcon } from "./AccordionHeaderIcon";
+import { AccordionOpenIcon, AccordionCloseIcon } from "./AccordionIcons";
 
 /* 
-Fields from database as follows
+Fields from database as follows, props recieved from CrimCodePartsScreen
 headingLabel = Heading1       Heading Name
 partLabel = Heading1_Label    Part Number
 sortIndex = SortIndex         Index used as key
@@ -23,8 +23,8 @@ Accordion instuctions can be found at https://github.com/marouanekadiri/Accordio
 const LegislationPartsAccordion = ({ headingLabel, partLabel, sortIndex }) => {
   const [dbDataSection, setDbDataSection] = useState([]); // create array to section heading data from Crim Code Database
   const [accordionArrow, setAccordionArrow] = useState(true);
-  //sends partLabel into SQL query in getDbDataCrimCodeSection to get back distinct section data per part
 
+  //sends partLabel into SQL query in getDbDataCrimCodeSection to get back distinct section data per part
   useEffect(() => {
     getDbDataCrimCodeSection(partLabel, setDbDataSection);
   }, [partLabel]);
@@ -38,9 +38,9 @@ const LegislationPartsAccordion = ({ headingLabel, partLabel, sortIndex }) => {
         <CollapseHeader>
           <View style={styles.accordionHeader}>
             {accordionArrow == true ? (
-              <AccordionUpIcon />
+              <AccordionCloseIcon />
             ) : (
-              <AccordionDownIcon />
+              <AccordionOpenIcon />
             )}
             <View style={styles.headingLabelContainer}>
               <Text style={styles.partsPrimaryText}>

@@ -1,11 +1,11 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 import styles from "../styles";
-import { AccordionSectionIcon } from "./AccordionSectionIcon";
+import { AccordionSectionIcon } from "./AccordionIcons";
 import { useNavigation } from "@react-navigation/native";
 
 /* 
-Fields from database as follows
+Fields from database as follows, props are received from LegislationPartsAccordion component
 sectionHeading = Heading2     Name of section
 sectionNum = id               Section Number
 sortIndex = SortIndex         Index used as key
