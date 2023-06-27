@@ -9,11 +9,10 @@ Fields from database as follows, props receieved from SubSectionCard
 marginalNote = Text                     Text of heading where isMarginalNote = True
 bookmarkGroup = BookmarkGroup           Name of bookmark grouping
 subSectionData = subSectionTextArray    sent as prop from SubSectionCard, houses text data filtered by sectionHeading
-
-
 */
 
 const SubSectionBody = ({ marginalNote, bookmarkGroup, subSectionData }) => {
+  //Array to filter out subSectionData by bookmark group
   const filtedSubSectionTextArray = subSectionData.filter((x) => {
     return x.BookmarkGroup == bookmarkGroup;
   });
@@ -22,6 +21,9 @@ const SubSectionBody = ({ marginalNote, bookmarkGroup, subSectionData }) => {
     <View style={styles.subSectionBody}>
       <Text style={styles.subSectionBodyHeaderText}>{marginalNote}</Text>
       {filtedSubSectionTextArray.map((x) => {
+        /* 
+        Indent levels are used to control the spacing of the text, base on if its a paragraph,subparagraph or sub subparagraph
+        */
         if (x.IndentLevel === "1") {
           return (
             <View style={styles.subSectionBodyLevel1}>
