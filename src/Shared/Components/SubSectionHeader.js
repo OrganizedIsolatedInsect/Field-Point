@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../styles";
 
 /* 
-Header for Subsection 
+Header for Subsections, housed in the SubSection Card Component
 
 Fields from database as follows, props recieved from SubSectionCard component
 partLabel = Heading1_Label    Part Number
