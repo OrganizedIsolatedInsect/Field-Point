@@ -6,7 +6,7 @@ import SubSectionBody from "./SubSectionBody";
 import { FlatList } from "react-native-gesture-handler";
 
 /* 
-Header for Subsection 
+Component to house the SubSection Header and SubSection Body components based on the selected Section 
 
 Fields from database as follows, props receieved from CrimCodeSubSectionsScreen
 partLabel = Heading1_Label    Part Number

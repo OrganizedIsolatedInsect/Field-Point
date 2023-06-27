@@ -57,12 +57,13 @@ const LegislationPartsAccordion = ({ headingLabel, partLabel, sortIndex }) => {
           <View>
             {dbDataSection.map((x) => {
               return (
-                <LegislationSectionsAccordion
-                  sectionHeading={x.Heading2}
-                  sectionNum={x.id}
-                  sortIndex={x.sortIndex}
-                  partLabel={partLabel}
-                />
+                <View key={x.SortIndex}>
+                  <LegislationSectionsAccordion
+                    sectionHeading={x.Heading2}
+                    sectionNum={x.id}
+                    partLabel={partLabel}
+                  />
+                </View>
               );
             })}
           </View>

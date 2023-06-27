@@ -10,14 +10,12 @@ Body component for Accordion, used to display the sections headings of the Part 
 Fields from database as follows, props are received from LegislationPartsAccordion component
 sectionHeading = Heading2     Name of section
 sectionNum = id               Section Number
-sortIndex = SortIndex         Index used as key
 partLabel = Heading1_Label    Part Number
  */
 
 const LegislationSectionsAccordion = ({
   sectionHeading,
   sectionNum,
-  sortIndex,
   partLabel,
 }) => {
   //use navigation hook to navigate to SubSection Screen sending the section heading name, section number and part label as a param via the navigation route
@@ -36,7 +34,7 @@ const LegislationSectionsAccordion = ({
         });
       }}
     >
-      <View style={styles.accordionBody} key={sortIndex}>
+      <View style={styles.accordionBody}>
         <View style={styles.sectionsHeaderContainer}>
           <View style={styles.sectionsNum}>
             <Text style={styles.sectionsPrimaryText}>{sectionNum}</Text>

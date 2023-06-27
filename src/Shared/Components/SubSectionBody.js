@@ -26,21 +26,21 @@ const SubSectionBody = ({ marginalNote, bookmarkGroup, subSectionData }) => {
         */
         if (x.IndentLevel === "1") {
           return (
-            <View style={styles.subSectionBodyLevel1}>
+            <View style={styles.subSectionBodyLevel1} key={x.SortIndex}>
               <Text style={styles.subSectionBodyText}>{x.Text}</Text>
             </View>
           );
         }
         if (x.IndentLevel === "2") {
           return (
-            <View style={styles.subSectionBodyLevel2}>
+            <View style={styles.subSectionBodyLevel2} key={x.SortIndex}>
               <Text style={styles.subSectionBodyText}>{x.Text}</Text>
             </View>
           );
         }
         if (x.IndentLevel === "3") {
           return (
-            <View style={styles.subSectionBodyLevel3}>
+            <View style={styles.subSectionBodyLevel3} key={x.SortIndex}>
               <Text style={styles.subSectionBodyText}>{x.Text}</Text>
             </View>
           );
