@@ -14,7 +14,7 @@ const HomeScreenData = [
     "iconSize": 36,
     "iconColor": Color.primaryText,
     "imgURI": require("../Assets/Imgs/Home-Screen/Legislation-button-home-334x120.jpg"),
-    "buttonPress": "LegislationScreen",
+    "buttonPress": "LegislationStack",
     
   },
 

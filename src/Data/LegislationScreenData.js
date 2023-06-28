@@ -15,7 +15,7 @@ const LegislationScreenData = [
     "id": 2,
     "buttonText": "Criminal Code of Canada",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/criminal-code-150x160.jpg"),
-    "buttonPress": "CCCScreen",
+    "buttonPress": "CrimCodePartsScreen",
     
   },
 

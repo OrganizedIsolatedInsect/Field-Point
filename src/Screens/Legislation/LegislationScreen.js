@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable, ScrollView } from "react-native";
+import { View, Text, ScrollView, Button } from "react-native";
 import React from "react";
 import styles, { Color } from "../../Shared/styles.js";
 import TileButton from "../../Shared/Components/TileButton.js";
@@ -21,7 +21,7 @@ let showButtons = LegislationScreenData.map(
   }
 );
 
-const LegislationScreen = ({ navigation }) => {
+const LegislationScreen = () => {
   return (
     <ScrollView style={styles.screenBackground}>
       <Text style={styles.homeScreenHeader}>
@@ -31,7 +31,6 @@ const LegislationScreen = ({ navigation }) => {
         Explore supporting information and resources
       </Text>
       <View style={styles.LegislationTilesView}>
-
         {/* Show the buttons from the <TileButton /> compoment 
       with props mapped from the LegislationScreenData.js JSON file */}
 

@@ -11,6 +11,7 @@ import AppNavigator from "./src/Shared/Navigation/BottomTabNavigator";
 import { Provider } from "react-redux";
 import store from "./src/Redux/store";
 
+
 const App = () => {
   return (
     <Provider store={store}>

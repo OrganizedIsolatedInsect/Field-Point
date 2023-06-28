@@ -1,12 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../../Screens/Home/HomeScreen";
-import LegislationScreen from "../../Screens/Legislation/LegislationScreen";
-import MVA from "../../Screens/MVA/MVA"
-import Policy from "../../Screens/Policy/Policy"
-import Resources from "../../Screens/Resources/Resources"
-import CCC from "../../Screens/CCC/CCC"
-
+import LegislationStack from "./LegislationStackNavigator";
+import PolicyScreen from "../../Screens/Policy/Policy";
+import ResourcesScreen from "../../Screens/Resources/Resources";
 
 // Create home stack to move to different parts of the app (eg. Legislation, Policy etc..)
 
@@ -17,13 +14,11 @@ const HomeStack = () => {
     <HomeStackNavigator.Navigator screenOptions={{ headerShown: false }}>
       <HomeStackNavigator.Screen name="HomeScreen" component={HomeScreen} />
       <HomeStackNavigator.Screen
-        name="LegislationScreen"
-        component={LegislationScreen}
+        name="LegislationStack"
+        component={LegislationStack}
       />
-      <HomeStackNavigator.Screen name="MVAScreen" component={MVA} />
-      <HomeStackNavigator.Screen name="PolicyScreen" component={Policy} />
-      <HomeStackNavigator.Screen name="ResourcesScreen" component={Resources} />
-      <HomeStackNavigator.Screen name="CCCScreen" component={CCC} />
+      <HomeStackNavigator.Screen name="PolicyScreen" component={PolicyScreen} />
+      <HomeStackNavigator.Screen name="ResourcesScreen" component={ResourcesScreen} />
     </HomeStackNavigator.Navigator>
   );
 };
