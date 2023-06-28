@@ -1,8 +1,16 @@
 import React from "react";
+import "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { render, screen, fireEvent } from "@testing-library/react-native";
 
 import AppNavigator from "../src/Shared/Navigation/BottomTabNavigator";
+import App from "../App";
+import SQLite from "react-native-sqlite-storage";
+
+SQLite.enablePromise(true);
+jest.mock("react-native-sqlite-storage");
+jest.mock("../src/Screens/Legislation/Criminal Code/CriminalCodeFunctions");
+jest.mock("accordion-collapse-react-native");
 
 //Find findByText is case sensitive and looks for the title of the component in the Code, not what is on the screen
 
