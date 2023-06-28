@@ -46,7 +46,7 @@ export const CustomHeader = ({ navigation, options, back }) => {
       <View style={styles.bottomRow}>
         {/* <BreadcrumbBar /> */}
         {/* <GoToButton /> */}
-        {/* <Breadcrumb route={route} navigation={navigation} /> */}
+        <Breadcrumb route={route} navigation={navigation} />
       </View>
     </View>
   );
