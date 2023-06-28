@@ -5,9 +5,9 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import { Color } from "../styles";
 
-const Breadcrumb = ({navigation, route}) => {
-//   const navigation = useNavigation();
-//   const route = useRoute();
+const Breadcrumb = () => {
+  const navigation = useNavigation();
+  const route = useRoute();
 
   // Checks to see if you can navigate back, and if so, go back. Otherwise, do nothing. Prevents a warning.
   // SOURCE: https://reactnavigation.org/docs/navigation-prop#cangoback
@@ -21,7 +21,7 @@ const Breadcrumb = ({navigation, route}) => {
   //    route name does not exist, only display the current route name.
   const NavigationLink = () => {
     return (
-      <View style={styles.breadcrumb}>
+      <View style={styles.breadcrumbLink}>
         <Pressable
           onPress={() => {
             validateReturn();
@@ -34,18 +34,28 @@ const Breadcrumb = ({navigation, route}) => {
     );
   };
 
+  // BlankBar to maintain header height when on the Home screen and not displaying the breadcrumb.
+  const BlankBar = () => {
+    return <View style={styles.blankBar}></View>;
+  };
+
   // Actual BreadcrumbBar component. If the route name is Home, do not display breadcrumb.
-  return <View>
-    {/* {route.name === "Home" ? null :  */}
-    <NavigationLink />
-    {/* } */}
-    </View>;
+  return (
+    <View style={styles.breadcrumb}>
+      {route.name === "Home" ? <BlankBar /> : <NavigationLink />}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   breadcrumb: {
-    flexDirection: "row",
     color: Color.primaryText,
+    backgroundColor: Color.headingBackground,
+    paddingBottom: 10,
+    paddingHorizontal: 13,
+  },
+  breadcrumbLink: {
+    flexDirection: "row",
     alignItems: "center",
   },
   breadcrumbText: {
@@ -55,6 +65,10 @@ const styles = StyleSheet.create({
   backIcon: {
     color: Color.primaryText,
     fontSize: 20,
+  },
+  blankBar: {
+    height: 24,
+    backgroundColor: Color.headingBackground,
   },
 });
 

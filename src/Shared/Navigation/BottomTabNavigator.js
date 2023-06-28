@@ -2,7 +2,6 @@ import * as React from "react";
 import { Pressable, Text } from "react-native";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
 
 import styles, { Color } from "../styles";
 
@@ -12,47 +11,25 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import { CustomHeader } from "../Components/CustomHeader";
 
-import HomeScreen from "../../Screens/Home/HomeScreen";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
-import LegislationScreen from "../../Screens/Legislation/LegislationScreen";
 
-// import HomeStack from "./HomeStackNavigator";
+import HomeStack from "./HomeStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
-const Home = createStackNavigator();
-
-// Common navigation screen options pulled out to be reusable against all stacks
+// Inserts the custom header into the Navigator
 const headerStyleOption = {
   header: ({ navigation, route, options, back }) => {
     return <CustomHeader navigation={navigation} route={route} />;
   },
 };
 
+// Tab bar styling props
 const tabNavigatorStyle = {
   tabBarStyle: { backgroundColor: Color.headingBackground },
   tabBarInactiveTintColor: Color.inActiveIcon, // color when icon is not picked
   tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
-};
-
-// Temporary HomeStack for routing
-const HomeStack = ({ navigation, route }) => {
-  return (
-    <Home.Navigator
-    // backBehavior="history" prop is required for navigating back to the last visited screen
-    // SOURCE: https://reactnavigation.org/docs/bottom-tab-navigator#backbehavior
-      backBehavior="history"
-      screenOptions={{
-        ...headerStyleOption,
-        headerShown: false,
-      }}
-    >
-      <Home.Screen name="Home" component={HomeScreen} />
-      {/* <Home.Screen name="Bookmarks" component={BookmarkScreen} /> */}
-      <Home.Screen name="LegislationScreen" component={LegislationScreen} />
-    </Home.Navigator>
-  );
 };
 
 // Bottom Tab Navigator
@@ -77,6 +54,8 @@ const AppNavigator = () => {
 
   return (
     <BottomTab.Navigator
+      // backBehavior="history" prop is required for navigating back to the last visited screen
+      // SOURCE: https://reactnavigation.org/docs/bottom-tab-navigator#backbehavior
       backBehavior="history"
       screenOptions={{ ...headerStyleOption, ...tabNavigatorStyle }}
       //set default screen to Home

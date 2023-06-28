@@ -10,9 +10,9 @@ const HomeStackNavigator = createStackNavigator();
 const HomeStack = () => {
   return (
     <HomeStackNavigator.Navigator screenOptions={{ headerShown: false }}>
-      <HomeStackNavigator.Screen name="HomeScreen" component={HomeScreen} />
+      <HomeStackNavigator.Screen name="Home" component={HomeScreen} />
       <HomeStackNavigator.Screen
-        name="LegislationScreen"
+        name="Legislation"
         component={LegislationScreen}
       />
     </HomeStackNavigator.Navigator>
