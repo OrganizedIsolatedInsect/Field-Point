@@ -5,16 +5,14 @@ import { Dimensions, StyleSheet } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 export const Color = {
-  primaryText: "#ffffff", //white
-  background: "#323232", //really dark grey
-  activeIcon: "#ffffff", //white
-  inActiveIcon: "#b3b3b3", //light red
-  headingBackground: "#000000", //black
-  cardBody: "#464646", //more dark grey
-  searchBody: "#ffffff", //white
-  inFocus: "#419aff", //light blue
-  black: "#000000", //black
-  lightGrey: "#9c9c9c", //light grey
+  primaryText: "#ffffff",
+  background: "#323232",
+  activeIcon: "#ffffff",
+  inActiveIcon: "#b3b3b3",
+  headingBackground: "#000000",
+  cardBody: "#464646",
+  searchBody: "#ffffff",
+  inFocus: "#419aff",
 };
 
 export default StyleSheet.create({
@@ -29,79 +27,121 @@ export default StyleSheet.create({
     fontFamily: "Roboto",
     fontSize: 10,
   },
-  centerOnScreen: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  accordionHeader: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    backgroundColor: Color.headingBackground,
+    marginTop: 5,
+    marginBottom: 5,
+    marginHorizontal: 5,
+    flexDirection: "row",
+    borderRadius: 5,
   },
-
-  //BOOKMARK STYLING
-  bookmarkScreenFormatting: {
-    backgroundColor: Color.background,
+  headingLabelContainer: {
+    width: 275,
+  },
+  partsPrimaryText: {
+    fontFamily: "Roboto",
+    fontSize: 18,
     color: Color.primaryText,
-    flex: 1,
     flexDirection: "column",
-    width: width,
-    height: height,
   },
-  bookmarkContainer: {
-    backgroundColor: Color.black,
-    width: width,
-    height: 100,
-    marginTop: 10,
-    marginBottom: 10,
-    paddingTop: 28,
-    paddingBottom: 28,
-    paddingLeft: 36,
+  partsSecondaryText: {
+    fontFamily: "Roboto",
+    fontSize: 10,
+    color: Color.inActiveIcon,
   },
-  bookmarkFlexContainer: {
+  partsCheveronCircle: {
+    color: Color.inActiveIcon,
+    fontSize: 30,
+    marginRight: 20,
+    marginLeft: 20,
+  },
+  accordionBody: {
+    paddingLeft: 20,
+    backgroundColor: Color.cardBody,
+    borderBottomColor: Color.inActiveIcon,
+    borderBottomWidth: 2,
+    marginHorizontal: 5,
+    paddingRight: 10,
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  bookmarkTextRender: {
+  sectionsHeaderContainer: {
+    width: 240,
+    padding: 5,
+    alignContent: "center",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
+  sectionsPrimaryText: {
+    fontFamily: "Roboto",
+    fontSize: 12,
     color: Color.primaryText,
-    fontSize: 14,
-    fontWeight: 300,
+    flexDirection: "column",
   },
-  bookmarkLabelRender: {
-    color: Color.lightGrey,
-    fontSize: 14,
-    fontWeight: 300,
+  sectionsCheveron: {
+    color: Color.primaryText,
+    fontSize: 20,
+    padding: 3,
   },
-  bookmarkChevronRender: {
-    color: Color.lightGrey,
-    flex: 1,
-    alignItems: "flex-end",
-    fontSize: 14,
-    fontWeight: 300,
+  sectionsNum: {
+    width: 45,
+    marginRight: 20,
   },
-  bookmarkFlexOne: {
-    flex: 1,
-    alignItems: "flex-start",
+  subSectionCard: {
+    marginTop: 10,
+    marginBottom: 5,
+    marginHorizontal: 5,
+    height: 600,
   },
-  bookmarkFlexTwo: {
-    flex: 2,
-    alignItems: "flex-start",
+  subSectionHeader: {
+    backgroundColor: Color.background,
+    padding: 20,
+    flexDirection: "row",
   },
-  bookmarkTitleRender: {
+  subSectionLabelContainer: {
+    marginLeft: 40,
+    width: 240,
+  },
+  subSectionPartSectionContainer: {
+    flexDirection: "column",
+  },
+  subSectionHeaderPartText: {
+    color: Color.inActiveIcon,
+    fontSize: 10,
+  },
+  subSectionHeaderSectionNumText: {
+    color: Color.primaryText,
+    fontSize: 24,
+  },
+  subSectionHeaderSectionLabelText: {
     color: Color.primaryText,
     fontSize: 18,
-    fontWeight: 400,
-    paddingTop: 8,
-    width: width - 36 - 26, //to allow for 1 line of title and an ellipses if trucating is necessary. (additional values are padding values)
   },
-  bookmarkNoneLabelRender: {
-    flexDirection: "row",
-    fontSize: 14,
-    fontWeight: 300,
+  subSectionBody: {
+    backgroundColor: Color.cardBody,
+    alignItems: "flex-start",
   },
-  bookmarkNoneBoxRender: {
-    paddingLeft: 36,
-    paddingRight: 36,
-  },
-  bookmarkNoneTitleRender: {
-    fontWeight: 500,
-    fontSize: 24,
+  subSectionBodyHeaderText: {
     color: Color.primaryText,
+    marginVertical: 10,
+    paddingLeft: 10,
+    fontSize: 14,
+  },
+  subSectionBodyText: {
+    color: Color.inActiveIcon,
+    fontSize: 12,
+  },
+  subSectionBodyLevel1: {
+    paddingLeft: 10,
+  },
+  subSectionBodyLevel2: {
+    paddingLeft: 25,
+    marginTop: 5,
+  },
+  subSectionBodyLevel3: {
+    paddingLeft: 35,
+    marginTop: 5,
   },
 });

@@ -4,9 +4,11 @@ import React from "react";
 const HomeScreen = () => {
   return (
     <View>
-      <Text>HomeScreen</Text>
-      <View></View>
-      <Button>Fill Redux</Button>
+      {/*  button is added to test navigation, component button will replace this */}
+      <Button
+        title="Legislation"
+        onPress={() => navigation.navigate("LegislationStack")}
+      />
     </View>
   );
 };

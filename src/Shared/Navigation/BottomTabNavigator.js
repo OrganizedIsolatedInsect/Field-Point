@@ -8,7 +8,6 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import styles, { Color } from "../styles";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
-import HomeScreen from "../../Screens/Home/HomeScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
 import HomeStack from "./HomeStackNavigator";
 

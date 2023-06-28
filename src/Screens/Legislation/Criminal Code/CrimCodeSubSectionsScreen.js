@@ -1,49 +1,31 @@
 import { View, Text } from "react-native";
-import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { BookmarkIcon } from "../../Bookmark/BookmarkIcon";
-import styles from "../../../Shared/styles";
+import React, { useEffect, useState } from "react";
+import { getDbDataCrimCodeSubSection } from "./CriminalCodeFunctions";
+import SubSectionCard from "../../../Shared/Components/SubSectionCard";
 
-export default function CrimCodeSubSectionsScreen({ route, navigation }) {
-  const { sectionNum, partLabel, sectionHeading, legislation } = route.params;
-  const [marked, setMarked] = useState(false); //to change marked status of content
+//Screen to display CrimCode sub sections data from the section a user selects coming from the CrimCode parts screen.
 
-  //TESTING CODE
-  let testSectionNum = "320.14(4)";
-  //
+const CrimCodeSubSectionsScreen = ({ route }) => {
+  //sectionHeading sent by LegislationSectionsAccordion component, taken via the naviagation route
+  const { sectionHeading, sectionNum, partLabel } = route.params;
 
-  //pull state to see if current section exists in bookmarks
-  const bookmarkStateId = useSelector(state => state.bookmarks.bookmarkItem);
+  const [dbSubSectionData, setDbSubSectionData] = useState([]);
 
-  console.log(testSectionNum + " " + sectionNum);
+  //function to get subSection data from database
   useEffect(() => {
-    // compares state array to see if section exists in bookmarks, if it does turn on bookmark icon
-    if (
-      // bookmarkStateId.some(
-      //   e => e.sectionNum == sectionNum && e.legislation == legislation)
+    getDbDataCrimCodeSubSection(partLabel, setDbSubSectionData);
+  }, [sectionHeading]);
 
-      //TESTING CODE
-      testSectionNum == sectionNum
-    ) {
-      setMarked(true);
-    } else {
-      setMarked(false);
-    }
-    console.log(marked);
-  }, []);
   return (
-    <View style={styles.bookmarkScreenFormatting}>
-      <Text style={styles.bookmarkTitleRender}>CrimCodeSubSectionsScreen</Text>
-      <Text style={styles.bookmarkTitleRender}>{sectionNum}</Text>
-      <View>
-        <BookmarkIcon
-          legislation={legislation}
-          sectionNum={sectionNum}
-          partLabel={partLabel}
-          sectionHeading={sectionHeading}
-          marked={marked}
-        />
-      </View>
+    <View>
+      <SubSectionCard
+        sectionHeading={sectionHeading}
+        sectionNum={sectionNum}
+        partLabel={partLabel}
+        dbData={dbSubSectionData}
+      />
     </View>
   );
-}
+};
+
+export default CrimCodeSubSectionsScreen;
