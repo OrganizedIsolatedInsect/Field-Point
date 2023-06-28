@@ -7,7 +7,7 @@ const HomeScreen = ({ navigation }) => {
       {/*  button is added to test navigation, component button will replace this */}
       <Button
         title="Legislation"
-        onPress={() => navigation.navigate("LegislationScreen")}
+        onPress={() => navigation.navigate("LegislationStack")}
       />
     </View>
   );
