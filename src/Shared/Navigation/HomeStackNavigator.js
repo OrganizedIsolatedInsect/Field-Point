@@ -2,8 +2,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import LegislationStack from "./LegislationStackNavigator";
-import PolicyScreen from "../../Screens/Policy/Policy";
-import ResourcesScreen from "../../Screens/Resources/Resources";
+import PolicyScreen from "../../Screens/Policy/PolicyScreen";
+import ResourcesScreen from "../../Screens/Resources/ResourcesScreen";
 
 // Create home stack to move to different parts of the app (eg. Legislation, Policy etc..)
 

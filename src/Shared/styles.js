@@ -23,9 +23,6 @@ export default StyleSheet.create({
   body: {
     fontFamily: "Roboto",
   },
-  bottomTabIconSize: {
-    fontSize: 24,
-  },
   bottomTabText: {
     fontFamily: "Roboto",
     fontSize: 10,
@@ -148,8 +145,8 @@ export default StyleSheet.create({
     marginTop: 5,
   },
 
-   /* Home Screen Styles */
-   screenBackground: {
+  /* Home Screen Styles */
+  screenBackground: {
     backgroundColor: Color.background,
     paddingHorizontal: 13,
     paddingVertical: 40,
@@ -228,5 +225,4 @@ export default StyleSheet.create({
   },
 
   /* End of Legislation Screen Styles */
-  
 });
