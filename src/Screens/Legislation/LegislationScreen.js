@@ -5,6 +5,7 @@ import { RoutingItems } from "../../Data/RoutingLookups"; //to determine visibil
 import { useRoute } from "@react-navigation/native";
 
 //button is temp until component for legislation is implemented
+//component screen is temporary until I can get the icon show/hid implementation in Header component.
 
 const LegislationScreen = ({ navigation }) => {
   const [showIcon, setShowIcon] = useState(false); //to enable whether the icon should display on the screen.

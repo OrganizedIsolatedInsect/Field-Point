@@ -17,7 +17,7 @@ sectionHeading  = heading2
 
 const BookmarkScreen = () => {
   const navAid = useNavigation();
-  const bookmarks = useSelector(state => state.bookmarks);
+  const bookmarks = useSelector(state => state.bookmarks); //get bookmarks array
 
   const renderBookmarkItem = ({ item }) => (
     <View>
@@ -94,10 +94,8 @@ const BookmarkScreen = () => {
     return (
       <View style={styles.bookmarkScreenFormatting}>
         <View>
-          {/* here should be a header/search */}
-          {/* here should be a breadcrumb */}
+          {/* here should be a header/search/ breadcrumb */}
           <FlatList
-            //data={bookmarks.bookmarkItem}
             data={bookmarks.bookmarkArray}
             renderItem={renderBookmarkItem}
           />

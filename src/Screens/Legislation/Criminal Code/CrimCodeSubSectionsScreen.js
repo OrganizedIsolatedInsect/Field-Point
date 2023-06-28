@@ -16,6 +16,7 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
     getDbDataCrimCodeSubSection(partLabel, setDbSubSectionData);
   }, [sectionHeading]);
 
+  //Icon here is temporary until I can get the icon into the Header component
   return (
     <View>
       <View>

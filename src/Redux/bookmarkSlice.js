@@ -39,3 +39,5 @@ const bookmarkSlice = createSlice({
 export const { addBookmark, removeBookmark } = bookmarkSlice.actions;
 
 export default bookmarkSlice.reducer;
+
+//NOTES: filtering out data requires a !() and not a !==.

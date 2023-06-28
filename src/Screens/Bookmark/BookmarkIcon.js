@@ -3,9 +3,7 @@ import { View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { addBookmark, removeBookmark } from "../../Redux/bookmarkSlice";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { useRoute } from "@react-navigation/native";
 import { Color } from "../../Shared/styles";
-import { RoutingItems } from "../../Data/RoutingLookups"; //to determine visibility of icon on screen
 
 export const BookmarkIcon = ({
   legislation,
@@ -14,16 +12,16 @@ export const BookmarkIcon = ({
   sectionHeading,
 }) => {
   const [marked, setMarked] = useState(false); //to change marked status of bookmark
-
-  const bookmarkStateId = useSelector(state => state.bookmarks.bookmarkArray);
+  const bookmarkStateId = useSelector(state => state.bookmarks.bookmarkArray); //get list of bookmarks
   const dispatch = useDispatch();
 
+  //switch the mark state to opposite what it was.
   function switchMarks() {
     setMarked(!marked);
     return marked;
   }
 
-  //Bookmark specific effect action
+  //if the bookmarks exists in redux, then switch the mark upon any change of all of the elements below.
   useEffect(() => {
     // compares state array to see if section exists in bookmarks, if it does turn on bookmark icon
     if (
@@ -37,6 +35,7 @@ export const BookmarkIcon = ({
     }
   }, [legislation, sectionNum, partLabel, sectionHeading]);
 
+  //adds or removes bookmark depending on the state of marked.
   function bookmarkAction(legislation, sectionNum, partLabel, sectionHeading) {
     if (marked === false) {
       dispatch(
@@ -59,7 +58,7 @@ export const BookmarkIcon = ({
     }
   }
 
-  //The icon only shows up visible on screens that have been identified in the valid routes.
+  //the redux action has to come before the bookmark action, which is counterintuitive but necessary for the
   return (
     <View style={{ marginLeft: "auto" }}>
       <View>
