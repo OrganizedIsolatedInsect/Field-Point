@@ -8,7 +8,7 @@ iconName: name of the icon based on icon set name.  See https://oblador.github.i
 iconColor: color of the icon
 iconSize: size of the icon
 buttonText: text under the icon
-onPress: function to be called when the button is pressed
+buttonPress: the navigation screen name
 
 */
 
@@ -16,20 +16,24 @@ import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import styles, { Color } from "../styles.js";
 import Icon from "./Icon.js";
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreenButton = ({
   imgURI,
   buttonText,
-  onPress,
+  buttonPress,
   iconStyle,
   iconName,
   iconSize,
   iconColor,
 }) => {
+
+  const navigation = useNavigation();
+
   return (
     <Pressable
       android_ripple={{ color: Color.cardBody, foreground: true }}
-      onPress={onPress}
+      onPress={() => navigation.navigate(buttonPress)}
     >
       <Image style={styles.homeScreenImg} source={imgURI} />
       <View style={styles.homeScreenButtonView}>
