@@ -9,7 +9,7 @@ export default function CrimCodeSubSectionsScreen({ route, navigation }) {
   const [marked, setMarked] = useState(false); //to change marked status of content
 
   //TESTING CODE
-  let testSectionNum = "29";
+  let testSectionNum = "320.14(4)";
   //
 
   //pull state to see if current section exists in bookmarks

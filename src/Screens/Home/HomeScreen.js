@@ -6,6 +6,7 @@ const HomeScreen = () => {
     <View>
       <Text>HomeScreen</Text>
       <View></View>
+      <Button>Fill Redux</Button>
     </View>
   );
 };

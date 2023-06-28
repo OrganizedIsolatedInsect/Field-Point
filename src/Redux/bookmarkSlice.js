@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//redux store for boookmarks
+//redux store for bookmarks
 
 const initialState = {
   bookmarkArray: [],

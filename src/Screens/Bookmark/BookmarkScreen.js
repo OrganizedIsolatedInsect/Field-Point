@@ -117,7 +117,7 @@ const BookmarkScreen = () => {
 
   /*Output Section*/
 
-  if (bookmarks.bookmarkArray.length === 0) {
+  if (bookmarks.bookmarkArray.length === 10) {
     return (
       <View style={[styles.bookmarkScreenFormatting, styles.centerOnScreen]}>
         <Ionicons
