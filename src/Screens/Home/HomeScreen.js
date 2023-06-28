@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../../Shared/styles.js";
 import HomeScreenButton from "../../Shared/Components/HomeScreenButton.js";
 
-import HomeScreenData from "./HomeScreenData.js";
+import HomeScreenData from "../../Data/HomeScreenData.js"
 
 // Map the HomeScreenData.js JSON file and return <HomeScreenButton />
 // components with mapped JSON data as props.

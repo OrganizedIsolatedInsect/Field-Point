@@ -2,7 +2,7 @@
 // Must use data.js in order to import images using by using require("./../picture.jpg")
 // https://stackoverflow.com/questions/54024112/how-to-import-images-from-json-data-into-create-react-app
 
-import { Color } from "../../Shared/styles.js";
+import { Color } from "../Shared/styles.js";
 
 const HomeScreenData = [
   {
@@ -13,7 +13,7 @@ const HomeScreenData = [
     "buttonText": "Legislation",
     "iconSize": 36,
     "iconColor": Color.primaryText,
-    "imgURI": require("./../../Assets/Imgs/Home-Screen/Legislation-button-home-334x120.jpg"),
+    "imgURI": require("../Assets/Imgs/Home-Screen/Legislation-button-home-334x120.jpg"),
     "buttonPress": "LegislationScreen",
     
   },
@@ -26,7 +26,7 @@ const HomeScreenData = [
     "buttonText": "Policy",
     "iconSize": 36,
     "iconColor": Color.primaryText,
-    "imgURI": require("./../../Assets/Imgs/Home-Screen/Policy-button-home334x120.jpg"),
+    "imgURI": require("../Assets/Imgs/Home-Screen/Policy-button-home334x120.jpg"),
     "buttonPress": "LegislationScreen",
     
   },
@@ -39,7 +39,7 @@ const HomeScreenData = [
     "buttonText": "Resources",
     "iconSize": 36,
     "iconColor": Color.primaryText,
-    "imgURI": require("./../../Assets/Imgs/Home-Screen/Resources-button-home-334x120.jpg"),
+    "imgURI": require("../Assets/Imgs/Home-Screen/Resources-button-home-334x120.jpg"),
     "buttonPress": "LegislationScreen",
     
   }
