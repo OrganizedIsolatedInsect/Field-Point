@@ -4,7 +4,7 @@ import styles, { Color } from "../../Shared/styles.js";
 import TileButton from "../../Shared/Components/TileButton.js";
 
 
-import data from "./LegislationScreenData.js";
+import data from "../../Data/LegislationScreenData.js";
 
 let showButtons = data.map(({ id, buttonText, imgURI, buttonPress }) => {
   return (
