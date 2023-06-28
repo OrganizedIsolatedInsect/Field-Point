@@ -35,7 +35,7 @@ let showButtons = HomeScreenData.map(
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <ScrollView style={styles.homeScreenBackground}>
+    <ScrollView style={styles.screenBackground}>
       <Text style={styles.homeScreenHeader}>What are you looking for?</Text>
       <Text style={styles.homeScreenSubHeader}>
         Explore supporting information and resources

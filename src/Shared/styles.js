@@ -24,7 +24,7 @@ export default StyleSheet.create({
   },
 
   /* Home Screen Styles */
-  homeScreenBackground: {
+  screenBackground: {
     backgroundColor: Color.background,
     paddingHorizontal: 13,
     paddingVertical: 40,

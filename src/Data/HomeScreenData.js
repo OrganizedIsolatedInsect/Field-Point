@@ -27,7 +27,7 @@ const HomeScreenData = [
     "iconSize": 36,
     "iconColor": Color.primaryText,
     "imgURI": require("../Assets/Imgs/Home-Screen/Policy-button-home334x120.jpg"),
-    "buttonPress": "LegislationScreen",
+    "buttonPress": "PolicyScreen",
     
   },
 
@@ -40,7 +40,7 @@ const HomeScreenData = [
     "iconSize": 36,
     "iconColor": Color.primaryText,
     "imgURI": require("../Assets/Imgs/Home-Screen/Resources-button-home-334x120.jpg"),
-    "buttonPress": "LegislationScreen",
+    "buttonPress": "ResourcesScreen",
     
   }
 ]

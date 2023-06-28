@@ -7,7 +7,7 @@ const LegislationScreenData = [
     "id": 1,
     "buttonText": "Motor Vehicle",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/motor-vehicle-150x160.jpg"),
-    "buttonPress": "HomeScreen",
+    "buttonPress": "MVAScreen",
     
   },
 
@@ -15,7 +15,7 @@ const LegislationScreenData = [
     "id": 2,
     "buttonText": "Criminal Code of Canada",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/criminal-code-150x160.jpg"),
-    "buttonPress": "HomeScreen",
+    "buttonPress": "CCCScreen",
     
   },
 
@@ -23,7 +23,7 @@ const LegislationScreenData = [
     "id": 3,
     "buttonText": "Cannabis Act",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/cannabis-button-150x160.jpg"),
-    "buttonPress": "HomeScreen",
+    "buttonPress": "",
     
   },
 
@@ -31,7 +31,7 @@ const LegislationScreenData = [
     "id": 4,
     "buttonText": "Tresspass Act",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/tresspassing-button-150x160.jpg"),
-    "buttonPress": "HomeScreen",
+    "buttonPress": "",
     
   },
 
@@ -39,14 +39,14 @@ const LegislationScreenData = [
     "id": 5,
     "buttonText": "Controlled Substances",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/Controlled-substances-button_150x160.jpg"),
-    "buttonPress": "HomeScreen",
+    "buttonPress": "",
     
   },
   {
     "id": 6,
     "buttonText": "Charter of Freedoms",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/Charter-of-freedoms-button-150x160.jpg"),
-    "buttonPress": "HomeScreen",
+    "buttonPress": "",
     
   }
 ]
