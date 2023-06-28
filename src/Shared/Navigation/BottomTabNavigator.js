@@ -15,7 +15,7 @@ import { CustomHeader } from "../Components/CustomHeader";
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
-import LegislationScreen from "../../Screens/Legislation/LegislationScreen";
+import HomeStack from "./HomeStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -68,7 +68,7 @@ const AppNavigator = () => {
     <BottomTab.Navigator
       screenOptions={screenOptionStyle}
       //set default screen to Home
-      initialRouteName="Home"
+      initialRouteName="HomeStack"
     >
       <BottomTab.Screen
         name="More"
@@ -97,7 +97,7 @@ const AppNavigator = () => {
         }}
       />
       <BottomTab.Screen
-        name="Home"
+        name="HomeStack"
         component={HomeStack}
         options={{
           tabBarLabel: ({ focused, color, size }) => {
