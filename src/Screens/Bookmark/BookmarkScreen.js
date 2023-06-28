@@ -19,52 +19,6 @@ const BookmarkScreen = () => {
   const navAid = useNavigation();
   const bookmarks = useSelector(state => state.bookmarks);
 
-  //FOR TESTING PURPOSES
-  const forTesting = [
-    {
-      legislation: "CrimCode",
-      sectionNum: "424.1(b)",
-      partLabel: "PART X",
-      sectionHeading:
-        "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
-    },
-    {
-      legislation: "MVA",
-      sectionNum: "3 (4.1)",
-      partLabel: "Part 1",
-      sectionHeading: "Registration, licence and insurance",
-    },
-    {
-      legislation: "CrimCode",
-      sectionNum: "430(3)(b)",
-      partLabel: "PART XI",
-      sectionHeading: "Mischief",
-    },
-    {
-      legislation: "MVA",
-      sectionNum: "3 (10)(c)(Continued)",
-      partLabel: "Part 1",
-      sectionHeading: "Registration, licence and insurance",
-    },
-    {
-      legislation: "CrimCode",
-      sectionNum: "320.14(4)",
-      partLabel: "PART VIII.1",
-      sectionHeading: "Offences and Punishment",
-    },
-    {
-      legislation: "MVA",
-      sectionNum: "126",
-      partLabel: "Part 3",
-      sectionHeading: "Traffic control signals",
-    },
-    {
-      legislation: "CrimCode",
-      sectionNum: "503(3)(b)(ii)",
-      partLabel: "PART XVI",
-      sectionHeading: "Appearance of Accused before Justice",
-    },
-  ];
   const renderBookmarkItem = ({ item }) => (
     <View>
       <Pressable
@@ -117,7 +71,7 @@ const BookmarkScreen = () => {
 
   /*Output Section*/
 
-  if (bookmarks.bookmarkArray.length === 10) {
+  if (bookmarks.bookmarkArray.length === 0) {
     return (
       <View style={[styles.bookmarkScreenFormatting, styles.centerOnScreen]}>
         <Ionicons
@@ -144,7 +98,7 @@ const BookmarkScreen = () => {
           {/* here should be a breadcrumb */}
           <FlatList
             //data={bookmarks.bookmarkItem}
-            data={forTesting}
+            data={bookmarks.bookmarkArray}
             renderItem={renderBookmarkItem}
           />
         </View>

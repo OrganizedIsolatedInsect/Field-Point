@@ -13,6 +13,8 @@ export const Color = {
   cardBody: "#464646",
   searchBody: "#ffffff",
   inFocus: "#419aff",
+  black: "#000000",
+  lightGrey: "#9c9c9c",
 };
 
 export default StyleSheet.create({
@@ -143,5 +145,80 @@ export default StyleSheet.create({
   subSectionBodyLevel3: {
     paddingLeft: 35,
     marginTop: 5,
+  },
+
+  //BOOKMARK STYLING
+  centerOnScreen: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  bookmarkScreenFormatting: {
+    backgroundColor: Color.background,
+    color: Color.primaryText,
+    flex: 1,
+    flexDirection: "column",
+    width: width,
+    height: height,
+  },
+  bookmarkContainer: {
+    backgroundColor: Color.black,
+    width: width,
+    height: 100,
+    marginTop: 10,
+    marginBottom: 10,
+    paddingTop: 28,
+    paddingBottom: 28,
+    paddingLeft: 36,
+  },
+  bookmarkFlexContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  bookmarkTextRender: {
+    color: Color.primaryText,
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkLabelRender: {
+    color: Color.lightGrey,
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkChevronRender: {
+    color: Color.lightGrey,
+    flex: 1,
+    alignItems: "flex-end",
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkFlexOne: {
+    flex: 1,
+    alignItems: "flex-start",
+  },
+  bookmarkFlexTwo: {
+    flex: 2,
+    alignItems: "flex-start",
+  },
+  bookmarkTitleRender: {
+    color: Color.primaryText,
+    fontSize: 18,
+    fontWeight: 400,
+    paddingTop: 8,
+    width: width - 36 - 26, //to allow for 1 line of title and an ellipses if trucating is necessary. (additional values are padding values)
+  },
+  bookmarkNoneLabelRender: {
+    flexDirection: "row",
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkNoneBoxRender: {
+    paddingLeft: 36,
+    paddingRight: 36,
+  },
+  bookmarkNoneTitleRender: {
+    fontWeight: 500,
+    fontSize: 24,
+    color: Color.primaryText,
   },
 });

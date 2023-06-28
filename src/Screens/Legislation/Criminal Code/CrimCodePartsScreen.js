@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FlatList } from "react-native";
+import { FlatList, View } from "react-native";
 import LegislationPartsAccordion from "../../../Shared/Components/LegislationPartsAccordion";
 import { getDbDataCrimCodeHeading } from "./CriminalCodeFunctions";
 //screen to house top level of Criminal Code and display all the parts of the legislation
@@ -11,7 +11,6 @@ const CrimCodePartsScreen = () => {
   }, []);
   return (
     <View>
-           {" "}
       <FlatList
         data={dbDataHeading}
         renderItem={({ item }) => {
@@ -24,7 +23,6 @@ const CrimCodePartsScreen = () => {
           );
         }}
       />
-         {" "}
     </View>
   );
 };
