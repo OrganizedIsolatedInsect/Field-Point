@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Pressable, StyleSheet } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 import { Color } from "../styles";
 
-const Breadcrumb = () => {
+const Breadcrumb = ({ partLabel }) => {
   const navigation = useNavigation();
   const route = useRoute();
+
+  const [partLabelExists, setPartLabelExists] = useState(false);
+
+  useEffect(() => {
+    if (partLabel !== undefined) {
+      setPartLabelExists(true);
+    }
+  }, [partLabel]);
 
   // Checks to see if you can navigate back, and if so, go back. Otherwise, do nothing. Prevents a warning.
   // SOURCE: https://reactnavigation.org/docs/navigation-prop#cangoback
@@ -18,7 +26,8 @@ const Breadcrumb = () => {
   };
 
   // Build the breadcrumb string and allow it to be pressed to go back to your previous screen. If a previous
-  //    route name does not exist, only display the current route name.
+  //    route name does not exist, only display the current route name. On the criminal code subsection, display
+  //    the Part # instead of a title.
   const NavigationLink = () => {
     return (
       <View style={styles.breadcrumbLink}>
@@ -29,7 +38,11 @@ const Breadcrumb = () => {
         >
           <MaterialIcons name="arrow-back" style={styles.backIcon} />
         </Pressable>
-        <Text style={styles.breadcrumbText}> {route.name}</Text>
+        {partLabelExists ? (
+          <Text style={styles.breadcrumbText}> {partLabel}</Text>
+        ) : (
+          <Text style={styles.breadcrumbText}> {route.name}</Text>
+        )}
       </View>
     );
   };
