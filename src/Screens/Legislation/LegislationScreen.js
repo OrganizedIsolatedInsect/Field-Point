@@ -1,7 +1,7 @@
 import { View, Text, Button } from "react-native";
 import React from "react";
 
-const LegislationScreen = () => {
+const LegislationScreen = ({navigation, route}) => {
   return (
     <View>
       <Button title="Criminal Code of Canada" />

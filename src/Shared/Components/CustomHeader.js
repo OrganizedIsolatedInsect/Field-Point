@@ -1,11 +1,19 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { Button, View, StyleSheet } from "react-native";
 
 import { Color } from "../styles";
 
 import { Logo } from "./Logo";
 import Searchbar from "./Searchbar";
 import BreadcrumbBar from "./BreadcrumbBar";
+
+import Breadcrumb from "./Breadcrumb";
+
+
+import { useNavigation, useRoute } from "@react-navigation/native";
+
+
+
 
 // Custom header displays branding/logo, searchbar and breadcrumb
 
@@ -18,7 +26,13 @@ import BreadcrumbBar from "./BreadcrumbBar";
 
 // Logo can take the logoHeight and logoWidth arguments. By default, it will be H400 x W416 (full size image)
 
-export const CustomHeader = () => {
+export const CustomHeader = ({ navigation, options, back }) => {
+
+  // const navigation = useNavigation();
+  const route = useRoute();
+
+  console.log(route)
+
   return (
     <View style={styles.container}>
       <View style={styles.topRow}>
@@ -30,7 +44,9 @@ export const CustomHeader = () => {
         <Searchbar />
       </View>
       <View style={styles.bottomRow}>
-        <BreadcrumbBar />
+        {/* <BreadcrumbBar /> */}
+        {/* <GoToButton /> */}
+        {/* <Breadcrumb route={route} navigation={navigation} /> */}
       </View>
     </View>
   );

@@ -15,31 +15,42 @@ import { CustomHeader } from "../Components/CustomHeader";
 import HomeScreen from "../../Screens/Home/HomeScreen";
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
-import HomeStack from "./HomeStackNavigator";
+import LegislationScreen from "../../Screens/Legislation/LegislationScreen";
+
+// import HomeStack from "./HomeStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
 const Home = createStackNavigator();
 
 // Common navigation screen options pulled out to be reusable against all stacks
-const screenOptionStyle = {
+const headerStyleOption = {
   header: ({ navigation, route, options, back }) => {
-    return <CustomHeader />;
+    return <CustomHeader navigation={navigation} route={route} />;
   },
+};
+
+const tabNavigatorStyle = {
   tabBarStyle: { backgroundColor: Color.headingBackground },
   tabBarInactiveTintColor: Color.inActiveIcon, // color when icon is not picked
   tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
 };
 
 // Temporary HomeStack for routing
-const HomeStack = () => {
+const HomeStack = ({ navigation, route }) => {
   return (
     <Home.Navigator
-      screenOptions={{ ...screenOptionStyle, headerShown: false }}
+    // backBehavior="history" prop is required for navigating back to the last visited screen
+    // SOURCE: https://reactnavigation.org/docs/bottom-tab-navigator#backbehavior
+      backBehavior="history"
+      screenOptions={{
+        ...headerStyleOption,
+        headerShown: false,
+      }}
     >
       <Home.Screen name="Home" component={HomeScreen} />
-      <Home.Screen name="Bookmarks" component={BookmarkScreen} />
-      <Home.Screen name="Legislation" component={LegislationScreen} />
+      {/* <Home.Screen name="Bookmarks" component={BookmarkScreen} /> */}
+      <Home.Screen name="LegislationScreen" component={LegislationScreen} />
     </Home.Navigator>
   );
 };
@@ -66,9 +77,10 @@ const AppNavigator = () => {
 
   return (
     <BottomTab.Navigator
-      screenOptions={screenOptionStyle}
+      backBehavior="history"
+      screenOptions={{ ...headerStyleOption, ...tabNavigatorStyle }}
       //set default screen to Home
-      initialRouteName="HomeStack"
+      initialRouteName="Home"
     >
       <BottomTab.Screen
         name="More"
@@ -97,7 +109,7 @@ const AppNavigator = () => {
         }}
       />
       <BottomTab.Screen
-        name="HomeStack"
+        name="Home"
         component={HomeStack}
         options={{
           tabBarLabel: ({ focused, color, size }) => {
