@@ -1,13 +1,58 @@
-import React from "react";
-import { Provider, useSelector } from "react-redux";
-import { NavigationContainer } from "@react-navigation/native";
-import { render, screen, fireEvent } from "@testing-library/react-native";
-import { configureStore } from "@reduxjs/toolkit";
-import bookmarkSlice from "../src/Redux/bookmarkSlice.js";
+import reducer, {
+  addBookmark,
+  removeBookmark,
+} from "../src/Redux/bookmarkSlice.js";
 
 describe("Bookmark Redux test list of bookmark items", () => {
-  test("should execute with a store of 7 items", () => {
-    const initialState = {
+  test("Should return the INITIAL STATE", () => {
+    expect(reducer(undefined, { type: undefined })).toEqual({
+      bookmarkArray: [],
+    });
+  }); //passes
+
+  test("Should handle a record being ADDED to an EMPTY array", () => {
+    const previousState = { bookmarkArray: [] };
+    let newObject = {
+      legislation: "CrimCode",
+      sectionNum: "424.1(b)",
+      partLabel: "PART X",
+      sectionHeading:
+        "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
+    };
+
+    expect(reducer(previousState, addBookmark(newObject))).toEqual({
+      bookmarkArray: [
+        {
+          legislation: "CrimCode",
+          sectionNum: "424.1(b)",
+          partLabel: "PART X",
+          sectionHeading:
+            "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
+        },
+      ],
+    });
+  });
+
+  test("Should handle ADDING ANOTHER bookmark to array", () => {
+    const previousState = {
+      bookmarkArray: [
+        {
+          legislation: "CrimCode",
+          sectionNum: "424.1(b)",
+          partLabel: "PART X",
+          sectionHeading:
+            "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
+        },
+      ],
+    };
+
+    let newObject = {
+      legislation: "MVA",
+      sectionNum: "3 (4.1)",
+      partLabel: "Part 1",
+      sectionHeading: "Registration, licence and insurance",
+    };
+    expect(reducer(previousState, addBookmark(newObject))).toEqual({
       bookmarkArray: [
         {
           legislation: "CrimCode",
@@ -22,58 +67,44 @@ describe("Bookmark Redux test list of bookmark items", () => {
           partLabel: "Part 1",
           sectionHeading: "Registration, licence and insurance",
         },
+      ],
+    });
+  });
+
+  test("Should handle REMOVING a bookmark from array", () => {
+    const previousState = {
+      bookmarkArray: [
         {
           legislation: "CrimCode",
-          sectionNum: "430(3)(b)",
-          partLabel: "PART XI",
-          sectionHeading: "Mischief",
+          sectionNum: "424.1(b)",
+          partLabel: "PART X",
+          sectionHeading:
+            "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
         },
         {
           legislation: "MVA",
-          sectionNum: "3 (10)(c)(Continued)",
+          sectionNum: "3 (4.1)",
           partLabel: "Part 1",
           sectionHeading: "Registration, licence and insurance",
         },
-        {
-          legislation: "CrimCode",
-          sectionNum: "320.14(4)",
-          partLabel: "PART VIII.1",
-          sectionHeading: "Offences and Punishment",
-        },
-        {
-          legislation: "MVA",
-          sectionNum: "126",
-          partLabel: "Part 3",
-          sectionHeading: "Traffic control signals",
-        },
-        {
-          legislation: "CrimCode",
-          sectionNum: "503(3)(b)(ii)",
-          partLabel: "PART XVI",
-          sectionHeading: "Appearance of Accused before Justice",
-        },
       ],
     };
-
-    let store = configureStore({
-      reducer: { bookmarks: bookmarkSlice },
-      initialState: { initialState },
+    let objToBeRemoved = {
+      legislation: "CrimCode",
+      sectionNum: "424.1(b)",
+      partLabel: "PART X",
+      sectionHeading:
+        "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
+    };
+    expect(reducer(previousState, removeBookmark(objToBeRemoved))).toEqual({
+      bookmarkArray: [
+        {
+          legislation: "MVA",
+          sectionNum: "3 (4.1)",
+          partLabel: "Part 1",
+          sectionHeading: "Registration, licence and insurance",
+        },
+      ],
     });
-
-    // const component = (
-    //   <Provider store={store}>
-    //     <NavigationContainer>
-    //       <BookmarkScreen />
-    //     </NavigationContainer>
-    //   </Provider>
-    // );
-
-    const bookmarks = store.getState().bookmarks;
-    expect(bookmarks.bookmarkArray.length).toEqual(7);
-
-    // render(component);
-    // const bookmarkElements = screen.getAllByText(/legislation/i);
-
-    // expect(bookmarkElements.length).toEqual(7);
   });
 });
