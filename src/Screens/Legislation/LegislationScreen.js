@@ -7,7 +7,8 @@ const LegislationScreen = ({ navigation }) => {
   return (
     <View>
       <Button
-        title="Criminal Code of Canada"
+        title="CrimCode"
+        testID="CrimCodeButton"
         onPress={() => navigation.navigate("CrimCodePartsScreen")}
       />
     </View>
