@@ -2,9 +2,9 @@ import React from "react";
 import { View } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
-import styles from "../styles";
+import styles from "../../styles";
 
-import { Logo } from "./Logo";
+import { Logo } from "../Logo";
 import Searchbar from "./Searchbar";
 import Breadcrumb from "./Breadcrumb";
 

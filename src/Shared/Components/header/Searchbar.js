@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TextInput, View } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
-import styles, { Color } from "../styles";
+import styles, { Color } from "../../styles";
 
 // TODO - wire in the actual search function
 // TODO - migrate styles to own CSS

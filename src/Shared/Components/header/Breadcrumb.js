@@ -3,7 +3,7 @@ import { View, Text, Pressable } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import styles from "../styles";
+import styles from "../../styles";
 
 const Breadcrumb = ({ partLabel }) => {
   const navigation = useNavigation();

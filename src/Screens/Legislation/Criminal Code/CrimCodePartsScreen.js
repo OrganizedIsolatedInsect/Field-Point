@@ -4,7 +4,7 @@ import { FlatList } from "react-native";
 
 import LegislationPartsAccordion from "../../../Shared/Components/LegislationPartsAccordion";
 import { getDbDataCrimCodeHeading } from "./CriminalCodeFunctions";
-import Breadcrumb from "../../../Shared/Components/Breadcrumb";
+import Breadcrumb from "../../../Shared/Components/header/Breadcrumb";
 
 
 

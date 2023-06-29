@@ -9,7 +9,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import { CustomHeader } from "../Components/CustomHeader";
+import { CustomHeader } from "../Components/header/CustomHeader";
 
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";

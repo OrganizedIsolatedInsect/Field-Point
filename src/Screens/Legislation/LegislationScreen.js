@@ -1,6 +1,6 @@
 import { View, Text, Button } from "react-native";
 import React from "react";
-import Breadcrumb from "../../Shared/Components/Breadcrumb";
+import Breadcrumb from "../../Shared/Components/header/Breadcrumb";
 
 //button is temp until component for legislation is implemented
 
