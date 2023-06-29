@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image } from "react-native";
+import styles from "../styles";
 
 // Logo component is scalable
 // Takes logoHeight and logoWidth as props. If height and/or width is undefined, use the defaultLogoSize dimensions.
@@ -24,10 +25,3 @@ export const Logo = ({ logoHeight, logoWidth }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  defaultLogoSize: {
-    height: 400,
-    width: 416,
-  },
-});

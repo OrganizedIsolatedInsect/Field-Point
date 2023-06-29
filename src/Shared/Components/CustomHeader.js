@@ -1,15 +1,14 @@
 import React from "react";
-import { Button, View, StyleSheet } from "react-native";
+import { View } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-import { Color } from "../styles";
+import styles from "../styles";
 
 import { Logo } from "./Logo";
 import Searchbar from "./Searchbar";
 import Breadcrumb from "./Breadcrumb";
 
-import { useNavigation, useRoute } from "@react-navigation/native";
-
-// Custom header displays branding/logo, searchbar and breadcrumb
+// Custom header displays branding/logo, searchbar
 
 // Because React Native does not support the outline style prop, we've had to manually simulate the outline
 //    function by using the borderWidth and making it "on" or "off" with the isFocused state. To achieve this,
@@ -23,46 +22,20 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 export const CustomHeader = ({ navigation, options, back }) => {
   // const navigation = useNavigation();
   // const route = useRoute();
-0
+  0;
   return (
-    <View style={styles.container}>
-      <View style={styles.topRow}>
-        <View style={styles.topRowSpacing}>
-          <View style={styles.logoPadding}>
+    <View style={styles.headerContainer}>
+      <View style={styles.headerTopRow}>
+        <View style={styles.headerTopRowSpacing}>
+          <View style={styles.headerLogoPadding}>
             <Logo logoHeight={49} logoWidth={50} />
           </View>
         </View>
         <Searchbar />
       </View>
-      {/* <View style={styles.bottomRow}> */}
-        {/* <Breadcrumb route={route} navigation={navigation} /> */}
+      {/* <View style={styles.headerBottomRow}> */}
+      {/* <Breadcrumb route={route} navigation={navigation} /> */}
       {/* </View> */}
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    // paddingVertical: 10,
-    paddingTop: 10,
-    paddingHorizontal: 13,
-    backgroundColor: Color.headingBackground,
-    // height: 110,
-    height: 76,
-  },
-  topRow: {
-    flex: 1,
-    flexDirection: "row",
-    height: 52,
-    justifyContent: "center",
-  },
-  topRowSpacing: {
-    paddingRight: 5,
-  },
-  logoPadding: {
-    paddingTop: 3,
-  },
-  bottomRow: {
-    marginTop: 24,
-  },
-});

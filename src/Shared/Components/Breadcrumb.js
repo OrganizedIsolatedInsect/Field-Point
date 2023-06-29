@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
-import { Color } from "../styles";
+import styles from "../styles";
 
 const Breadcrumb = ({ partLabel }) => {
   const navigation = useNavigation();
@@ -59,30 +59,5 @@ const Breadcrumb = ({ partLabel }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  breadcrumb: {
-    color: Color.primaryText,
-    backgroundColor: Color.headingBackground,
-    paddingBottom: 10,
-    paddingHorizontal: 13,
-  },
-  breadcrumbLink: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  breadcrumbText: {
-    color: Color.primaryText,
-    fontSize: 18,
-  },
-  backIcon: {
-    color: Color.primaryText,
-    fontSize: 20,
-  },
-  blankBar: {
-    height: 24,
-    backgroundColor: Color.headingBackground,
-  },
-});
 
 export default Breadcrumb;

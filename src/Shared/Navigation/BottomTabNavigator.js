@@ -15,7 +15,6 @@ import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
 import HomeStack from "./HomeStackNavigator";
 
-
 const BottomTab = createBottomTabNavigator();
 
 // Inserts the custom header into the Navigator
