@@ -6,43 +6,40 @@ import { Color } from "../Shared/styles.js";
 
 const HomeScreenData = [
   {
-    "id": 1,
-    "name": "Legislation",
-    "iconStyle": "FontAwesome5",
-    "iconName": "book",
-    "buttonText": "Legislation",
-    "iconSize": 36,
-    "iconColor": Color.primaryText,
-    "imgURI": require("../Assets/Imgs/Home-Screen/Legislation-button-home-334x120.jpg"),
-    "buttonPress": "LegislationStack",
-    
+    id: 1,
+    name: "Legislation",
+    iconStyle: "FontAwesome5",
+    iconName: "book",
+    buttonText: "Legislation",
+    iconSize: 36,
+    iconColor: Color.primaryText,
+    imgURI: require("../Assets/Imgs/Home-Screen/Legislation-button-home-334x120.jpg"),
+    buttonPress: "LegislationStack",
   },
 
   {
-    "id": 2,
-    "name": "Policy",
-    "iconStyle": "FontAwesome",
-    "iconName": "hourglass",
-    "buttonText": "Policy",
-    "iconSize": 36,
-    "iconColor": Color.primaryText,
-    "imgURI": require("../Assets/Imgs/Home-Screen/Policy-button-home334x120.jpg"),
-    "buttonPress": "PolicyScreen",
-    
+    id: 2,
+    name: "Policy",
+    iconStyle: "FontAwesome",
+    iconName: "hourglass",
+    buttonText: "Policy",
+    iconSize: 36,
+    iconColor: Color.primaryText,
+    imgURI: require("../Assets/Imgs/Home-Screen/Policy-button-home334x120.jpg"),
+    buttonPress: "Policy",
   },
 
   {
-    "id": 3,
-    "name": "Resources",
-    "iconStyle": "Ionicons",
-    "iconName": "newspaper",
-    "buttonText": "Resources",
-    "iconSize": 36,
-    "iconColor": Color.primaryText,
-    "imgURI": require("../Assets/Imgs/Home-Screen/Resources-button-home-334x120.jpg"),
-    "buttonPress": "ResourcesScreen",
-    
-  }
-]
+    id: 3,
+    name: "Resources",
+    iconStyle: "Ionicons",
+    iconName: "newspaper",
+    buttonText: "Resources",
+    iconSize: 36,
+    iconColor: Color.primaryText,
+    imgURI: require("../Assets/Imgs/Home-Screen/Resources-button-home-334x120.jpg"),
+    buttonPress: "Resources",
+  },
+];
 
-export default HomeScreenData
+export default HomeScreenData;
