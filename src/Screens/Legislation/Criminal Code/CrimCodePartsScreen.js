@@ -4,6 +4,9 @@ import { FlatList } from "react-native";
 
 import LegislationPartsAccordion from "../../../Shared/Components/LegislationPartsAccordion";
 import { getDbDataCrimCodeHeading } from "./CriminalCodeFunctions";
+import Breadcrumb from "../../../Shared/Components/header/Breadcrumb";
+
+
 
 //screen to house top level of Criminal Code and display all the parts of the legislation
 //parts are seperated by the component LegislationPartsAccordion, pressing will lead to sections of Crim Code
@@ -18,6 +21,7 @@ const CrimCodePartsScreen = () => {
 
   return (
     <View>
+      <Breadcrumb />
       <FlatList
         data={dbDataHeading}
         renderItem={({ item }) => {

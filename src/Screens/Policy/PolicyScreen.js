@@ -2,13 +2,13 @@ import { View, Text } from "react-native";
 import React from "react";
 import Breadcrumb from "../../Shared/Components/header/Breadcrumb";
 
-const BookmarkScreen = () => {
+const Policy = () => {
   return (
     <View>
       <Breadcrumb />
-      <Text>BookmarkScreen</Text>
+      <Text>Policy</Text>
     </View>
   );
 };
 
-export default BookmarkScreen;
+export default Policy;

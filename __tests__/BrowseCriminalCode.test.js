@@ -1,5 +1,6 @@
 import React from "react";
 import "react-native";
+import "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { render, screen, fireEvent } from "@testing-library/react-native";
 
