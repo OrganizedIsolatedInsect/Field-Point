@@ -14,6 +14,7 @@ partLabel       = heading1_label
 sectionNum      = id
 sectionHeading  = heading2
 */
+import Breadcrumb from "../../Shared/Components/header/Breadcrumb";
 
 const BookmarkScreen = () => {
   const navAid = useNavigation();
@@ -39,6 +40,7 @@ const BookmarkScreen = () => {
         <View style={styles.bookmarkContainer}>
           <View style={styles.bookmarkFlexContainer}>
             <View style={styles.bookmarkFlexOne}>
+              <Breadcrumb />
               <Text style={styles.bookmarkLabelRender}>Legislation: </Text>
             </View>
 

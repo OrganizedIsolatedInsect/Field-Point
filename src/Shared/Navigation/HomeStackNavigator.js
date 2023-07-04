@@ -12,16 +12,13 @@ const HomeStackNavigator = createStackNavigator();
 const HomeStack = () => {
   return (
     <HomeStackNavigator.Navigator screenOptions={{ headerShown: false }}>
-      <HomeStackNavigator.Screen name="HomeScreen" component={HomeScreen} />
+      <HomeStackNavigator.Screen name="Home" component={HomeScreen} />
       <HomeStackNavigator.Screen
         name="LegislationStack"
         component={LegislationStack}
       />
-      <HomeStackNavigator.Screen name="PolicyScreen" component={PolicyScreen} />
-      <HomeStackNavigator.Screen
-        name="ResourcesScreen"
-        component={ResourcesScreen}
-      />
+      <HomeStackNavigator.Screen name="Policy" component={PolicyScreen} />
+      <HomeStackNavigator.Screen name="Resources" component={ResourcesScreen} />
     </HomeStackNavigator.Navigator>
   );
 };

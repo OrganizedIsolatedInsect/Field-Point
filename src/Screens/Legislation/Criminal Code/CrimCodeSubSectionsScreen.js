@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { getDbDataCrimCodeSubSection } from "./CriminalCodeFunctions";
 import SubSectionCard from "../../../Shared/Components/SubSectionCard";
 import { BookmarkIcon } from "../../Bookmark/BookmarkIcon";
+import Breadcrumb from "../../../Shared/Components/header/Breadcrumb";
 
 //Screen to display CrimCode sub sections data from the section a user selects coming from the CrimCode parts screen.
 
@@ -27,6 +28,7 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
           sectionHeading={sectionHeading}
         />
       </View>
+      <Breadcrumb partLabel={partLabel} />
       <SubSectionCard
         sectionHeading={sectionHeading}
         sectionNum={sectionNum}
