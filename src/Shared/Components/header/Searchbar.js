@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { TextInput, View } from "react-native";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Icon from "../Icon";
 
 import styles, { Color } from "../../styles";
 
@@ -14,14 +14,18 @@ const Searchbar = () => {
 
   return (
     <View
-    // Because of the dynamic borderColor change on focus, the style here needs to remain inline
+      // Because of the dynamic borderColor change on focus, the style here needs to remain inline
       style={{
         ...styles.searchContainer,
         borderColor:
           isFocused == true ? Color.inFocus : Color.headingBackground,
       }}
     >
-      <FontAwesome name="search" style={styles.searchIcon} />
+      <Icon
+        iconStyle="FontAwesome"
+        iconName="search"
+        style={styles.searchIcon}
+      />
       <TextInput
         style={{ ...styles.searchbar }}
         placeholder="Search for a reference topic"
