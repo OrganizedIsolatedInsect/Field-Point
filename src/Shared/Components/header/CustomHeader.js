@@ -19,7 +19,7 @@ import Breadcrumb from "./Breadcrumb";
 
 // Logo can take the logoHeight and logoWidth arguments. By default, it will be H400 x W416 (full size image)
 
-export const CustomHeader = ({ navigation, options, back, partLabel }) => {
+export const CustomHeader = () => {
   // const navigation = useNavigation();
   const route = useRoute();
   0;

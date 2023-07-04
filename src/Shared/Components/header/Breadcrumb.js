@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import Icon from "../Icon";
 
 import styles from "../../styles";
 
+// Breadcrumb is a navigation component that should reside on the top of all the screens. It allows a user
+//  to go back to the previous screen by using the back button.
+// It takes the partLabel prop from the CrimCodeSubSectionScreen. This is required to display the part #
+//  in the breadcrumb instead of the route name.
 const Breadcrumb = ({ partLabel }) => {
   const navigation = useNavigation();
   const route = useRoute();
 
+  // State used to check if the partLabel prop is passed, if it exists display the part #, otherwise display the
+  // route name
   const [partLabelExists, setPartLabelExists] = useState(false);
 
   useEffect(() => {
@@ -36,7 +42,11 @@ const Breadcrumb = ({ partLabel }) => {
             validateReturn();
           }}
         >
-          <MaterialIcons name="arrow-back" style={styles.backIcon} />
+          <Icon
+            iconStyle="MaterialIcons"
+            iconName="arrow-back"
+            style={styles.backIcon}
+          />
         </Pressable>
         {partLabelExists ? (
           <Text style={styles.breadcrumbText}> {partLabel}</Text>

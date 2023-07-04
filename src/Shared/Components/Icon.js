@@ -9,7 +9,7 @@ iconStyle: style of the icon based on react-native-vector-icons. See https://obl
 iconName: name of the icon based on icon set name.  See https://oblador.github.io/react-native-vector-icons/ for icon names
 iconColor: color of the icon
 iconSize: size of the icon
-
+style: accepts style passed as a prop
 */
 
 import { View } from "react-native";
@@ -32,7 +32,7 @@ import Octicons from "react-native-vector-icons/Octicons";
 import Zocial from "react-native-vector-icons/Zocial";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
-const Icon = ({ iconStyle, iconName, iconSize, iconColor }) => {
+const Icon = ({ iconStyle, iconName, iconSize, iconColor, style }) => {
   return (
     <View>
       {/* If else render function */}
@@ -41,60 +41,139 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor }) => {
       {(() => {
         if (iconStyle == "AntDesign") {
           return (
-            <AntDesign name={iconName} size={iconSize} color={iconColor} />
+            <AntDesign
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "Entypo") {
-          return <Entypo name={iconName} size={iconSize} color={iconColor} />;
+          return (
+            <Entypo
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
+          );
         } else if (iconStyle == "EvilIcons") {
           return (
-            <EvilIcons name={iconName} size={iconSize} color={iconColor} />
+            <EvilIcons
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "Feather") {
-          return <Feather name={iconName} size={iconSize} color={iconColor} />;
+          return (
+            <Feather
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
+          );
         } else if (iconStyle == "FontAwesome") {
           return (
-            <FontAwesome name={iconName} size={iconSize} color={iconColor} />
+            <FontAwesome
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "FontAwesome5") {
           return (
-            <FontAwesome5 name={iconName} size={iconSize} color={iconColor} />
+            <FontAwesome5
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "FontAwesome5Brands") {
           return (
-            <FontAwesome5 name={iconName} size={iconSize} color={iconColor} />
+            <FontAwesome5
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "Fontisto") {
-          return <Fontisto name={iconName} size={iconSize} color={iconColor} />;
+          return (
+            <Fontisto
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
+          );
         } else if (iconStyle == "Foundation") {
           return (
-            <Foundation name={iconName} size={iconSize} color={iconColor} />
+            <Foundation
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "Ionicons") {
-          return <Ionicons name={iconName} size={iconSize} color={iconColor} />;
+          return (
+            <Ionicons
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
+          );
         } else if (iconStyle == "MaterialCommunityIcons") {
           return (
             <MaterialCommunityIcons
               name={iconName}
               size={iconSize}
               color={iconColor}
+              style={style}
             />
           );
         } else if (iconStyle == "MaterialIcons") {
           return (
-            <MaterialIcons name={iconName} size={iconSize} color={iconColor} />
+            <MaterialIcons
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
           );
         } else if (iconStyle == "Octicons") {
-          return <Octicons name={iconName} size={iconSize} color={iconColor} />;
+          return (
+            <Octicons
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
+          );
         } else if (iconStyle == "SimpleLineIcons") {
           return (
             <SimpleLineIcons
               name={iconName}
               size={iconSize}
               color={iconColor}
+              style={style}
             />
           );
         } else if (iconStyle == "Zocial") {
-          return <Zocial name={iconName} size={iconSize} color={iconColor} />;
+          return (
+            <Zocial
+              name={iconName}
+              size={iconSize}
+              color={iconColor}
+              style={style}
+            />
+          );
         } else {
           /// return exclamation !!! icons if iconStyle is not defined or mispelled
           return (
