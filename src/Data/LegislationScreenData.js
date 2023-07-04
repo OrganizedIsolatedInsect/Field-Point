@@ -7,7 +7,7 @@ const LegislationScreenData = [
     "id": 1,
     "buttonText": "Motor Vehicle",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/motor-vehicle-150x160.jpg"),
-    "buttonPress": "MVAScreen",
+    "buttonPress": "Motor Vehicle",
     
   },
 
@@ -15,7 +15,7 @@ const LegislationScreenData = [
     "id": 2,
     "buttonText": "Criminal Code of Canada",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/criminal-code-150x160.jpg"),
-    "buttonPress": "CrimCodePartsScreen",
+    "buttonPress": "Criminal Code of Canada",
     
   },
 
@@ -29,7 +29,7 @@ const LegislationScreenData = [
 
   {
     "id": 4,
-    "buttonText": "Tresspass Act",
+    "buttonText": "Trespass Act",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/tresspassing-button-150x160.jpg"),
     "buttonPress": "",
     
@@ -44,7 +44,7 @@ const LegislationScreenData = [
   },
   {
     "id": 6,
-    "buttonText": "Charter of Freedoms",
+    "buttonText": "Charter of Rights And Freedoms Act",
     "imgURI": require("../Assets/Imgs/Legislation-Screen/Charter-of-freedoms-button-150x160.jpg"),
     "buttonPress": "",
     

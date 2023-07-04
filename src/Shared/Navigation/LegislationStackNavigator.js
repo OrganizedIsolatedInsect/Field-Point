@@ -25,7 +25,7 @@ const LegislationStack = () => {
         component={CrimCodeSubSectionsScreen}
       />
       <LegislationStackNavigator.Screen
-        name="MVAScreen"
+        name="Motor Vehicle"
         component={MVAScreen}
       />
     </LegislationStackNavigator.Navigator>
