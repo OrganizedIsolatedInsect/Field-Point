@@ -1,37 +1,42 @@
-import { View, Text, Button } from "react-native";
-import React, { useState } from "react";
-import { BookmarkIcon } from "../Bookmark/BookmarkIcon";
-import { RoutingItems } from "../../Data/RoutingLookups"; //to determine visibility of icon on screen
-import { useRoute } from "@react-navigation/native";
+import { View, Text, ScrollView, Button } from "react-native";
+import React from "react";
+import styles, { Color } from "../../Shared/styles.js";
+import TileButton from "../../Shared/Components/TileButton.js";
 
-//button is temp until component for legislation is implemented
-//component screen is temporary until I can get the icon show/hid implementation in Header component.
+import LegislationScreenData from "../../Data/LegislationScreenData.js";
 
-const LegislationScreen = ({ navigation }) => {
-  const [showIcon, setShowIcon] = useState(false); //to enable whether the icon should display on the screen.
-  const route = useRoute(); //put in header to check for visibilty.
-  if (
-    RoutingItems.includes(screenName => screenName.screenName == route.name)
-  ) {
-    setShowIcon(true);
-  }
-  return (
-    <View>
-      <View>
-        {showIcon ? (
-          <BookmarkIcon
-            legislation="CrimCode"
-            sectionNum={sectionNum}
-            partLabel={partLabel}
-            sectionHeading={sectionHeading}
-          />
-        ) : null}
-      </View>
-      <Button
-        title="Criminal Code of Canada"
-        onPress={() => navigation.navigate("CrimCodePartsScreen")}
+// Map the LegislationScreenData.js JSON file and return <HomeScreenButton />
+// components with mapped JSON data as props.
+
+let showButtons = LegislationScreenData.map(
+  ({ id, buttonText, imgURI, buttonPress }) => {
+    return (
+      <TileButton
+        key={id}
+        buttonText={buttonText}
+        imgURI={imgURI}
+        buttonPress={buttonPress} ///Screen Name
       />
-    </View>
+    );
+  }
+);
+
+const LegislationScreen = () => {
+  return (
+    <ScrollView style={styles.screenBackground}>
+      <Text style={styles.homeScreenHeader}>
+        What kind of Legislation are you looking for?
+      </Text>
+      <Text style={styles.homeScreenSubHeader}>
+        Explore supporting information and resources
+      </Text>
+      <View style={styles.LegislationTilesView}>
+        {/* Show the buttons from the <TileButton /> compoment 
+      with props mapped from the LegislationScreenData.js JSON file */}
+
+        {showButtons}
+      </View>
+    </ScrollView>
   );
 };
 
