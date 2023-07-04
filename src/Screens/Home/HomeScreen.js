@@ -34,13 +34,6 @@ let showButtons = HomeScreenData.map(
 );
 
 const HomeScreen = ({ navigation }) => {
-  const [tap, setTap] = useState(0);
-
-  const increase = (tap) => {
-    setTap(tap + 1);
-    console.log(tap);
-  };
-
   return (
     <ScrollView>
       <Breadcrumb />
