@@ -1,4 +1,4 @@
-//Data for Listing Legislation on the Landing Screen -
+//Data for Identifying which screen routing to take when bookmarking items.
 
 class RoutingItem {
   constructor(id, title, screenName, dataBaseName, legislation) {
@@ -13,10 +13,10 @@ class RoutingItem {
 export const RoutingItems = [
   new RoutingItem(
     "1",
-    "Criminal Code of Canada",
+    "CrimCodeSubSectionsScreen",
     "CrimCodeSubSectionsScreen",
     "C-46_Criminal_Code",
-    "CrimCode"
+    "Crim Code"
   ),
   new RoutingItem(
     "2",

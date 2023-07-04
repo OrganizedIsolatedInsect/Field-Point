@@ -13,6 +13,8 @@ export const Color = {
   cardBody: "#464646",
   searchBody: "#ffffff",
   inFocus: "#419aff",
+  black: "#000000",
+  lightGrey: "#9c9c9c",
 };
 
 export const DarkTheme = {
@@ -20,8 +22,6 @@ export const DarkTheme = {
   colors: {
     background: Color.background,
   },
-  black: "#000000",
-  lightGrey: "#9c9c9c",
 };
 
 export default StyleSheet.create({
@@ -311,17 +311,32 @@ export default StyleSheet.create({
 
   //BOOKMARK STYLING
   centerOnScreen: {
-    flex: 1,
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
   },
-  bookmarkScreenFormatting: {
-    backgroundColor: Color.background,
+  bookmarkIcon: {
     color: Color.primaryText,
-    flex: 1,
-    flexDirection: "column",
+    fontSize: 24,
+    textAlign: "right",
+  },
+  bookmarkIconLarge: {
+    fontSize: 200,
+    color: Color.primaryText,
+  },
+  bookmarkIconTiny: {
+    fontSize: 15,
+    color: Color.primaryText,
+  },
+  bookmarkIconRight: {
+    fontSize: 24,
+    color: Color.primaryText,
+  },
+  bookmarkScreenFormatting: {
+    color: Color.primaryText,
+    flexDirection: "row",
     width: width,
-    height: height,
+    height: height - 200, //to compensate for the height of the header and breadcrumb rows.
   },
   bookmarkContainer: {
     backgroundColor: Color.black,
@@ -349,8 +364,9 @@ export default StyleSheet.create({
   },
   bookmarkChevronRender: {
     color: Color.lightGrey,
-    flex: 1,
-    alignItems: "flex-end",
+    textAlign: "right",
+    // flex: 1,
+    // alignItems: "flex-end",
     fontSize: 14,
     fontWeight: 300,
   },

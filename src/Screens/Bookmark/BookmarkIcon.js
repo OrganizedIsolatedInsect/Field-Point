@@ -3,15 +3,16 @@ import { View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { addBookmark, removeBookmark } from "../../Redux/bookmarkSlice";
 import Icon from "react-native-vector-icons/FontAwesome";
-import { Color } from "../../Shared/styles";
+import styles, { Color } from "../../Shared/styles";
+import { RoutingItems } from "../../Data/RoutingLookups";
 
 export const BookmarkIcon = ({
-  legislation,
+  title,
   sectionNum,
   partLabel,
   sectionHeading,
 }) => {
-  const [marked, setMarked] = useState(false); //to change marked status of bookmark
+  const [marked, setMarked] = useState(false); //to change marked state of bookmark
   const bookmarkStateId = useSelector(state => state.bookmarks.bookmarkArray); //get list of bookmarks
   const dispatch = useDispatch();
 
@@ -24,60 +25,50 @@ export const BookmarkIcon = ({
   //if the bookmarks exists in redux, then switch the mark upon any change of all of the elements below.
   useEffect(() => {
     // compares state array to see if section exists in bookmarks, if it does turn on bookmark icon
-    if (
-      bookmarkStateId.some(
-        e => e.sectionNum == sectionNum && e.legislation == legislation
-      )
-    ) {
-      setMarked(true);
-    } else {
-      setMarked(false);
-    }
-  }, [legislation, sectionNum, partLabel, sectionHeading]);
+    bookmarkStateId.some(e => e.sectionNum == sectionNum && e.title == title)
+      ? setMarked(true)
+      : setMarked(false);
+  }, [title, sectionNum, partLabel, sectionHeading]);
 
   // //adds or removes bookmark depending on the state of marked.
-  function bookmarkAction(legislation, sectionNum, partLabel, sectionHeading) {
+  function bookmarkAction(title, sectionNum, partLabel, sectionHeading) {
+    const legislation = RoutingItems.find(e => e.title == title);
+
     if (marked === false) {
       dispatch(
         addBookmark({
-          legislation: legislation,
+          title: title,
           sectionNum: sectionNum,
           partLabel: partLabel,
           sectionHeading: sectionHeading,
+          legislation: legislation.legislation,
         })
       );
     } else {
       dispatch(
         removeBookmark({
-          legislation: legislation,
+          title: title,
           sectionNum: sectionNum,
           partLabel: partLabel,
           sectionHeading: sectionHeading,
+          legislation: legislation.legislation,
         })
       );
     }
   }
 
-  //the redux action has to come before the bookmark action, which is counterintuitive but necessary for the
+  //the redux action has to come before the bookmark action, which is counterintuitive but necessary for the proper action order
+  //the Icon here cannot use the developer created icon component because of the  placement of the onPress function.
   return (
-    <View style={{ marginLeft: "auto" }}>
-      <View>
-        <Icon
-          name={marked ? "bookmark" : "bookmark-o"}
-          size={30}
-          onPress={() => {
-            bookmarkAction(
-              legislation,
-              sectionNum,
-              partLabel,
-              sectionHeading,
-              marked
-            );
-            switchMarks();
-          }}
-          style={{ color: Color.background, right: 5 }}
-        />
-      </View>
+    <View>
+      <Icon
+        name={marked ? "bookmark" : "bookmark-o"}
+        onPress={() => {
+          bookmarkAction(title, sectionNum, partLabel, sectionHeading, marked);
+          switchMarks();
+        }}
+        style={styles.bookmarkIcon}
+      />
     </View>
   );
 };
