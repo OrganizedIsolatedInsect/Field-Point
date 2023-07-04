@@ -21,8 +21,8 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
     <View>
       <View>
         <BookmarkIcon
-          legislation="CrimCode"
-          sectionNum={sectionNum}
+          legislation="CrimCode" //this may have to include a "screen name" prop to ensure that the legislation source is passed to the bookmark icon.  Then a lookup
+          sectionNum={sectionNum} //to the model needs to be done to obtain the "legislation"
           partLabel={partLabel}
           sectionHeading={sectionHeading}
         />
