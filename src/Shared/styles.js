@@ -11,6 +11,13 @@ export const Color = {
   inFocus: "#419aff",
 };
 
+export const DarkTheme = {
+  dark: true,
+  colors: {
+    background: Color.background,
+  },
+};
+
 export default StyleSheet.create({
   body: {
     fontFamily: "Roboto",

@@ -19,9 +19,9 @@ import Breadcrumb from "./Breadcrumb";
 
 // Logo can take the logoHeight and logoWidth arguments. By default, it will be H400 x W416 (full size image)
 
-export const CustomHeader = ({ navigation, options, back }) => {
+export const CustomHeader = ({ navigation, options, back, partLabel }) => {
   // const navigation = useNavigation();
-  // const route = useRoute();
+  const route = useRoute();
   0;
   return (
     <View style={styles.headerContainer}>
@@ -34,7 +34,7 @@ export const CustomHeader = ({ navigation, options, back }) => {
         <Searchbar />
       </View>
       {/* <View style={styles.headerBottomRow}> */}
-      {/* <Breadcrumb route={route} navigation={navigation} /> */}
+      {/* <Breadcrumb route={route} navigation={navigation} partLabel={partLabel} /> */}
       {/* </View> */}
     </View>
   );

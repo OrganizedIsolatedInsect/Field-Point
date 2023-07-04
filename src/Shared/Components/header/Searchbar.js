@@ -5,7 +5,6 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import styles, { Color } from "../../styles";
 
 // TODO - wire in the actual search function
-// TODO - migrate styles to own CSS
 
 // Searchbar component implements the search icon, focused and blurred state outline, and changing the keyboard
 //    return key to a magnifying glass icon.
