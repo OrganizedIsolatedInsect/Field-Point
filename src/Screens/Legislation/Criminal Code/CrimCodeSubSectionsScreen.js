@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import React, { useEffect, useState } from "react";
 import { getDbDataCrimCodeSubSection } from "./CriminalCodeFunctions";
 import SubSectionCard from "../../../Shared/Components/SubSectionCard";
+import Breadcrumb from "../../../Shared/Components/header/Breadcrumb";
 
 //Screen to display CrimCode sub sections data from the section a user selects coming from the CrimCode parts screen.
 
@@ -18,6 +19,7 @@ const CrimCodeSubSectionsScreen = ({ route }) => {
 
   return (
     <View>
+      <Breadcrumb partLabel={partLabel} />
       <SubSectionCard
         sectionHeading={sectionHeading}
         sectionNum={sectionNum}

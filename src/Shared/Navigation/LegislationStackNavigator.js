@@ -13,11 +13,11 @@ const LegislationStack = () => {
   return (
     <LegislationStackNavigator.Navigator screenOptions={{ headerShown: false }}>
       <LegislationStackNavigator.Screen
-        name="LegislationScreen"
+        name="Legislation"
         component={LegislationScreen}
       />
       <LegislationStackNavigator.Screen
-        name="CrimCodePartsScreen"
+        name="Criminal Code of Canada"
         component={CrimCodePartsScreen}
       />
       <LegislationStackNavigator.Screen
@@ -25,7 +25,7 @@ const LegislationStack = () => {
         component={CrimCodeSubSectionsScreen}
       />
       <LegislationStackNavigator.Screen
-        name="MVAScreen"
+        name="Motor Vehicle"
         component={MVAScreen}
       />
     </LegislationStackNavigator.Navigator>

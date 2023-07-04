@@ -1,8 +1,8 @@
-import { Text, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import React from "react";
 import styles from "../../Shared/styles.js";
 import HomeScreenButton from "../../Shared/Components/HomeScreenButton.js";
-
+import Breadcrumb from "../../Shared/Components/header/Breadcrumb";
 import HomeScreenData from "../../Data/HomeScreenData.js";
 
 // Map the HomeScreenData.js JSON file and return <HomeScreenButton />
@@ -35,15 +35,18 @@ let showButtons = HomeScreenData.map(
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <ScrollView style={styles.screenBackground}>
-      <Text style={styles.homeScreenHeader}>What are you looking for?</Text>
-      <Text style={styles.homeScreenSubHeader}>
-        Explore supporting information and resources
-      </Text>
+    <ScrollView>
+      <Breadcrumb />
+      <View style={styles.screenBackground}>
+        <Text style={styles.homeScreenHeader}>What are you looking for?</Text>
+        <Text style={styles.homeScreenSubHeader}>
+          Explore supporting information and resources
+        </Text>
 
-      {/* Show the buttons from the <HomeScreenButton /> compoment 
+        {/* Show the buttons from the <HomeScreenButton /> compoment 
       with props mapped from the HomeScreenData.js JSON file */}
-      {showButtons}
+        {showButtons}
+      </View>
     </ScrollView>
   );
 };

@@ -9,14 +9,13 @@ export const Color = {
   cardBody: "#464646",
   searchBody: "#ffffff",
   inFocus: "#419aff",
-  primaryText: "#ffffff",
-  background: "#323232",
-  activeIcon: "#ffffff",
-  inActiveIcon: "#b3b3b3",
-  headingBackground: "#000000",
-  cardBody: "#464646",
-  searchBody: "#ffffff",
-  inFocus: "#419aff",
+};
+
+export const DarkTheme = {
+  dark: true,
+  colors: {
+    background: Color.background,
+  },
 };
 
 export default StyleSheet.create({
@@ -225,4 +224,82 @@ export default StyleSheet.create({
   },
 
   /* End of Legislation Screen Styles */
+  defaultLogoSize: {
+    height: 400,
+    width: 416,
+  },
+
+  // Header styles start
+  searchContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderWidth: 3,
+    borderRadius: 7,
+    height: 56,
+  },
+  searchIcon: {
+    backgroundColor: Color.searchBody,
+    height: 50,
+    borderTopLeftRadius: 4,
+    borderBottomLeftRadius: 4,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 13,
+    fontSize: 24,
+  },
+  searchbar: {
+    width: 227,
+    height: 50,
+    backgroundColor: Color.searchBody,
+    fontSize: 16,
+    textAlign: "left",
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
+  },
+  breadcrumb: {
+    color: Color.primaryText,
+    backgroundColor: Color.headingBackground,
+    paddingBottom: 10,
+    paddingHorizontal: 13,
+  },
+  breadcrumbLink: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  breadcrumbText: {
+    color: Color.primaryText,
+    fontSize: 18,
+  },
+  backIcon: {
+    color: Color.primaryText,
+    fontSize: 20,
+  },
+  blankBar: {
+    height: 24,
+    backgroundColor: Color.headingBackground,
+  },
+  headerContainer: {
+    // paddingVertical: 10,
+    paddingTop: 10,
+    paddingHorizontal: 13,
+    backgroundColor: Color.headingBackground,
+    // height: 110,
+    height: 76,
+  },
+  headerTopRow: {
+    flex: 1,
+    flexDirection: "row",
+    height: 52,
+    justifyContent: "center",
+  },
+  headerTopRowSpacing: {
+    paddingRight: 5,
+  },
+  headerLogoPadding: {
+    paddingTop: 3,
+  },
+  headerBottomRow: {
+    marginTop: 24,
+  },
+  // Header styles end
 });

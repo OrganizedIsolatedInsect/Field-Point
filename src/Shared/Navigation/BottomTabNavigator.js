@@ -1,16 +1,35 @@
 import * as React from "react";
-
 import { Pressable, Text } from "react-native";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from "../Components/Icon";
+
 import styles, { Color } from "../styles";
+
+import Icon from "../Components/Icon";
+import { CustomHeader } from "../Components/header/CustomHeader";
+
 import SettingScreen from "../../Screens/Setting/SettingScreen";
 import BookmarkScreen from "../../Screens/Bookmark/BookmarkScreen";
 import HomeStack from "./HomeStackNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
-export const AppNavigator = () => {
+// Inserts the custom header into the Navigator
+const headerStyleOption = {
+  header: ({ navigation, route, options, back }) => {
+    return <CustomHeader navigation={navigation} route={route} />;
+  },
+};
+
+// Tab bar styling props
+const tabNavigatorStyle = {
+  tabBarStyle: { backgroundColor: Color.headingBackground },
+  tabBarInactiveTintColor: Color.inActiveIcon, // color when icon is not picked
+  tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
+};
+
+// Bottom Tab Navigator
+const AppNavigator = () => {
   //Changes style of the Icon to show a line on top
   const CustomTabButton = (props) => (
     <Pressable
@@ -29,15 +48,12 @@ export const AppNavigator = () => {
     />
   );
 
-  //OUTPUT
   return (
     <BottomTab.Navigator
-      screenOptions={({ route }) => ({
-        headerShown: false,
-        tabBarStyle: { backgroundColor: Color.headingBackground },
-        tabBarInactiveTintColor: Color.inActiveIcon, // color when icon is not picked
-        tabBarActiveTintColor: Color.activeIcon, // color when icon is picked
-      })}
+      // backBehavior="history" prop is required for navigating back to the last visited screen
+      // SOURCE: https://reactnavigation.org/docs/bottom-tab-navigator#backbehavior
+      backBehavior="history"
+      screenOptions={{ ...headerStyleOption, ...tabNavigatorStyle }}
       //set default screen to Home
       initialRouteName="HomeStack"
     >
