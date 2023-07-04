@@ -228,6 +228,8 @@ export default StyleSheet.create({
     height: 400,
     width: 416,
   },
+
+  // Header styles start
   searchContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -299,4 +301,5 @@ export default StyleSheet.create({
   headerBottomRow: {
     marginTop: 24,
   },
+  // Header styles end
 });
