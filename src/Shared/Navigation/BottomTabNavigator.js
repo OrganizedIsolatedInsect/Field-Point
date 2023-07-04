@@ -5,10 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import styles, { Color } from "../styles";
 
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-
+import Icon from "../Components/Icon";
 import { CustomHeader } from "../Components/header/CustomHeader";
 
 import SettingScreen from "../../Screens/Setting/SettingScreen";
@@ -77,10 +74,11 @@ const AppNavigator = () => {
             );
           },
           tabBarIcon: ({ color, size, focused }) => (
-            <MaterialIcons
-              name="help-center"
-              color={color}
-              style={styles.bottomTabIconSize}
+            <Icon
+              iconStyle="MaterialIcons"
+              iconName="help-center"
+              iconColor={color}
+              iconSize={24}
             />
           ),
           tabBarButton: CustomTabButton,
@@ -103,10 +101,11 @@ const AppNavigator = () => {
             );
           },
           tabBarIcon: ({ color, size, focused }) => (
-            <FontAwesome
-              name="home"
-              color={color}
-              style={styles.bottomTabIconSize}
+            <Icon
+              iconStyle="FontAwesome"
+              iconName="home"
+              iconColor={color}
+              iconSize={24}
             />
           ),
           tabBarButton: CustomTabButton,
@@ -129,10 +128,11 @@ const AppNavigator = () => {
             );
           },
           tabBarIcon: ({ color, size, focused }) => (
-            <MaterialCommunityIcons
-              name="bookmark-multiple"
-              color={color}
-              style={styles.bottomTabIconSize}
+            <Icon
+              iconStyle="MaterialCommunityIcons"
+              iconName="bookmark-multiple"
+              iconColor={color}
+              iconSize={24}
             />
           ),
           tabBarButton: CustomTabButton,
