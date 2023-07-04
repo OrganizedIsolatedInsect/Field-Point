@@ -35,7 +35,7 @@ export const BookmarkIcon = ({
     }
   }, [legislation, sectionNum, partLabel, sectionHeading]);
 
-  //adds or removes bookmark depending on the state of marked.
+  // //adds or removes bookmark depending on the state of marked.
   function bookmarkAction(legislation, sectionNum, partLabel, sectionHeading) {
     if (marked === false) {
       dispatch(
@@ -66,10 +66,16 @@ export const BookmarkIcon = ({
           name={marked ? "bookmark" : "bookmark-o"}
           size={30}
           onPress={() => {
-            bookmarkAction(legislation, sectionNum, partLabel, sectionHeading);
+            bookmarkAction(
+              legislation,
+              sectionNum,
+              partLabel,
+              sectionHeading,
+              marked
+            );
             switchMarks();
           }}
-          style={{ color: Color.background, right: 0 }}
+          style={{ color: Color.background, right: 5 }}
         />
       </View>
     </View>
