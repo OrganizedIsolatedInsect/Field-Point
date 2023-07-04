@@ -16,7 +16,7 @@ import { View, Text, Image, Pressable } from "react-native";
 import React from "react";
 import styles, { Color } from "../styles.js";
 import Icon from "./Icon.js";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreenButton = ({
   imgURI,
@@ -26,14 +26,17 @@ const HomeScreenButton = ({
   iconName,
   iconSize,
   iconColor,
+  testId,
 }) => {
-
   const navigation = useNavigation();
+
+  console.log(testId);
 
   return (
     <Pressable
       android_ripple={{ color: Color.cardBody, foreground: true }}
       onPress={() => navigation.navigate(buttonPress)}
+      testID={testId}
     >
       <Image style={styles.homeScreenImg} source={imgURI} />
       <View style={styles.homeScreenButtonView}>

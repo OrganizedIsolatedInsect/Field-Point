@@ -8,13 +8,16 @@ describe("Crim Code Test", () => {
   });
 
   it("test getting to crim code", async () => {
-    await expect(element(by.text("Tap"))).toBeVisible;
-    await element(by.text("TAP")).tap();
-    await element(by.text("LEGISLATION")).tap();
-
-    /* await expect(element(by.id("LegislationButton"))).toBeVisible();
+    expect(element(by.text("Legislation"))).toBeVisible;
     await element(by.id("LegislationButton")).tap();
 
-    await expect(element(by.id("CrimCodeButton"))).toExist(); */
+    await waitFor(element(by.text("Criminal Code of Canada")))
+      .toBeVisible()
+      .withTimeout(2000);
+    await element(by.id("Criminal Code of Canada Button")).tap();
+
+    await waitFor(element(by.text("General")))
+      .toBeVisible()
+      .withTimeout(4000);
   });
 });

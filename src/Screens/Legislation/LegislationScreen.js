@@ -16,6 +16,7 @@ let showButtons = LegislationScreenData.map(
         buttonText={buttonText}
         imgURI={imgURI}
         buttonPress={buttonPress} ///Screen Name
+        testId={`${buttonText} Button`}
       />
     );
   }

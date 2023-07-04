@@ -28,6 +28,7 @@ let showButtons = HomeScreenData.map(
         iconColor={iconColor}
         imgURI={imgURI}
         buttonPress={buttonPress}
+        testId={`${name}Button`}
       />
     );
   }

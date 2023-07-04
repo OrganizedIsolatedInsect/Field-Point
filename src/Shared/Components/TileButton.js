@@ -10,13 +10,14 @@ import React from "react";
 import styles, { Color } from "../styles.js";
 import { useNavigation } from "@react-navigation/native";
 
-const TileButton = ({ imgURI, buttonText, buttonPress }) => {
+const TileButton = ({ imgURI, buttonText, buttonPress, testId }) => {
   const navigation = useNavigation();
 
   return (
     <Pressable
       android_ripple={{ color: Color.cardBody, foreground: true }}
       onPress={() => navigation.navigate(buttonPress)}
+      testID={testId}
     >
       <Image source={imgURI} style={styles.LegislationImg} />
       <View style={styles.LegislationButtonTextView}>
