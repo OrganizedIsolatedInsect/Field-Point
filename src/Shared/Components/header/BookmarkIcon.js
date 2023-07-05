@@ -13,10 +13,12 @@ import styles from "../../styles";
 import { RoutingItems } from "../../../Data/RoutingLookups";
 
 export const BookmarkIcon = ({
-  title,
-  sectionNum,
-  partLabel,
-  sectionHeading,
+  title, //this is the name of the Screen as per the LegislationStackNavigator.
+  //This is used as a lookup to obtain the "short version" of the legislation name for output to the device as well as determine which screen the bookmark will return to.
+  //This will pass to the redux upon adding bookmark.  eg.  "Criminal Code of Canada"
+  sectionNum, //the section number of the specific legislation being passed.   This will pass to the redux upon adding bookmark.  eg. 83.05
+  partLabel, //the part of the legislation where the section number sits. This will pass to the redux upon adding bookmark. eg. PART III
+  sectionHeading, // the description of the specific legislation.  This will pass to the redux upon adding bookmark. eg. List of Entities
 }) => {
   const [marked, setMarked] = useState(false); //to change marked state of bookmark
   const bookmarkStateId = useSelector(state => state.bookmarks.bookmarkArray); //get list of bookmarks
