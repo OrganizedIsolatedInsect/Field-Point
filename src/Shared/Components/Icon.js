@@ -32,7 +32,7 @@ import Octicons from "react-native-vector-icons/Octicons";
 import Zocial from "react-native-vector-icons/Zocial";
 import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
-const Icon = ({ iconStyle, iconName, iconSize, iconColor, style }) => {
+const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
   return (
     <View>
       {/* If else render function */}
@@ -82,6 +82,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "FontAwesome5") {

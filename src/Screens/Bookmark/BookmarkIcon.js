@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { addBookmark, removeBookmark } from "../../Redux/bookmarkSlice";
-import Icon from "react-native-vector-icons/FontAwesome";
+//import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "../../Shared/Components/Icon.js";
 import styles, { Color } from "../../Shared/styles";
 import { RoutingItems } from "../../Data/RoutingLookups";
 
@@ -25,14 +26,14 @@ export const BookmarkIcon = ({
   //if the bookmarks exists in redux, then switch the mark upon any change of all of the elements below.
   useEffect(() => {
     // compares state array to see if section exists in bookmarks, if it does turn on bookmark icon
-    bookmarkStateId.some(e => e.sectionNum == sectionNum && e.title == title)
+    bookmarkStateId.find(e => e.sectionNum === sectionNum && e.title === title)
       ? setMarked(true)
       : setMarked(false);
   }, [title, sectionNum, partLabel, sectionHeading]);
 
   // //adds or removes bookmark depending on the state of marked.
   function bookmarkAction(title, sectionNum, partLabel, sectionHeading) {
-    const legislation = RoutingItems.find(e => e.title == title);
+    const legislation = RoutingItems.find(e => e.title === title);
 
     if (marked === false) {
       dispatch(
@@ -62,7 +63,8 @@ export const BookmarkIcon = ({
   return (
     <View>
       <Icon
-        name={marked ? "bookmark" : "bookmark-o"}
+        iconStyle="FontAwesome"
+        iconName={marked ? "bookmark" : "bookmark-o"}
         onPress={() => {
           bookmarkAction(title, sectionNum, partLabel, sectionHeading, marked);
           switchMarks();

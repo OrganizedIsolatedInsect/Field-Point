@@ -3,25 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 //redux store for bookmarks
 
 const initialState = {
-  bookmarkArray: [
-    //TEST data
-    // {
-    //   legislation: "CrimCode",
-    //   sectionNum: "424.1(b)",
-    //   partLabel: "PART X",
-    //   sectionHeading:
-    //     "Breach of Contract, Intimidation and Discrimination Against Trade Unionists",
-    // },
-  ],
+  bookmarkArray: [],
 };
 
 const bookmarkSlice = createSlice({
   name: "bookmarks",
   initialState,
   reducers: {
+    //adding the payload adds 5 items to the bookmark Array
+    //title, sectionNum, partLabel, sectionHeading, legislation
     addBookmark: (state, action) => {
       state.bookmarkArray.push(action.payload);
     },
+    //removing the item requires that at least 4 items match, this is to ensure that when we add similar legislation to the app, there is no mistake.
     removeBookmark: (state, action) => {
       state.bookmarkArray = state.bookmarkArray.filter(
         bookmarkItem =>
