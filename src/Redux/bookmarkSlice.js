@@ -12,6 +12,13 @@ const bookmarkSlice = createSlice({
   reducers: {
     //adding the payload adds 5 items to the bookmark Array
     //title, sectionNum, partLabel, sectionHeading, legislation
+    //title, this is the name of the Screen as per the LegislationStackNavigator.
+    //This is used as a lookup to obtain the "short version" of the legislation name for output to the device as well as determine which screen the bookmark will return to.
+    // eg.  "Criminal Code of Canada"
+    //sectionNum, the section number of the specific legislation being passed. eg. 83.05
+    //partLabel, the part of the legislation where the section number sits. eg. PART III
+    //sectionHeading, - the description of the specific legislation.  eg. List of Entities
+    //legislation - this is the short form of the legislation used for display purposes.  eg.  Crim Code
     addBookmark: (state, action) => {
       state.bookmarkArray.push(action.payload);
     },
