@@ -10,6 +10,7 @@ iconName: name of the icon based on icon set name.  See https://oblador.github.i
 iconColor: color of the icon
 iconSize: size of the icon
 style: accepts style passed as a prop
+onPress: acceps function to send the the onPress property.
 */
 
 import { View } from "react-native";
