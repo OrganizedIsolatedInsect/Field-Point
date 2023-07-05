@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Icon from "../Icon";
+import { BookmarkIcon } from "./BookmarkIcon";
+import { RoutingItems } from "../../../Data/RoutingLookups";
 
 import styles from "../../styles";
 
@@ -16,12 +18,15 @@ const Breadcrumb = ({ partLabel }) => {
   // State used to check if the partLabel prop is passed, if it exists display the part #, otherwise display the
   // route name
   const [partLabelExists, setPartLabelExists] = useState(false);
-
+  const [showIcon, setShowIcon] = useState(false); //to enable whether the bookmark icon should display on the current screen.
   useEffect(() => {
     if (partLabel !== undefined) {
       setPartLabelExists(true);
     }
-  }, [partLabel]);
+    RoutingItems.find(rt => rt.title == route.name)
+      ? setShowIcon(true)
+      : setShowIcon(false);
+  }, [partLabel, showIcon]);
 
   // Checks to see if you can navigate back, and if so, go back. Otherwise, do nothing. Prevents a warning.
   // SOURCE: https://reactnavigation.org/docs/navigation-prop#cangoback
@@ -53,6 +58,14 @@ const Breadcrumb = ({ partLabel }) => {
         ) : (
           <Text style={styles.breadcrumbText}> {route.name}</Text>
         )}
+        {showIcon ? (
+          <BookmarkIcon
+            title={route.name} //this may have to include a "screen name" prop to ensure that the legislation source is passed to the bookmark icon.  Then a lookup
+            sectionNum={route.params.sectionNum} //to the model needs to be done to obtain the "legislation"
+            partLabel={route.params.partLabel}
+            sectionHeading={route.params.sectionHeading}
+          />
+        ) : null}
       </View>
     );
   };
@@ -64,8 +77,10 @@ const Breadcrumb = ({ partLabel }) => {
 
   // Actual BreadcrumbBar component. If the route name is Home, do not display breadcrumb.
   return (
-    <View style={styles.breadcrumb}>
-      {route.name === "Home" ? <BlankBar /> : <NavigationLink />}
+    <View>
+      <View style={styles.breadcrumb}>
+        {route.name === "Home" ? <BlankBar /> : <NavigationLink />}
+      </View>
     </View>
   );
 };
