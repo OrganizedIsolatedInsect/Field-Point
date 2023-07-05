@@ -340,13 +340,16 @@ export default StyleSheet.create({
   },
   bookmarkContainer: {
     backgroundColor: Color.black,
-    width: width,
+    width: width - 26,
     height: 100,
     marginTop: 10,
     marginBottom: 10,
+    marginLeft: 13,
+    marginRight: 13,
     paddingTop: 28,
     paddingBottom: 28,
     paddingLeft: 36,
+    borderRadius: 7,
   },
   bookmarkFlexContainer: {
     flexDirection: "row",
