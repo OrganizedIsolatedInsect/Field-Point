@@ -346,13 +346,10 @@ export default StyleSheet.create({
     backgroundColor: Color.black,
     width: width - 26,
     height: 100,
-    marginTop: 10,
-    marginBottom: 10,
-    marginLeft: 13,
-    marginRight: 13,
-    paddingTop: 28,
-    paddingBottom: 28,
-    paddingLeft: 36,
+    marginVertical: 10,
+    marginHorizontal: 13,
+    paddingVertical: 26,
+    paddingLeft: 36 - 13,
     borderRadius: 7,
   },
   bookmarkFlexContainer: {
@@ -393,7 +390,7 @@ export default StyleSheet.create({
     color: Color.primaryText,
     fontSize: 18,
     fontWeight: 400,
-    paddingTop: 8,
+    paddingTop: 7,
     width: width - 36 - 26, //to allow for 1 line of title and an ellipses if trucating is necessary. (additional values are padding values)
   },
   bookmarkNoneLabelRender: {
