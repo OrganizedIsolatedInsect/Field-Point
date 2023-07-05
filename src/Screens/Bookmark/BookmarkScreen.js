@@ -36,12 +36,12 @@ const BookmarkScreen = () => {
               style={[styles.bookmarkTextRender, styles.bookmarkNoneBoxRender]}
             >
               Keep track of your most popular articles and documents by clicking
-              the
+              the{" "}
               <Icon
                 iconStyle="FontAwesome"
-                iconName="bookmark"
+                iconName="bookmark-o"
                 style={styles.bookmarkIconTiny}
-              />
+              />{" "}
               icon.
             </Text>
           </View>

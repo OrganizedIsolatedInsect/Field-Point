@@ -48,7 +48,7 @@ export const BookmarkCard = ({ item }) => {
                 {item.legislation} {item.sectionNum}
               </Text>
             </View>
-            <View style={styles.bookmarkFlexOne}>
+            <View style={styles.bookmarkFlexThree}>
               <Text style={styles.bookmarkChevronRender}>
                 <Icon
                   iconStyle="FontAwesome"

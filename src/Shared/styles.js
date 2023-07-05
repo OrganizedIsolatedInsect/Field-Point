@@ -371,19 +371,23 @@ export default StyleSheet.create({
   },
   bookmarkChevronRender: {
     color: Color.lightGrey,
-    textAlign: "right",
-    // flex: 1,
-    // alignItems: "flex-end",
+    flex: 1,
+    paddingRight: 23,
     fontSize: 14,
     fontWeight: 300,
   },
   bookmarkFlexOne: {
     flex: 1,
+    justifyContent: "space-between",
     alignItems: "flex-start",
   },
   bookmarkFlexTwo: {
     flex: 2,
     alignItems: "flex-start",
+  },
+  bookmarkFlexThree: {
+    flex: 1,
+    alignItems: "flex-end",
   },
   bookmarkTitleRender: {
     color: Color.primaryText,
