@@ -1,4 +1,8 @@
-import { StyleSheet } from "react-native";
+//https://stackoverflow.com/questions/38715028/how-to-handle-different-screen-sizes-in-react-native
+
+import { Dimensions, StyleSheet } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 export const Color = {
   primaryText: "#ffffff",
@@ -9,6 +13,8 @@ export const Color = {
   cardBody: "#464646",
   searchBody: "#ffffff",
   inFocus: "#419aff",
+  black: "#000000",
+  lightGrey: "#9c9c9c",
 };
 
 export const DarkTheme = {
@@ -261,14 +267,18 @@ export default StyleSheet.create({
     backgroundColor: Color.headingBackground,
     paddingBottom: 10,
     paddingHorizontal: 13,
+    flexDirection: "row",
   },
   breadcrumbLink: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
+    justifyContent: "space-between",
   },
   breadcrumbText: {
     color: Color.primaryText,
     fontSize: 18,
+    flex: 4,
   },
   backIcon: {
     color: Color.primaryText,
@@ -302,4 +312,99 @@ export default StyleSheet.create({
     marginTop: 24,
   },
   // Header styles end
+
+  //BOOKMARK STYLING
+  centerOnScreen: {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  bookmarkIcon: {
+    color: Color.primaryText,
+    fontSize: 24,
+    alignContent: "flex-end",
+  },
+  bookmarkIconLarge: {
+    fontSize: 200,
+    color: Color.primaryText,
+  },
+  bookmarkIconTiny: {
+    fontSize: 15,
+    color: Color.primaryText,
+  },
+  bookmarkIconRight: {
+    fontSize: 24,
+    color: Color.primaryText,
+  },
+  bookmarkScreenFormatting: {
+    color: Color.primaryText,
+    flexDirection: "row",
+    width: width,
+    height: height - 200, //to compensate for the height of the header and breadcrumb rows.
+  },
+  bookmarkContainer: {
+    backgroundColor: Color.black,
+    width: width - 26,
+    height: 100,
+    marginVertical: 10,
+    marginHorizontal: 13,
+    paddingVertical: 26,
+    paddingLeft: 36 - 13,
+    borderRadius: 7,
+  },
+  bookmarkFlexContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  bookmarkTextRender: {
+    color: Color.primaryText,
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkLabelRender: {
+    color: Color.lightGrey,
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkChevronRender: {
+    color: Color.lightGrey,
+    flex: 1,
+    paddingRight: 23,
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkFlexOne: {
+    flex: 1,
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+  },
+  bookmarkFlexTwo: {
+    flex: 2,
+    alignItems: "flex-start",
+  },
+  bookmarkFlexThree: {
+    flex: 1,
+    alignItems: "flex-end",
+  },
+  bookmarkTitleRender: {
+    color: Color.primaryText,
+    fontSize: 18,
+    fontWeight: 400,
+    paddingTop: 7,
+    width: width - 36 - 26, //to allow for 1 line of title and an ellipses if trucating is necessary. (additional values are padding values)
+  },
+  bookmarkNoneLabelRender: {
+    flexDirection: "row",
+    fontSize: 14,
+    fontWeight: 300,
+  },
+  bookmarkNoneBoxRender: {
+    paddingLeft: 36,
+    paddingRight: 36,
+  },
+  bookmarkNoneTitleRender: {
+    fontWeight: 500,
+    fontSize: 24,
+    color: Color.primaryText,
+  },
 });
