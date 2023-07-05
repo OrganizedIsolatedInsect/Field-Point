@@ -1,10 +1,15 @@
+/*
+  The Bookmark Icon sits on the Breadcrumb component and passes the legislation props to the icon actions.
+  The icon is only visible on pages that have Legislation that can be bookmarked although the icon is technically "seen" by all the screens that contain the breadcrumb.
+  The icon renders differently depending on whether the legislation is found in the redux.
+*/
+
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { addBookmark, removeBookmark } from "../../Redux/bookmarkSlice";
-//import Icon from "react-native-vector-icons/FontAwesome";
 import Icon from "../../Shared/Components/Icon.js";
-import styles, { Color } from "../../Shared/styles";
+import styles from "../../Shared/styles";
 import { RoutingItems } from "../../Data/RoutingLookups";
 
 export const BookmarkIcon = ({

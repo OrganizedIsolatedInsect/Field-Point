@@ -58,6 +58,14 @@ const Breadcrumb = ({ partLabel }) => {
         ) : (
           <Text style={styles.breadcrumbText}> {route.name}</Text>
         )}
+        {showIcon ? (
+          <BookmarkIcon
+            title={route.name} //this may have to include a "screen name" prop to ensure that the legislation source is passed to the bookmark icon.  Then a lookup
+            sectionNum={route.params.sectionNum} //to the model needs to be done to obtain the "legislation"
+            partLabel={route.params.partLabel}
+            sectionHeading={route.params.sectionHeading}
+          />
+        ) : null}
       </View>
     );
   };
@@ -72,14 +80,6 @@ const Breadcrumb = ({ partLabel }) => {
     <View>
       <View style={styles.breadcrumb}>
         {route.name === "Home" ? <BlankBar /> : <NavigationLink />}
-        {showIcon ? (
-          <BookmarkIcon
-            title={route.name} //this may have to include a "screen name" prop to ensure that the legislation source is passed to the bookmark icon.  Then a lookup
-            sectionNum={route.params.sectionNum} //to the model needs to be done to obtain the "legislation"
-            partLabel={route.params.partLabel}
-            sectionHeading={route.params.sectionHeading}
-          />
-        ) : null}
       </View>
     </View>
   );

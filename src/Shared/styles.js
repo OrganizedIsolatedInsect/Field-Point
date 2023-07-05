@@ -267,14 +267,18 @@ export default StyleSheet.create({
     backgroundColor: Color.headingBackground,
     paddingBottom: 10,
     paddingHorizontal: 13,
+    flexDirection: "row",
   },
   breadcrumbLink: {
     flexDirection: "row",
     alignItems: "center",
+    flex: 1,
+    justifyContent: "space-between",
   },
   breadcrumbText: {
     color: Color.primaryText,
     fontSize: 18,
+    flex: 4,
   },
   backIcon: {
     color: Color.primaryText,
@@ -318,7 +322,7 @@ export default StyleSheet.create({
   bookmarkIcon: {
     color: Color.primaryText,
     fontSize: 24,
-    textAlign: "right",
+    alignContent: "flex-end",
   },
   bookmarkIconLarge: {
     fontSize: 200,
