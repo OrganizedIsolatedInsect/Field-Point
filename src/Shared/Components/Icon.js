@@ -46,6 +46,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Entypo") {
@@ -55,6 +56,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "EvilIcons") {
@@ -64,6 +66,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Feather") {
@@ -73,6 +76,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "FontAwesome") {
@@ -92,6 +96,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "FontAwesome5Brands") {
@@ -101,6 +106,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Fontisto") {
@@ -110,6 +116,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Foundation") {
@@ -119,6 +126,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Ionicons") {
@@ -128,6 +136,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "MaterialCommunityIcons") {
@@ -137,6 +146,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "MaterialIcons") {
@@ -146,6 +156,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Octicons") {
@@ -155,6 +166,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "SimpleLineIcons") {
@@ -164,6 +176,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else if (iconStyle == "Zocial") {
@@ -173,6 +186,7 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
               size={iconSize}
               color={iconColor}
               style={style}
+              onPress={onPress}
             />
           );
         } else {
@@ -183,16 +197,19 @@ const Icon = ({ iconStyle, iconName, iconSize, iconColor, style, onPress }) => {
                 name="exclamation"
                 size={iconSize}
                 color={iconColor}
+                onPress={onPress}
               />
               <FontAwesome
                 name="exclamation"
                 size={iconSize}
                 color={iconColor}
+                onPress={onPress}
               />
               <FontAwesome
                 name="exclamation"
                 size={iconSize}
                 color={iconColor}
+                onPress={onPress}
               />
             </View>
           );

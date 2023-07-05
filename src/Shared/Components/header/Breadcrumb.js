@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Icon from "../Icon";
-import { BookmarkIcon } from "../../../Screens/Bookmark/BookmarkIcon";
+import { BookmarkIcon } from "./BookmarkIcon";
 import { RoutingItems } from "../../../Data/RoutingLookups";
 
 import styles from "../../styles";
