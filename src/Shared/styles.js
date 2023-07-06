@@ -325,8 +325,9 @@ export default StyleSheet.create({
     alignContent: "flex-end",
   },
   bookmarkIconLarge: {
-    fontSize: 200,
-    color: Color.primaryText,
+    fontSize: 160,
+    color: Color.inActiveIcon,
+    marginTop: 88,
   },
   bookmarkIconTiny: {
     fontSize: 15,
@@ -340,7 +341,7 @@ export default StyleSheet.create({
     color: Color.primaryText,
     flexDirection: "row",
     width: width,
-    height: height - 200, //to compensate for the height of the header and breadcrumb rows.
+    //height: height - 200, //to compensate for the height of the header and breadcrumb rows.
   },
   bookmarkContainer: {
     backgroundColor: Color.black,
@@ -405,6 +406,6 @@ export default StyleSheet.create({
   bookmarkNoneTitleRender: {
     fontWeight: 500,
     fontSize: 24,
-    color: Color.primaryText,
+    color: Color.inActiveIcon,
   },
 });
